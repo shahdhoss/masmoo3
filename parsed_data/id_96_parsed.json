@@ -1,0 +1,710 @@
+{
+    "title": "Junior Classics Volume 1: Fairy and Wonder Tales, The by William Patten (1868 - 1936) and William Allan Neilson (1869 - 1946)",
+    "image": "https://www.archive.org/download/LibrivoxCdCoverArt10/Junior_Classics_Vol_1_1108.jpg",
+    "language": "eng",
+    "category": "Literature",
+    "episodes": [
+        {
+            "chapter_title": "Preface",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_000_patten_64kb.mp3",
+            "episode_no": "0",
+            "duration": "00:08:04"
+        },
+        {
+            "chapter_title": "Manabozho, The Mischief Maker",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_001_patten_64kb.mp3",
+            "episode_no": "1",
+            "duration": "00:13:15"
+        },
+        {
+            "chapter_title": "The Woodpecker",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_002_patten_64kb.mp3",
+            "episode_no": "2",
+            "duration": "00:09:14"
+        },
+        {
+            "chapter_title": "Why the Diver Duck Has So Few Tail Feathers",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_003_patten_64kb.mp3",
+            "episode_no": "3",
+            "duration": "00:03:54"
+        },
+        {
+            "chapter_title": "Manabozho Changed to Wolf",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_004_patten_64kb.mp3",
+            "episode_no": "4",
+            "duration": "00:05:55"
+        },
+        {
+            "chapter_title": "Manabozho is Robbed",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_005_patten_64kb.mp3",
+            "episode_no": "5",
+            "duration": "00:03:38"
+        },
+        {
+            "chapter_title": "Manabozho and the Woodpeckers",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_006_patten_64kb.mp3",
+            "episode_no": "6",
+            "duration": "00:06:37"
+        },
+        {
+            "chapter_title": "The Boy and the Wolves",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_007_patten_64kb.mp3",
+            "episode_no": "7",
+            "duration": "00:05:36"
+        },
+        {
+            "chapter_title": "The Indian Who Lost His Wife",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_008_patten_64kb.mp3",
+            "episode_no": "8",
+            "duration": "00:05:46"
+        },
+        {
+            "chapter_title": "Punchkin",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_009_patten_64kb.mp3",
+            "episode_no": "9",
+            "duration": "00:31:03"
+        },
+        {
+            "chapter_title": "The Sun, Moon and Wind",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_010_patten_64kb.mp3",
+            "episode_no": "10",
+            "duration": "00:03:49"
+        },
+        {
+            "chapter_title": "Why the Fish Laughed",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_011_patten_64kb.mp3",
+            "episode_no": "11",
+            "duration": "00:14:14"
+        },
+        {
+            "chapter_title": "The Farmer and Money Lender",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_012_patten_64kb.mp3",
+            "episode_no": "12",
+            "duration": "00:06:28"
+        },
+        {
+            "chapter_title": "Pride Goeth Before a Fall",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_013_patten_64kb.mp3",
+            "episode_no": "13",
+            "duration": "00:05:13"
+        },
+        {
+            "chapter_title": "The Wicked Sons",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_014_patten_64kb.mp3",
+            "episode_no": "14",
+            "duration": "00:02:43"
+        },
+        {
+            "chapter_title": "Tiger, Brahman, and Jackal",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_015_patten_64kb.mp3",
+            "episode_no": "15",
+            "duration": "00:05:33"
+        },
+        {
+            "chapter_title": "The Lambikin",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_016_patten_64kb.mp3",
+            "episode_no": "16",
+            "duration": "00:04:51"
+        },
+        {
+            "chapter_title": "The Rat's Wedding",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_017_patten_64kb.mp3",
+            "episode_no": "17",
+            "duration": "00:14:26"
+        },
+        {
+            "chapter_title": "The Jackal and the Partridge",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_018_patten_64kb.mp3",
+            "episode_no": "18",
+            "duration": "00:06:47"
+        },
+        {
+            "chapter_title": "The Jackal and the Crocodile",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_019_patten_64kb.mp3",
+            "episode_no": "19",
+            "duration": "00:06:10"
+        },
+        {
+            "chapter_title": "The Jackal and the Iguana",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_020_patten_64kb.mp3",
+            "episode_no": "20",
+            "duration": "00:05:43"
+        },
+        {
+            "chapter_title": "The Bear's Bad Bargain",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_021_patten_64kb.mp3",
+            "episode_no": "21",
+            "duration": "00:09:29"
+        },
+        {
+            "chapter_title": "The Thief and the Fox",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_022_patten_64kb.mp3",
+            "episode_no": "22",
+            "duration": "00:01:39"
+        },
+        {
+            "chapter_title": "The Farmer and the Fox",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_023_patten_64kb.mp3",
+            "episode_no": "23",
+            "duration": "00:01:50"
+        },
+        {
+            "chapter_title": "The Fools and the Drum",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_024_patten_64kb.mp3",
+            "episode_no": "24",
+            "duration": "00:01:37"
+        },
+        {
+            "chapter_title": "The Lion and the Goat",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_025_patten_64kb.mp3",
+            "episode_no": "25",
+            "duration": "00:02:34"
+        },
+        {
+            "chapter_title": "The Glowworm and Jackdaw",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_026_patten_64kb.mp3",
+            "episode_no": "26",
+            "duration": "00:01:36"
+        },
+        {
+            "chapter_title": "The Camel and the Pig",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_027_patten_64kb.mp3",
+            "episode_no": "27",
+            "duration": "00:01:55"
+        },
+        {
+            "chapter_title": "The Dog and the Dog Dealer",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_028_patten_64kb.mp3",
+            "episode_no": "28",
+            "duration": "00:01:24"
+        },
+        {
+            "chapter_title": "The Tiger, Fox, and Hunters",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_029_patten_64kb.mp3",
+            "episode_no": "29",
+            "duration": "00:02:25"
+        },
+        {
+            "chapter_title": "The Sea, the Fox, and the Wolf",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_030_patten_64kb.mp3",
+            "episode_no": "30",
+            "duration": "00:01:37"
+        },
+        {
+            "chapter_title": "The Fox in the Well",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_031_patten_64kb.mp3",
+            "episode_no": "31",
+            "duration": "00:02:06"
+        },
+        {
+            "chapter_title": "Ashiepattle",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_032_patten_64kb.mp3",
+            "episode_no": "32",
+            "duration": "00:18:30"
+        },
+        {
+            "chapter_title": "The Squire's Bride",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_033_patten_64kb.mp3",
+            "episode_no": "33",
+            "duration": "00:06:12"
+        },
+        {
+            "chapter_title": "The Doll in the Grass",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_034_patten_64kb.mp3",
+            "episode_no": "34",
+            "duration": "00:05:00"
+        },
+        {
+            "chapter_title": "The Bear and the Fox",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_035_patten_64kb.mp3",
+            "episode_no": "35",
+            "duration": "00:08:21"
+        },
+        {
+            "chapter_title": "The Lad Who Went to the North Wind",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_036_patten_64kb.mp3",
+            "episode_no": "36",
+            "duration": "00:07:09"
+        },
+        {
+            "chapter_title": "The Husband Who Was to Mind the House",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_037_patten_64kb.mp3",
+            "episode_no": "37",
+            "duration": "00:04:36"
+        },
+        {
+            "chapter_title": "How One Went Out to Woo",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_038_patten_64kb.mp3",
+            "episode_no": "38",
+            "duration": "00:01:30"
+        },
+        {
+            "chapter_title": "Why the Bear is Stumpy-Tailed",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_039_patten_64kb.mp3",
+            "episode_no": "39",
+            "duration": "00:02:02"
+        },
+        {
+            "chapter_title": "Boots and the Princess",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_040_patten_64kb.mp3",
+            "episode_no": "40",
+            "duration": "00:03:58"
+        },
+        {
+            "chapter_title": "The Witch in the Stone Boat",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_041_patten_64kb.mp3",
+            "episode_no": "41",
+            "duration": "00:11:18"
+        },
+        {
+            "chapter_title": "The Snuffbox",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_042_patten_64kb.mp3",
+            "episode_no": "42",
+            "duration": "00:09:55"
+        },
+        {
+            "chapter_title": "The Golden Blackbird",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_043_patten_64kb.mp3",
+            "episode_no": "43",
+            "duration": "00:11:01"
+        },
+        {
+            "chapter_title": "The Half-Chick",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_044_patten_64kb.mp3",
+            "episode_no": "44",
+            "duration": "00:08:08"
+        },
+        {
+            "chapter_title": "The Three Brothers",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_045_patten_64kb.mp3",
+            "episode_no": "45",
+            "duration": "00:07:02"
+        },
+        {
+            "chapter_title": "The Glass Mountain",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_046_patten_64kb.mp3",
+            "episode_no": "46",
+            "duration": "00:10:05"
+        },
+        {
+            "chapter_title": "Huntsman the Unlucky",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_047_patten_64kb.mp3",
+            "episode_no": "47",
+            "duration": "00:11:20"
+        },
+        {
+            "chapter_title": "Story of Little Simpleton",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_048_patten_64kb.mp3",
+            "episode_no": "48",
+            "duration": "00:00:02"
+        },
+        {
+            "chapter_title": "The Golden Fish",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_049_patten_64kb.mp3",
+            "episode_no": "49",
+            "duration": "00:06:28"
+        },
+        {
+            "chapter_title": "The Wonderful Hair",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_050_patten_64kb.mp3",
+            "episode_no": "50",
+            "duration": "00:06:50"
+        },
+        {
+            "chapter_title": "The Language of Animals",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_051_patten_64kb.mp3",
+            "episode_no": "51",
+            "duration": "00:09:19"
+        },
+        {
+            "chapter_title": "The Emperor Trojan's Ears",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_052_patten_64kb.mp3",
+            "episode_no": "52",
+            "duration": "00:04:56"
+        },
+        {
+            "chapter_title": "The Maiden Who Was Wiser Than the King",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_053_patten_64kb.mp3",
+            "episode_no": "53",
+            "duration": "00:06:52"
+        },
+        {
+            "chapter_title": "The Three Sons",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_054_patten_64kb.mp3",
+            "episode_no": "54",
+            "duration": "00:10:21"
+        },
+        {
+            "chapter_title": "Hok Lee and the Dwarfs",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_055_patten_64kb.mp3",
+            "episode_no": "55",
+            "duration": "00:11:42"
+        },
+        {
+            "chapter_title": "A Dreadful Boar",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_056_patten_64kb.mp3",
+            "episode_no": "56",
+            "duration": "00:05:43"
+        },
+        {
+            "chapter_title": "The Five Queer Brothers",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_057_patten_64kb.mp3",
+            "episode_no": "57",
+            "duration": "00:07:29"
+        },
+        {
+            "chapter_title": "The Accomplished Teakettle",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_058_patten_64kb.mp3",
+            "episode_no": "58",
+            "duration": "00:04:07"
+        },
+        {
+            "chapter_title": "Adventures of Little Peachling",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_059_patten_64kb.mp3",
+            "episode_no": "59",
+            "duration": "00:03:35"
+        },
+        {
+            "chapter_title": "The Two Lizards",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_060_patten_64kb.mp3",
+            "episode_no": "60",
+            "duration": "00:03:54"
+        },
+        {
+            "chapter_title": "De King and De Peafowl",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_061_patten_64kb.mp3",
+            "episode_no": "61",
+            "duration": "00:04:41"
+        },
+        {
+            "chapter_title": "Hansel and Grethel",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_062_patten_64kb.mp3",
+            "episode_no": "62",
+            "duration": "00:16:20"
+        },
+        {
+            "chapter_title": "Thumbling",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_063_patten_64kb.mp3",
+            "episode_no": "63",
+            "duration": "00:10:42"
+        },
+        {
+            "chapter_title": "The Six Swans",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_064_patten_64kb.mp3",
+            "episode_no": "64",
+            "duration": "00:11:34"
+        },
+        {
+            "chapter_title": "Snow-White and Rose-Red",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_065_patten_64kb.mp3",
+            "episode_no": "65",
+            "duration": "00:16:13"
+        },
+        {
+            "chapter_title": "The Ugly Duckling",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_066_patten_64kb.mp3",
+            "episode_no": "66",
+            "duration": "00:23:08"
+        },
+        {
+            "chapter_title": "The Tinder-Box",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_067_patten_64kb.mp3",
+            "episode_no": "67",
+            "duration": "00:15:16"
+        },
+        {
+            "chapter_title": "The Constant Tin Soldier",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_068_patten_64kb.mp3",
+            "episode_no": "68",
+            "duration": "00:09:53"
+        },
+        {
+            "chapter_title": "The Fir Tree",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_069_patten_64kb.mp3",
+            "episode_no": "69",
+            "duration": "00:21:55"
+        },
+        {
+            "chapter_title": "The Flying Trunk",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_070_patten_64kb.mp3",
+            "episode_no": "70",
+            "duration": "00:10:54"
+        },
+        {
+            "chapter_title": "The Darning Needle",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_071_patten_64kb.mp3",
+            "episode_no": "71",
+            "duration": "00:06:24"
+        },
+        {
+            "chapter_title": "Pen and Inkstand",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_072_patten_64kb.mp3",
+            "episode_no": "72",
+            "duration": "00:06:12"
+        },
+        {
+            "chapter_title": "Cinderella",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_073_patten_64kb.mp3",
+            "episode_no": "73",
+            "duration": "00:16:22"
+        },
+        {
+            "chapter_title": "Little Red Riding-Hood",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_074_patten_64kb.mp3",
+            "episode_no": "74",
+            "duration": "00:05:17"
+        },
+        {
+            "chapter_title": "The Story of the Three Bears",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_075_patten_64kb.mp3",
+            "episode_no": "75",
+            "duration": "00:09:36"
+        },
+        {
+            "chapter_title": "Puss in Boots",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_076_patten_64kb.mp3",
+            "episode_no": "76",
+            "duration": "00:13:05"
+        },
+        {
+            "chapter_title": "Jack the Giant-Killer",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_077_patten_64kb.mp3",
+            "episode_no": "77",
+            "duration": "00:12:10"
+        },
+        {
+            "chapter_title": "Tom Thumb",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_078_patten_64kb.mp3",
+            "episode_no": "78",
+            "duration": "00:10:17"
+        },
+        {
+            "chapter_title": "Blue Beard",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_079_patten_64kb.mp3",
+            "episode_no": "79",
+            "duration": "00:11:51"
+        },
+        {
+            "chapter_title": "The Brave Little Tailor",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_080_patten_64kb.mp3",
+            "episode_no": "80",
+            "duration": "00:18:48"
+        },
+        {
+            "chapter_title": "The Sleeping Beauty",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_081_patten_64kb.mp3",
+            "episode_no": "81",
+            "duration": "00:14:04"
+        },
+        {
+            "chapter_title": "The Fair One with Golden Locks",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_082_patten_64kb.mp3",
+            "episode_no": "82",
+            "duration": "00:22:56"
+        },
+        {
+            "chapter_title": "Beauty and the Beast",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_083_patten_64kb.mp3",
+            "episode_no": "83",
+            "duration": "00:32:12"
+        },
+        {
+            "chapter_title": "Jack and the Beanstalk",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_084_patten_64kb.mp3",
+            "episode_no": "84",
+            "duration": "00:26:12"
+        },
+        {
+            "chapter_title": "Hop-o'-My-Thumb",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_085_patten_64kb.mp3",
+            "episode_no": "85",
+            "duration": "00:24:26"
+        },
+        {
+            "chapter_title": "Goose-Girl, The",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_086_patten_64kb.mp3",
+            "episode_no": "86",
+            "duration": "00:13:00"
+        },
+        {
+            "chapter_title": "He Who Knew Not Fear",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_087_patten_64kb.mp3",
+            "episode_no": "87",
+            "duration": "00:22:31"
+        },
+        {
+            "chapter_title": "The Town Mouse and the Country Mouse",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_088_patten_64kb.mp3",
+            "episode_no": "88",
+            "duration": "00:02:27"
+        },
+        {
+            "chapter_title": "The Man, Boy, and Donkey",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_089_patten_64kb.mp3",
+            "episode_no": "89",
+            "duration": "00:02:01"
+        },
+        {
+            "chapter_title": "The Shepherd's Boy",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_090_patten_64kb.mp3",
+            "episode_no": "90",
+            "duration": "00:01:22"
+        },
+        {
+            "chapter_title": "Androcles",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_091_patten_64kb.mp3",
+            "episode_no": "91",
+            "duration": "00:02:05"
+        },
+        {
+            "chapter_title": "The Fox and the Stork",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_092_patten_64kb.mp3",
+            "episode_no": "92",
+            "duration": "00:01:22"
+        },
+        {
+            "chapter_title": "The Crow and the Pitcher",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_093_patten_64kb.mp3",
+            "episode_no": "93",
+            "duration": "00:01:36"
+        },
+        {
+            "chapter_title": "The Frogs Desiring a King",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_094_patten_64kb.mp3",
+            "episode_no": "94",
+            "duration": "00:02:31"
+        },
+        {
+            "chapter_title": "The Frog and the Ox",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_095_patten_64kb.mp3",
+            "episode_no": "95",
+            "duration": "00:01:30"
+        },
+        {
+            "chapter_title": "The Cock and the Pearl",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_096_patten_64kb.mp3",
+            "episode_no": "96",
+            "duration": "00:01:01"
+        },
+        {
+            "chapter_title": "The Fox Without a Tail",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_097_patten_64kb.mp3",
+            "episode_no": "97",
+            "duration": "00:01:47"
+        },
+        {
+            "chapter_title": "The Fox and the Cat",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_098_patten_64kb.mp3",
+            "episode_no": "98",
+            "duration": "00:01:38"
+        },
+        {
+            "chapter_title": "The Dog in the Manger",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_099_patten_64kb.mp3",
+            "episode_no": "99",
+            "duration": "00:01:16"
+        },
+        {
+            "chapter_title": "The Fox and the Goat",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_100_patten_64kb.mp3",
+            "episode_no": "100",
+            "duration": "00:01:28"
+        },
+        {
+            "chapter_title": "Belling the Cat",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_101_patten_64kb.mp3",
+            "episode_no": "101",
+            "duration": "00:01:53"
+        },
+        {
+            "chapter_title": "The Jay and the Peacock",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_102_patten_64kb.mp3",
+            "episode_no": "102",
+            "duration": "00:01:18"
+        },
+        {
+            "chapter_title": "The Ass and the Lap-Dog",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_103_patten_64kb.mp3",
+            "episode_no": "103",
+            "duration": "00:01:44"
+        },
+        {
+            "chapter_title": "The Ant and the Grasshopper",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_104_patten_64kb.mp3",
+            "episode_no": "104",
+            "duration": "00:01:36"
+        },
+        {
+            "chapter_title": "The Woodman and the Serpent",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_105_patten_64kb.mp3",
+            "episode_no": "105",
+            "duration": "00:01:30"
+        },
+        {
+            "chapter_title": "The Milkmaid and Her Pail",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_106_patten_64kb.mp3",
+            "episode_no": "106",
+            "duration": "00:01:32"
+        },
+        {
+            "chapter_title": "The Lion and the Mouse",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_107_patten_64kb.mp3",
+            "episode_no": "107",
+            "duration": "00:01:48"
+        },
+        {
+            "chapter_title": "Hercules and the Waggoner",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_108_patten_64kb.mp3",
+            "episode_no": "108",
+            "duration": "00:01:29"
+        },
+        {
+            "chapter_title": "The Lion's Share",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_109_patten_64kb.mp3",
+            "episode_no": "109",
+            "duration": "00:01:51"
+        },
+        {
+            "chapter_title": "The Fox and the Crow",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_110_patten_64kb.mp3",
+            "episode_no": "110",
+            "duration": "00:01:40"
+        },
+        {
+            "chapter_title": "The Dog and the Shadow",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_111_patten_64kb.mp3",
+            "episode_no": "111",
+            "duration": "00:01:23"
+        },
+        {
+            "chapter_title": "The Wolf and the Lamb",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_112_patten_64kb.mp3",
+            "episode_no": "112",
+            "duration": "00:01:40"
+        },
+        {
+            "chapter_title": "The Bat, Birds, and Beasts",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_113_patten_64kb.mp3",
+            "episode_no": "113",
+            "duration": "00:01:34"
+        },
+        {
+            "chapter_title": "The Belly and the Members",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_114_patten_64kb.mp3",
+            "episode_no": "114",
+            "duration": "00:01:28"
+        },
+        {
+            "chapter_title": "The Fox and the Grapes",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_115_patten_64kb.mp3",
+            "episode_no": "115",
+            "duration": "00:01:22"
+        },
+        {
+            "chapter_title": "The Swallow and the Birds",
+            "audio_link": "https://www.archive.org/download/junior_classics_vol1_librivox/junior-classics-vol1_116_patten_64kb.mp3",
+            "episode_no": "116",
+            "duration": "00:01:48"
+        }
+    ]
+}

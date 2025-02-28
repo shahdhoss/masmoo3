@@ -1,0 +1,146 @@
+{
+    "title": "Fables de La Fontaine, livre 01 by Jean de La Fontaine (1621 - 1695)",
+    "image": "https://archive.org/download/fables_lafontaine_01_librivox/fables01_1007.jpg",
+    "language": "fra",
+    "category": "Literature",
+    "episodes": [
+        {
+            "chapter_title": "\u00c0 Monseigneur le Dauphin",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_00_lafontaine_64kb.mp3",
+            "episode_no": "0",
+            "duration": "00:01:12"
+        },
+        {
+            "chapter_title": "La Cigale et la Fourmi",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_01_lafontaine_64kb.mp3",
+            "episode_no": "1",
+            "duration": "00:01:11"
+        },
+        {
+            "chapter_title": "Le Corbeau et le Renard",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_02_lafontaine_64kb.mp3",
+            "episode_no": "2",
+            "duration": "00:01:23"
+        },
+        {
+            "chapter_title": "La Grenouille qui veut se faire aussi grosse que le Boeuf",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_03_lafontaine_64kb.mp3",
+            "episode_no": "3",
+            "duration": "00:01:11"
+        },
+        {
+            "chapter_title": "Les deux Mulets",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_04_lafontaine_64kb.mp3",
+            "episode_no": "4",
+            "duration": "00:01:26"
+        },
+        {
+            "chapter_title": "Le Loup et le Chien",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_05_lafontaine_64kb.mp3",
+            "episode_no": "5",
+            "duration": "00:02:42"
+        },
+        {
+            "chapter_title": "La G&eacute;nisse, la Ch&egrave;vre et la Brebis en soci&eacute;t&eacute; avec l",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_06_lafontaine_64kb.mp3",
+            "episode_no": "6",
+            "duration": "00:01:42"
+        },
+        {
+            "chapter_title": "La Besace",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_07_lafontaine_64kb.mp3",
+            "episode_no": "7",
+            "duration": "00:02:16"
+        },
+        {
+            "chapter_title": "L'Hirondelle et les petits Oiseaux",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_08_lafontaine_64kb.mp3",
+            "episode_no": "8",
+            "duration": "00:03:22"
+        },
+        {
+            "chapter_title": "Le Rat de ville et le Rat des champs",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_09_lafontaine_64kb.mp3",
+            "episode_no": "9",
+            "duration": "00:01:25"
+        },
+        {
+            "chapter_title": "Le Loup et l'Agneau",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_10_lafontaine_64kb.mp3",
+            "episode_no": "10",
+            "duration": "00:01:36"
+        },
+        {
+            "chapter_title": "L'Homme et son Image",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_11_lafontaine_64kb.mp3",
+            "episode_no": "11",
+            "duration": "00:02:05"
+        },
+        {
+            "chapter_title": "Le Dragon &agrave; plusieurs t&ecirc;tes et le Dragon &agrave; plusieurs queues",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_12_lafontaine_64kb.mp3",
+            "episode_no": "12",
+            "duration": "00:01:44"
+        },
+        {
+            "chapter_title": "Les Voleurs et l'&Acirc;ne",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_13_lafontaine_64kb.mp3",
+            "episode_no": "13",
+            "duration": "00:01:17"
+        },
+        {
+            "chapter_title": "Simonide pr&eacute;serv&eacute; par les Dieux",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_14_lafontaine_64kb.mp3",
+            "episode_no": "14",
+            "duration": "00:04:03"
+        },
+        {
+            "chapter_title": "La Mort et le Malheureux",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_15_lafontaine_64kb.mp3",
+            "episode_no": "15",
+            "duration": "00:01:42"
+        },
+        {
+            "chapter_title": "La Mort et le B&ucirc;cheron",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_16_lafontaine_64kb.mp3",
+            "episode_no": "16",
+            "duration": "00:02:00"
+        },
+        {
+            "chapter_title": "L'Homme entre deux &acirc;ges, et ses deux Ma&icirc;tresses",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_17_lafontaine_64kb.mp3",
+            "episode_no": "17",
+            "duration": "00:02:08"
+        },
+        {
+            "chapter_title": "Le Renard et la Cigogne",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_18_lafontaine_64kb.mp3",
+            "episode_no": "18",
+            "duration": "00:01:59"
+        },
+        {
+            "chapter_title": "L'Enfant et le Ma&icirc;tre d'&eacute;cole",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_19_lafontaine_64kb.mp3",
+            "episode_no": "19",
+            "duration": "00:02:29"
+        },
+        {
+            "chapter_title": "Le Coq et la Perle",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_20_lafontaine_64kb.mp3",
+            "episode_no": "20",
+            "duration": "00:01:01"
+        },
+        {
+            "chapter_title": "Les Frelons et les Mouches",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_21_lafontaine_64kb.mp3",
+            "episode_no": "21",
+            "duration": "00:01:58"
+        },
+        {
+            "chapter_title": "Le Ch&ecirc;ne et le Roseau",
+            "audio_link": "https://www.archive.org/download/fables_lafontaine_01_librivox/fables_01_22_lafontaine_64kb.mp3",
+            "episode_no": "22",
+            "duration": "00:01:53"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "title": "Story of a Stuffed Elephant, The by Laura Lee Hope",
+    "image": "https://archive.org/download/stuffed_elephant_solo_librivox/story_of_a_stuffed_elephant_1012.jpg",
+    "language": "eng",
+    "category": "Literature",
+    "episodes": [
+        {
+            "chapter_title": "The Elephant And The Mouse",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_01_hope_64kb.mp3",
+            "episode_no": "1",
+            "duration": "00:14:02"
+        },
+        {
+            "chapter_title": "The Man And The Elephant",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_02_hope_64kb.mp3",
+            "episode_no": "2",
+            "duration": "00:15:42"
+        },
+        {
+            "chapter_title": "Up In The Attic",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_03_hope_64kb.mp3",
+            "episode_no": "3",
+            "duration": "00:13:16"
+        },
+        {
+            "chapter_title": "Christmas Fun",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_04_hope_64kb.mp3",
+            "episode_no": "4",
+            "duration": "00:13:38"
+        },
+        {
+            "chapter_title": "05 - In The Barn",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_05_hope_64kb.mp3",
+            "episode_no": "5",
+            "duration": "00:13:18"
+        },
+        {
+            "chapter_title": "A Dangerous Slide",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_06_hope_64kb.mp3",
+            "episode_no": "6",
+            "duration": "00:11:55"
+        },
+        {
+            "chapter_title": "The Big Dog",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_07_hope_64kb.mp3",
+            "episode_no": "7",
+            "duration": "00:11:09"
+        },
+        {
+            "chapter_title": "An Elephant Judge",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_08_hope_64kb.mp3",
+            "episode_no": "8",
+            "duration": "00:17:09"
+        },
+        {
+            "chapter_title": "Out In The Rain",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_09_hope_64kb.mp3",
+            "episode_no": "9",
+            "duration": "00:09:12"
+        },
+        {
+            "chapter_title": "A Voyage Home",
+            "audio_link": "https://www.archive.org/download/stuffed_elephant_solo_librivox/stuffed_elephant_10_hope_64kb.mp3",
+            "episode_no": "10",
+            "duration": "00:10:29"
+        }
+    ]
+}
