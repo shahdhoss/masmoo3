@@ -1,0 +1,51 @@
+{
+    "title": "Art of War, The by Sun Tzu \u5b59\u6b66 (554 BCE - 496 BCE)",
+    "image": "https://archive.org/download/art_of_war_librivox/Art_War_1107.jpg",
+    "language": "eng",
+    "category": "Literature",
+    "description": "\"The Art of War is a Chinese military treatise written during the 6th century BC by Sun Tzu. Composed of 13 chapters, each of which is devoted to one aspect of warfare, it has long been praised as the definitive work on military strategies and tactics of its time. The Art of War is one of the oldest and most famous studies of strategy and has had a huge influence on both military planning and beyond. The Art of War has also been applied, with much success, to business and managerial strategies.\" (summary from Wikipedia)",
+    "episodes": [
+        {
+            "chapter_title": "01 - Laying Plans / 02 - Waging War",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_01-02_sun_tzu_64kb.mp3",
+            "episode_no": "1",
+            "duration": "00:08:26"
+        },
+        {
+            "chapter_title": "03 - Attack By Stratagem / 04 - Tactical Dispositions",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_03-04_sun_tzu_64kb.mp3",
+            "episode_no": "2",
+            "duration": "00:07:45"
+        },
+        {
+            "chapter_title": "05 - Energy / 06 - Weak Points and Strong",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_05-06_sun_tzu_64kb.mp3",
+            "episode_no": "3",
+            "duration": "00:10:36"
+        },
+        {
+            "chapter_title": "07 - Maneuvering / 08 - Variation in Tactics",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_07-08_sun_tzu_64kb.mp3",
+            "episode_no": "4",
+            "duration": "00:08:50"
+        },
+        {
+            "chapter_title": "09 - The Army on the March / 10 - Terrain",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_09-10_sun_tzu_64kb.mp3",
+            "episode_no": "5",
+            "duration": "00:14:42"
+        },
+        {
+            "chapter_title": "11 - The Nine Situations",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_11_sun_tzu_64kb.mp3",
+            "episode_no": "6",
+            "duration": "00:12:56"
+        },
+        {
+            "chapter_title": "12 - The Attack By Fire / 13 - The Use of Spies",
+            "audio_link": "https://www.archive.org/download/art_of_war_librivox/art_of_war_12-13_sun_tzu_64kb.mp3",
+            "episode_no": "7",
+            "duration": "00:08:59"
+        }
+    ]
+}

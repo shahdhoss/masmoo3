@@ -9,14 +9,13 @@ for id in ids_list:
 
     response = requests.get(f"https://librivox.org/rss/{id}")
     data = xmltodict.parse(response.text)
-
     dict={}
 
     dict['title']= data ['rss']['channel']['title']
     dict['image'] = data['rss']['channel']["itunes:image"]['@href'] 
     dict['language'] = data['rss']['channel']['language']
     dict['category'] = data['rss']['channel']['itunes:category']["itunes:category"]['@text']
-
+    dict['description'] = data['rss']['channel']['description']
     episodes=[]
     data_dict={}
     if 'item' in data['rss']['channel']:

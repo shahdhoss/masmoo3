@@ -1,0 +1,75 @@
+{
+    "title": "Histoires ou Contes du temps pass\u00e9 avec des moralit\u00e9s by Charles Perrault (1628 - 1703)",
+    "image": "https://archive.org/download/contes_temps_passe_librivox/Histoires_Contes_temps_passe_moralites_1107.jpg",
+    "language": "fra",
+    "category": "Literature",
+    "description": "Cette \u00e9dition de 1742 nous rapporte les contes de ma m\u00e8re l'Oye adapt\u00e9s par Charles Perrault et agr\u00e9ment\u00e9s de moralit\u00e9s.<br />Pleines d'enseignements, ces histoires du temps pass\u00e9, cont\u00e9es, en France, depuis le Moyen \u00c2ge, nous ferons encore r\u00eaver ou frissonner avec leurs jeunes filles et jeunes gens dans l'adversit\u00e9, leurs princesses et leurs princes et, bien s\u00fbr, leurs f\u00e9es.<br />Retrouvons donc le petit Chaperon rouge, Cendrillon, le Chat bott\u00e9, ... et red\u00e9couvrons d'o\u00f9 nous vient ce \u00ab Anne, ma soeur Anne, ne vois-tu rien venir ? \u00bb<br /><br />In this book, published in 1742, Charles Perrault accompanies his Tales of passed times, by Mother Goose, with witty morals.<br />In the French language, let us discover or rediscover what happens to Cinderella, the Sleeping Beauty and their folk-tales peers. </br>(Summary by Ezwa)",
+    "episodes": [
+        {
+            "chapter_title": "\u00c0 mademoiselle",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_01_perrault_64kb.mp3",
+            "episode_no": "1",
+            "duration": "00:02:28"
+        },
+        {
+            "chapter_title": "Le petit chaperon rouge",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_02_perrault_64kb.mp3",
+            "episode_no": "2",
+            "duration": "00:05:08"
+        },
+        {
+            "chapter_title": "Les f&eacute;es",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_03_perrault_64kb.mp3",
+            "episode_no": "3",
+            "duration": "00:05:41"
+        },
+        {
+            "chapter_title": "La barbe bleue",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_04_perrault_64kb.mp3",
+            "episode_no": "4",
+            "duration": "00:11:03"
+        },
+        {
+            "chapter_title": "La belle au bois dormant",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_05_perrault_64kb.mp3",
+            "episode_no": "5",
+            "duration": "00:18:19"
+        },
+        {
+            "chapter_title": "Le chat bott&eacute; ou le ma&icirc;tre chat",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_06_perrault_64kb.mp3",
+            "episode_no": "6",
+            "duration": "00:09:31"
+        },
+        {
+            "chapter_title": "Cendrillon ou la petite pantoufle de verre",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_07_perrault_64kb.mp3",
+            "episode_no": "7",
+            "duration": "00:12:46"
+        },
+        {
+            "chapter_title": "Riquet &agrave; la houpe",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_08_perrault_64kb.mp3",
+            "episode_no": "8",
+            "duration": "00:14:13"
+        },
+        {
+            "chapter_title": "Le petit poucet",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_09_perrault_64kb.mp3",
+            "episode_no": "9",
+            "duration": "00:20:21"
+        },
+        {
+            "chapter_title": "L'adroite princesse, 1\u00e8re partie",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_10_a_perrault_64kb.mp3",
+            "episode_no": "10",
+            "duration": "00:27:37"
+        },
+        {
+            "chapter_title": "L'adroite princesse, 2\u00e8me partie",
+            "audio_link": "https://www.archive.org/download/contes_temps_passe_librivox/contes_du_temps_passe_10_b_perrault_64kb.mp3",
+            "episode_no": "11",
+            "duration": "00:25:36"
+        }
+    ]
+}
