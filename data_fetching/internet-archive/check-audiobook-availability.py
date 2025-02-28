@@ -16,7 +16,7 @@ for hit in data:
     else:
         print(f"Failed to fetch metadata for {hit}") 
 
-with open("metadata.json", "w") as file:
+with open("data_fetching\internet-archive\metadata.json", "w") as file:
     json.dump(metadata_list, file, indent=4)
     
     

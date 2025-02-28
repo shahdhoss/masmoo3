@@ -1,9 +1,12 @@
 {
+    "id": "56",
     "title": "Secret Garden, The by Frances Hodgson Burnett (1849 - 1924)",
     "image": "https://archive.org/download/secret_garden_librivox/Secret_Garden_1003.jpg",
     "language": "eng",
     "category": "Literature",
-    "description": "Mary Lennox is a spoiled, middle-class, self-centered child who has been recently orphaned. She is accepted into the quiet and remote country house of an uncle, who has almost completely withdrawn into himself after the death of his wife. Mary gradually becomes drawn into the hidden side of the house: why does she hear the crying of a unseen child? Why is there an overgrown, walled garden, its door long locked? (Summary by Peter)",
+    "description": "Mary Lennox is a spoiled, middle-class, self-centered child who has been recently orphaned. She is accepted into the quiet and remote country house of an uncle, who has almost completely withdrawn into himself after the death of his wife. Mary gradually becomes drawn into the hidden side of the house: why does she hear the crying of a unseen child? Why is there an overgrown, walled garden, its door long locked? ",
+    "author_first_name": "Frances Hodgson",
+    "author_last_name": "Burnett",
     "episodes": [
         {
             "chapter_title": "There is No One Left",

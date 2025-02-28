@@ -1,9 +1,12 @@
 {
+    "id": "93",
     "title": "Story of a Stuffed Elephant, The by Laura Lee Hope",
     "image": "https://archive.org/download/stuffed_elephant_solo_librivox/story_of_a_stuffed_elephant_1012.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "The Story of a Stuffed Elephant is... well, the story of a Stuffed Elephant and the little boy who owns him, and his sister, and all their adventures. A delightful children's book by the author of The Bobbsey Twins series. (Summary by Vlooi and Kara)",
+    "author_first_name": "Laura Lee",
+    "author_last_name": "Hope",
     "episodes": [
         {
             "chapter_title": "The Elephant And The Mouse",

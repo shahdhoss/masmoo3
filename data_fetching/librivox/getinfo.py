@@ -2,7 +2,7 @@ import requests
 import xmltodict
 import json
 
-with open("librivox\ids.json", "r") as file:
+with open("data_fetching\librivox\ids.json", "r") as file:
     ids_list = json.load(file)
 
 for id in ids_list:
@@ -10,7 +10,7 @@ for id in ids_list:
     response = requests.get(f"https://librivox.org/rss/{id}")
     data = xmltodict.parse(response.text)
     dict={}
-
+    dict['id']= id
     dict['title']= data ['rss']['channel']['title']
     dict['image'] = data['rss']['channel']["itunes:image"]['@href'] 
     dict['language'] = data['rss']['channel']['language']
@@ -28,6 +28,6 @@ for id in ids_list:
             data_dict={}
 
     dict['episodes']= episodes
-    with open(f"parsed_data\\id_{id}_parsed.json", "w") as file:
+    with open(f"parsed_book_data\\id_{id}_parsed.json", "w") as file:
         json.dump(dict, file, indent=4)
 

@@ -1,9 +1,12 @@
 {
+    "id": "55",
     "title": "This Side of Paradise by F. Scott Fitzgerald (1896 - 1940)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt5/this_side_of_paradise_1006.jpg",
     "language": "eng",
     "category": "Literature",
-    "description": "This Side of Paradise is the debut novel of F. Scott Fitzgerald. Published in 1920, and taking its title from a line of the Rupert Brooke poem Tiare Tahiti, the book examines the lives and morality of post-World War I youth. Its protagonist, Amory Blaine, is a wealthy and attractive Princeton University student who dabbles in literature and has a series of romances that eventually lead to his disillusionment. In his later novels, Fitzgerald would further develop the book's theme of love warped by greed and status-seeking. (Summary from Wikipedia)",
+    "description": "This Side of Paradise is the debut novel of F. Scott Fitzgerald. Published in 1920, and taking its title from a line of the Rupert Brooke poem Tiare Tahiti, the book examines the lives and morality of post-World War I youth. Its protagonist, Amory Blaine, is a wealthy and attractive Princeton University student who dabbles in literature and has a series of romances that eventually lead to his disillusionment. In his later novels, Fitzgerald would further develop the book's theme of love warped by greed and status-seeking.",
+    "author_first_name": "F. Scott",
+    "author_last_name": "Fitzgerald",
     "episodes": [
         {
             "chapter_title": "Bk1 Ch1 Pt 1",

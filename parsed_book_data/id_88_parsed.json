@@ -1,9 +1,12 @@
 {
+    "id": "88",
     "title": "Mrs. Caudle's Curtain Lectures by  Douglas William Jerrold (1803 - 1857)",
     "image": "https://archive.org/download/mrs_caudles_curtain_lectures_librivox/Mrs_Caudles_Curtain_Lectures_1105.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Douglas William Jerrold (1803-1857) was the son of an actor manager. After some time in the Navy and as an apprentice printer he became a playwright and later a journalist. He was a contemporary and friend of Charles Dickens. As a journalist he worked for Punch magazine in which Mrs Caudle's Curtain Lectures were serialised, to be published in book form in 1846.<br /><br />Job Caudle, the 'hero' of the book is a Victorian shopkeeper whose wife finds she can only talk to him without interruption in bed. Caudle, who outlives his wife, finds he can no longer sleep easily because of his memory of these 'lectures' and resolves to exorcise his wife's memory by recording the lectures, it seems with a view to future publication for the edification of others. Jerrold's humour shines through this insight into Victorian middle class culture. (Summary by Martin Clifton)",
+    "author_first_name": "Douglas William",
+    "author_last_name": "Jerrold",
     "episodes": [
         {
             "chapter_title": "Introduction",

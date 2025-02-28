@@ -1,9 +1,14 @@
 {
+    "id": "96",
     "title": "Junior Classics Volume 1: Fairy and Wonder Tales, The by William Patten (1868 - 1936) and William Allan Neilson (1869 - 1946)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt10/Junior_Classics_Vol_1_1108.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "The purpose of The Junior Classics is to provide, in ten volumes containing about five thousand pages, a classified collection of tales, stories, and poems, both ancient and modern, suitable for boys and girls of from six to sixteen years of age. (summary from book introduction)<br /><br />This collection consists of Volume 1 of The Junior Classics, and it contains many well known stories in their original forms. Among stories from other authors, you'll find Hans Christian Anderson, Aesop, and the Grimm brothers.",
+    "author_name": [
+            "William Allan Neilson",
+            "William Patten"
+    ],
     "episodes": [
         {
             "chapter_title": "Preface",

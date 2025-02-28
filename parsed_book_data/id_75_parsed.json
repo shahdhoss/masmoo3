@@ -1,9 +1,12 @@
 {
+    "id": "75",
     "title": "Uncle Tom's Cabin by Harriet Beecher Stowe (1811 - 1896)",
     "image": "https://archive.org/download/uncle_toms_cabin_librivox/Uncle_Toms_Cabin_1006.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Among the most \u201cbanned\u201d books in the United States, Uncle Tom\u2019s Cabin; or, Life Among the Lowly is a novel by American author Harriet Beecher Stowe which treats slavery as a central theme. Stowe was a Connecticut-born teacher at the Hartford Female Academy and an active abolitionist. The novel is believed to have had a profound effect on the North\u2019s view of slavery. In fact, when he met Harriet Beecher Stowe, President Lincoln is said to have commented, \u201cSo you\u2019re the little lady whose book started the Civil War.\u201d First published on March 20, 1852, the story focuses on the tale of Uncle Tom, a long-suffering black slave, the central character around whose life the other characters\u2014both fellow slaves and slave owners\u2014revolve. The novel depicts the harsh reality of slavery while also showing that Christian love and faith can overcome even something as evil as enslavement of fellow human beings. (summary by Wikipedia and John Greenman)<br /><br /><b>Note From the Reader: </b><br />The listener is about to enter a world rich with diverse characters. In order to differentiate between the characters, the reader has given each, his/her own voice. As an adult male reader, however, the reader's representation of women and children will, necessarily be less than adequate. He asks for your indulgence.",
+    "author_first_name": "Harriet Beecher",
+    "author_last_name": "Stowe",
     "episodes": [
         {
             "chapter_title": "Chapter 1",

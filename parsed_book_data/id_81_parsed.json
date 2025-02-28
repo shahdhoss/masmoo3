@@ -1,9 +1,12 @@
 {
+    "id": "81",
     "title": "Dream Psychology by Sigmund Freud (1856 - 1939)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt6/dream_psychology_1101.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Not a few serious-minded students, [...], have been discouraged from attempting a study of Freud's dream psychology. The book in which he originally offered to the world his interpretation of dreams was as circumstantial as a legal record to be pondered over by scientists at their leisure, not to be assimilated in a few hours by the average alert reader. In those days, Freud could not leave out any detail likely to make his extremely novel thesis evidentially acceptable to those willing to sift data. - Freud himself, however, realized the magnitude of the task which the reading of his magnum opus imposed upon those who have not been prepared for it by long psychological and scientific training and he abstracted from that gigantic work the parts which constitute the essential of his discoveries.<br /><br />The publishers of the present book deserve credit for presenting to the reading public the gist of Freud's psychology in the master's own words, and in a form which shall neither discourage beginners, nor appear too elementary to those who are more advanced in psychoanalytic study. - Dream psychology is the key to Freud's works and to all modern psychology. With a simple, compact manual such as Dream Psychology there shall be no longer any excuse for ignorance of the most revolutionary psychological system of modern times. (From the book introduction, by Andre Tridon)",
+    "author_first_name": "Sigmund",
+    "author_last_name": "Freud",
     "episodes": [
         {
             "chapter_title": "Introduction",

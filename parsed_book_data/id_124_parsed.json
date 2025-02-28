@@ -1,9 +1,12 @@
 {
+    "id": "124",
     "title": "Girl of the Limberlost, A by Gene Stratton-Porter (1863 - 1924)",
     "image": "https://archive.org/download/girl_limberlost_librivox/Girl_Limberlost_1107.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "A Girl of the Limberlost, a novel written by the American writer and naturalist Gene Stratton-Porter, was first published in August, 1909. The story takes place in Indiana, in and around the Limberlost Swamp, during the early 20th century. (Summary from Wikipedia)",
+    "author_first_name": "Gene",
+    "author_last_name": "Stratton-Porter",
     "episodes": [
         {
             "chapter_title": "Chapter 01",

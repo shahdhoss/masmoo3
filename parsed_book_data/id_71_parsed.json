@@ -1,9 +1,12 @@
 {
+    "id": "71",
     "title": "Canterville Ghost, The by Oscar Wilde (1854 - 1900)",
     "image": "https://archive.org/download/canterville_ghost_librivox/Canterville_Ghost_1106.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "The American Minister and his family have bought the English stately home Canterville Chase, complete with the ghost of Sir Simon de Canterville - blood-stains, clanking chains and all. But these modern Americans will have no truck with ghostly goings-on, and set out to beat the spectre at his own game. (Summary by David Barnes)",
+    "author_first_name": "Oscar",
+    "author_last_name": "Wilde",
     "episodes": [
         {
             "chapter_title": "Chapters 1 to 3",

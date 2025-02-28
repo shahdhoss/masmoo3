@@ -1,9 +1,12 @@
 {
+    "id": "52",
     "title": "Letters of Two Brides by Honor\u00e9 de Balzac (1799 - 1850)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt12/Letters_Two_Brides_1110.jpg",
     "language": "eng",
     "category": "Literature",
-    "description": "Letters of Two Brides is an epistolary novel. The two brides are Louise de Chaulieu (Madame Gaston) and Ren\u00e9e de Maucombe (Madame l'Estorade). The women became friends during their education at a convent and upon leaving began a life-long correspondence. For a 17 year period, they exchange letters describing their lives.<br /><br />Michelle Crandall reads Renee\u2019s letters, and Kara Shallenberg reads Louise\u2019s. Letters from the men in their lives are read by Peter Yearsley, David Barnes, Denny Sayers, and Sean McKinley",
+    "description": "Letters of Two Brides is an epistolary novel. The two brides are Louise de Chaulieu (Madame Gaston) and Ren\u00e9e de Maucombe (Madame l'Estorade). The women became friends during their education at a convent and upon leaving began a life-long correspondence. For a 17 year period, they exchange letters describing their lives.Michelle Crandall reads Renee\u2019s letters, and Kara Shallenberg reads Louise\u2019s. Letters from the men in their lives are read by Peter Yearsley, David Barnes, Denny Sayers, and Sean McKinley",
+    "author_first_name": "Honor\u00e9 de",
+    "author_last_name": "Balzac",
     "episodes": [
         {
             "chapter_title": "Letter 1",

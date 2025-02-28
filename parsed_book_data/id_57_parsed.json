@@ -1,9 +1,12 @@
 {
+    "id": "57",
     "title": "Twenty Years After by Alexandre Dumas (1802 - 1870)",
     "image": "https://www.archive.org/download/librivox_cd_covers/twenty_years_after.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Let's continue the D'Artagnan Romances that we've already started with The Three Musketeers.",
+    "author_first_name": "Alexandre",
+    "author_last_name": "Dumas",
     "episodes": [
         {
             "chapter_title": "01 - The Shade of Cardinal Richelieu.",

@@ -1,9 +1,12 @@
 {
+    "id": "132",
     "title": "Last of the Mohicans - A Narrative of 1757 (version 2), The by James Fenimore Cooper (1789 - 1851)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt14/Last_Mohicans_1201.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "This story is set in the British province of New York during the French and Indian War, and concerns a Huron massacre (with passive French acquiescence) of from 500 to 1,500 unarmed Anglo-American troops, who had honorably surrendered at Fort William Henry, plus some women and servants; the kidnapping of two sisters, daughters of the British commander; and their rescue by Hawkeye, the last two Mohicans, and others. Parts of the story may have been derived from the capture and death of Jane McCrea in July 1777 near Fort Edward, New York, by members of an Algonquian tribe. (Summary from Wikipedia)",
+    "author_first_name": "James Fenimore",
+    "author_last_name": "Cooper",
     "episodes": [
         {
             "chapter_title": "Introduction",

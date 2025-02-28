@@ -1,9 +1,12 @@
 {
+    "id": "53",
     "title": "Bleak House by Charles Dickens (1812 - 1870)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt/Bleak_House_1003.jpg",
     "language": "eng",
     "category": "Literature",
-    "description": "Bleak House is the ninth novel by Charles Dickens, published in 20 monthly parts between March 1852 and September 1853. It is widely held to be one of Dickens' finest and most complete novels, containing one of the most vast, complex and engaging arrays of minor characters and sub-plots in his entire canon. Dickens tells all of these both through the narrative of the novel's heroine, Esther Summerson, and as an omniscient narrator. Memorable characters include the menacing lawyer Tulkinghorn, the friendly but depressive John Jarndyce and the childish Harold Skimpole. The plot concerns a long-running legal dispute (Jarndyce and Jarndyce) which has far-reaching consequences for all involved. (Summary from Wikipedia)",
+    "description": "Bleak House is the ninth novel by Charles Dickens, published in 20 monthly parts between March 1852 and September 1853. It is widely held to be one of Dickens' finest and most complete novels, containing one of the most vast, complex and engaging arrays of minor characters and sub-plots in his entire canon. Dickens tells all of these both through the narrative of the novel's heroine, Esther Summerson, and as an omniscient narrator. Memorable characters include the menacing lawyer Tulkinghorn, the friendly but depressive John Jarndyce and the childish Harold Skimpole. The plot concerns a long-running legal dispute (Jarndyce and Jarndyce) which has far-reaching consequences for all involved.",
+    "author_first_name": "Charles",
+    "author_last_name": "Dickens",
     "episodes": [
         {
             "chapter_title": "In Chancery",

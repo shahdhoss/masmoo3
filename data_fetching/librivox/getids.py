@@ -13,6 +13,6 @@ for hit in data['xml']['books']['book']:
 # with open("librivox\\data.json" , "w") as file:
 #     json.dump(data,file, indent=4)
 
-with open("librivox\\ids.json" , "w") as file:
+with open("data_fetching\librivox\ids.json" , "w") as file:
     json.dump(ids,file, indent=4)
 print(data)

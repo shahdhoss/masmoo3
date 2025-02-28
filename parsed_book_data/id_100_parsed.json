@@ -1,9 +1,12 @@
 {
+    "id": "100",
     "title": "Narrative of Arthur Gordon Pym of Nantucket, The by Edgar Allan Poe (1809 - 1849)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt10/Narrative_Arthur_Gordon_Pym_1108.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "The Narrative of Arthur Gordon Pym of Nantucket is Edgar Allan Poe\u2019s only complete novel, published in 1838.<br /><br />The work relates the tale of the young Arthur Gordon Pym who stows away aboard a whaling ship called Grampus. Various adventures and mis-adventures befall Pym including shipwreck, mutiny and cannibalism. The story starts out as a fairly conventional adventure at sea, but it becomes increasingly strange and hard to classify in later chapters, involving religious symbolism and the Hollow Earth. (Summary from Wikipedia)",
+    "author_first_name": "Edgar Allan",
+    "author_last_name": "Poe",
     "episodes": [
         {
             "chapter_title": "Chapter 00",

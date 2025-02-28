@@ -1,9 +1,12 @@
 {
+    "id": "99",
     "title": "Villette by Charlotte Bront\u00eb (1816 - 1855)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt9/Villette_1107.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "After a tragedy in her family, Lucy Snow leaves her home to become a teacher at a French boarding school. Lucy soon begins to fight against an overwhelming sense of desolation. Meeting a charming doctor and a strict, peculiar schoolmaster changes her life forever-- and threatens to break her spirit. (summary by heatherausten)",
+    "author_first_name": "Charlotte",
+    "author_last_name": "Bront\u00eb",
     "episodes": [
         {
             "chapter_title": "Chapter 1 \u2013 Bretton",

@@ -1,9 +1,12 @@
 {
+    "id": "123",
     "title": "Amateur Cracksman, The by E. W. Hornung (1866 - 1921)",
     "image": "https://archive.org/download/amateur_cracksman_librivox/Amateur_Cracksman_1004.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "<i>\"I'd tasted blood, and it was all over with me. Why should I work when I could steal? Why settle down to some humdrum uncongenial billet, when excitement, romance, danger and a decent living were all going begging together?\"- A. J. Raffles, The Ides of March.</i><br /><br />The Amateur Cracksman is the first collection of stories about A. J. Raffles, gentleman, cricketer, and thief. After stopping his old school friend, Bunny Manders, from a desperate attempt at suicide, Raffles introduces the unsuspecting Bunny to a new way of earning a living, burglary. Though frequently horrified by Raffles's actions, the conscience-stricken Bunny stands by him through all their adventures, firm to his promise, \"When you want me, I'm your man!\" (Summary by Kristin Hughes)",
+    "author_first_name": "E. W.",
+    "author_last_name": "Hornung",
     "episodes": [
         {
             "chapter_title": "The Ides of March",

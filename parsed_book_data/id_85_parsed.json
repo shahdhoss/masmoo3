@@ -1,9 +1,12 @@
 {
+    "id": "85",
     "title": "Consolation of Philosophy, The by  Anicius Manlius Severinus Boethius (c. 480 - 525)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt9/Consolation_Philosophy_1107.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Consolation of Philosophy (Latin: Consolatio Philosophiae) is a philosophical work by Boethius written in about the year 524 AD. It has been described as the single most important and influential work in the West in medieval and early Renaissance Christianity, and is also the last great work that can be called Classical. <br /><br /> Consolation of Philosophy was written during Boethius' one year imprisonment while awaiting trial, and eventual horrific execution, for the crime of treason by Ostrogothic King Theodoric the Great. Boethius was at the very heights of power in Rome and was brought down by treachery. It was from this experience he was inspired to write a philosophical book from prison reflecting on how a lord's favor could change so quickly and why friends would turn against him. It has been described as \u201cby far the most interesting example of prison literature the world has ever seen.\u201d <br /><br /> The Consolation of Philosophy stands, by its note of fatalism and its affinities with the Christian doctrine of humility, midway between the heathen philosophy of Seneca the Younger and the later Christian philosophy of consolation represented by Thomas Aquinas. <br /><br />The book is heavily influenced by Plato and his dialogues (as was Boethius himself). (Summary from Wikipedia)",
+    "author_first_name": "Anicius Manlius Severinus",
+    "author_last_name": "Boethius",
     "episodes": [
         {
             "chapter_title": "Preface & Proem",

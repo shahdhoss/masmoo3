@@ -1,9 +1,12 @@
 {
+    "id": "97",
     "title": "Lord Jim by Joseph Conrad (1857 - 1924)",
     "image": "https://archive.org/download/lord_jim_librivox/Lord_Jim_1002.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "A classic of early literary modernism, Lord Jim tells the story of a young \"simple and sensitive character\" who loses his honor in a display of cowardice at sea -- and of his expiation of that sin against his own \"shadowy ideal of conduct\" on the remote island of Patusan. The novel, written by Conrad for magazine serialization during an intense and chaotic ten months in 1899 and 1900, has, in the words of Thomas C. Moser, \"the rare distinction of being a masterpiece in two separate genres. It is at once an exotic adventure story of the Eastern seas in the popular tradition of Kipling and Stevenson and a complexly wrought 'art novel' in the tradition of Flaubert and James. (summary by Stewart Wills)",
+    "author_first_name": "Joseph",
+    "author_last_name": "Conrad",
     "episodes": [
         {
             "chapter_title": "Chapter 1",

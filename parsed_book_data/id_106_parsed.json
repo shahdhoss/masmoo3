@@ -1,9 +1,14 @@
 {
+    "id": "106",
     "title": "Poems Every Child Should Know by Various and  Mary E. Burt (1850 - 1918)",
     "image": "https://archive.org/download/poems_every_child_should_know_librivox/poems_every_child_should_know_1012.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "This anthology of poetry, published in 1904, contains such favorites as The Raven, My Shadow, and The Village Blacksmith, as well as many lovely poems that may be unfamiliar. Most of the poems in this collection are short enough for children to memorize.",
+    "author_name": [
+            "Mary E. Burt",
+            " Various"
+        ],
     "episodes": [
         {
             "chapter_title": "Preface",

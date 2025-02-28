@@ -1,9 +1,12 @@
 {
+    "id": "47",
     "title": "Count of Monte Cristo, The by Alexandre Dumas (1802 - 1870)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt12/Count_Monte_Cristo_1110.jpg",
     "language": "eng",
     "category": "Literature",
-    "description": "<i>The Count of Monte Cristo</i> (French: <i>Le Comte de Monte-Cristo</i>) is an adventure novel by Alexandre Dumas, p\u00e8re. It is often considered, along with <i>The Three Musketeers</i>, as Dumas's most popular work. The writing of the work was completed in 1844. Like many of his novels, it is expanded from the plot outlines suggested by his collaborating ghostwriter Auguste Maquet.<br /><br />The story takes place in France, Italy, islands in the Mediterranean and the Levant during the historical events of 1815\u20131838 (from just before the Hundred Days through the reign of Louis-Philippe of France). The historical setting is a fundamental element of the book. It is primarily concerned with themes of justice, vengeance, mercy, and forgiveness, and is told in the style of an adventure story. (Summary from Wikipedia)<br /><br />This book contains alternate versions of a number of chapters \u2013 indicated by an alt after the file number. The Zip files contain both versions of these chapters.<br /><br />There are 2 versions of the M4Bs made , one containing the original files for these chapters (4 parts), the other containing the alternate files for the chapters (5 parts).",
+    "description": "The Count of Monte Cristo(French: Le Comte de Monte-Cristo) is an adventure novel by Alexandre Dumas, p\u00e8re. It is often considered, along with The Three Musketeers, as Dumas's most popular work. The writing of the work was completed in 1844. Like many of his novels, it is expanded from the plot outlines suggested by his collaborating ghostwriter Auguste Maquet. The story takes place in France, Italy, islands in the Mediterranean and the Levant during the historical events of 1815\u20131838 (from just before the Hundred Days through the reign of Louis-Philippe of France). The historical setting is a fundamental element of the book. It is primarily concerned with themes of justice, vengeance, mercy, and forgiveness, and is told in the style of an adventure story.",
+    "author_first_name": "Alexandre",
+    "author_last_name": "Dumas",
     "episodes": [
         {
             "chapter_title": "Marseilles\u2013The Arrival",

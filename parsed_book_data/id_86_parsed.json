@@ -1,9 +1,12 @@
 {
+    "id": "86",
     "title": "Emma by Jane Austen (1775 - 1817)",
     "image": "https://archive.org/download/emma_solo_librivox/Emma_Solo_1105.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Sherry reads Jane Austen\u2019s sparkling comedy of manners with wit and vivacity, and brings the characters to life. Mr. Woodhouse worries and frets, Miss Bates chatters on, and Emma blithely manipulates and misunderstands her friends and family until she finally learns her lesson! (Summary by Kara)",
+    "author_first_name": "Jane",
+    "author_last_name": "Austen",
     "episodes": [
         {
             "chapter_title": "Vol. 1 Ch. 01",

@@ -1,9 +1,12 @@
 {
+    "id": "54",
     "title": "Penguin Island by Anatole France (1844 - 1924)",
     "image": "https://www.archive.org/download/LibrivoxCdCoverArt4/Penguin_Island_1004.jpg",
     "language": "eng",
     "category": "Literature",
-    "description": "The novel (original French title -- L'\u00cele des Pingouins) is a satire on human nature. The first publication was in 1908. These penguins are mistaken for humans by the 97-year-old priest, Father Mael, because of his bad eyesight. He baptizes them, and once baptized, they have no choice but to become human. They take on human traits (build civilizations, go to war, etc.). The book is very funny and powerful. (Summary by Michael)",
+    "description": "The novel (original French title -- L'\u00cele des Pingouins) is a satire on human nature. The first publication was in 1908. These penguins are mistaken for humans by the 97-year-old priest, Father Mael, because of his bad eyesight. He baptizes them, and once baptized, they have no choice but to become human. They take on human traits (build civilizations, go to war, etc.). The book is very funny and powerful.",
+    "author_first_name": "Anatole",
+    "author_last_name": "France",
     "episodes": [
         {
             "chapter_title": "1-1 Life of Saint Mael",

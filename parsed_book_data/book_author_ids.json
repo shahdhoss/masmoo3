@@ -1,0 +1,420 @@
+[
+    {
+        "book_id": "47",
+        "author_id": "431",
+        "author_first_name": "Alexandre",
+        "author_last_name": "Dumas",
+        "author_dob": "1802",
+        "author_dod": "1870"
+    },
+    {
+        "book_id": "52",
+        "author_id": "86",
+        "author_first_name": "Honor\u00e9 de",
+        "author_last_name": "Balzac",
+        "author_dob": "1799",
+        "author_dod": "1850"
+    },
+    {
+        "book_id": "53",
+        "author_id": "91",
+        "author_first_name": "Charles",
+        "author_last_name": "Dickens",
+        "author_dob": "1812",
+        "author_dod": "1870"
+    },
+    {
+        "book_id": "54",
+        "author_id": "890",
+        "author_first_name": "Anatole",
+        "author_last_name": "France",
+        "author_dob": "1844",
+        "author_dod": "1924"
+    },
+    {
+        "book_id": "55",
+        "author_id": "148",
+        "author_first_name": "F. Scott",
+        "author_last_name": "Fitzgerald",
+        "author_dob": "1896",
+        "author_dod": "1940"
+    },
+    {
+        "book_id": "56",
+        "author_id": "150",
+        "author_first_name": "Frances Hodgson",
+        "author_last_name": "Burnett",
+        "author_dob": "1849",
+        "author_dod": "1924"
+    },
+    {
+        "book_id": "57",
+        "author_id": "431",
+        "author_first_name": "Alexandre",
+        "author_last_name": "Dumas",
+        "author_dob": "1802",
+        "author_dod": "1870"
+    },
+    {
+        "book_id": "59",
+        "author_id": "9",
+        "author_first_name": "Mark",
+        "author_last_name": "Twain",
+        "author_dob": "1835",
+        "author_dod": "1910"
+    },
+    {
+        "book_id": "64",
+        "author_id": "95",
+        "author_first_name": "Joseph",
+        "author_last_name": "Conrad",
+        "author_dob": "1857",
+        "author_dod": "1924"
+    },
+    {
+        "book_id": "65",
+        "author_id": "765",
+        "author_first_name": null,
+        "author_last_name": "Homer",
+        "author_dob": "c. 8th cen",
+        "author_dod": "c. 8th cen"
+    },
+    {
+        "book_id": "67",
+        "author_id": "1189",
+        "author_first_name": "Dante",
+        "author_last_name": "Alighieri",
+        "author_dob": "1265",
+        "author_dod": "1321"
+    },
+    {
+        "book_id": "68",
+        "author_id": "1059",
+        "author_first_name": "Isabella L.",
+        "author_last_name": "Bird",
+        "author_dob": "1831",
+        "author_dod": "1904"
+    },
+    {
+        "book_id": "71",
+        "author_id": "114",
+        "author_first_name": "Oscar",
+        "author_last_name": "Wilde",
+        "author_dob": "1854",
+        "author_dod": "1900"
+    },
+    
+    {
+        "book_id": "74",
+        "author_id": "406",
+        "author_first_name": "L. Frank",
+        "author_last_name": "Baum",
+        "author_dob": "1856",
+        "author_dod": "1919"
+    },
+    {
+        "book_id": "75",
+        "author_id": "260",
+        "author_first_name": "Harriet Beecher",
+        "author_last_name": "Stowe",
+        "author_dob": "1811",
+        "author_dod": "1896"
+    },
+    {
+        "book_id": "76",
+        "author_id": "4100",
+        "author_first_name": "M. M.",
+        "author_last_name": "Mangasarian",
+        "author_dob": "1859",
+        "author_dod": "1943"
+    },
+    {
+        "book_id": "78",
+        "author_id": "4101",
+        "author_first_name": "Charles Wayland",
+        "author_last_name": "Towne",
+        "author_dob": "1875",
+        "author_dod": "1965"
+    },
+    {
+        "book_id": "79",
+        "author_id": "631",
+        "author_first_name": "George",
+        "author_last_name": "MacDonald",
+        "author_dob": "1824",
+        "author_dod": "1905"
+    },
+    {
+        "book_id": "80",
+        "author_id": "746",
+        "author_first_name": "Jean de La",
+        "author_last_name": "Fontaine",
+        "author_dob": "1621",
+        "author_dod": "1695"
+    },
+    {
+        "book_id": "81",
+        "author_id": "312",
+        "author_first_name": "Sigmund",
+        "author_last_name": "Freud",
+        "author_dob": "1856",
+        "author_dod": "1939"
+    },
+    {
+        "book_id": "82",
+        "author_id": "481",
+        "author_first_name": "Karl",
+        "author_last_name": "May",
+        "author_dob": "1842",
+        "author_dod": "1912"
+    },
+    {
+        "book_id": "83",
+        "author_id": "1349",
+        "author_first_name": "Mary",
+        "author_last_name": "Wollstonecraft",
+        "author_dob": "1759",
+        "author_dod": "1797"
+    },
+    {
+        "book_id": "84",
+        "author_id": "4103",
+        "author_first_name": "Henry Handel",
+        "author_last_name": "Richardson",
+        "author_dob": "1870",
+        "author_dod": "1946"
+    },
+    {
+        "book_id": "85",
+        "author_id": "4104",
+        "author_first_name": "Anicius Manlius Severinus",
+        "author_last_name": "Boethius",
+        "author_dob": "c. 480",
+        "author_dod": "525"
+    },
+    {
+        "book_id": "86",
+        "author_id": "155",
+        "author_first_name": "Jane",
+        "author_last_name": "Austen",
+        "author_dob": "1775",
+        "author_dod": "1817"
+    },
+    {
+        "book_id": "88",
+        "author_id": "4105",
+        "author_first_name": "Douglas William",
+        "author_last_name": "Jerrold",
+        "author_dob": "1803",
+        "author_dod": "1857"
+    },
+    {
+        "book_id": "89",
+        "author_id": "181",
+        "author_first_name": null,
+        "author_last_name": "Aesop",
+        "author_dob": "c. 620 BCE",
+        "author_dod": "564"
+    },
+    {
+        "book_id": "90",
+        "author_id": "114",
+        "author_first_name": "Oscar",
+        "author_last_name": "Wilde",
+        "author_dob": "1854",
+        "author_dod": "1900"
+    },
+    {
+        "book_id": "93",
+        "author_id": "806",
+        "author_first_name": "Laura Lee",
+        "author_last_name": "Hope",
+        "author_dob": null,
+        "author_dod": null
+    },
+    {
+        "book_id": "94",
+        "author_id": "1222",
+        "author_first_name": "Kenneth",
+        "author_last_name": "Grahame",
+        "author_dob": "1859",
+        "author_dod": "1932"
+    },
+    {
+        "book_id": "96",
+        "author_id": [
+            "6279",
+            "4106"
+        ],
+        "author_name": [
+            "William Allan Neilson",
+            "William Patten"
+        ],
+        "author_dob": [
+            "1869",
+            "1868"
+        ],
+        "author_dod": [
+            "1946",
+            "1936"
+        ]
+    },
+    {
+        "book_id": "97",
+        "author_id": "95",
+        "author_first_name": "Joseph",
+        "author_last_name": "Conrad",
+        "author_dob": "1857",
+        "author_dod": "1924"
+    },
+    {
+        "book_id": "99",
+        "author_id": "931",
+        "author_first_name": "Charlotte",
+        "author_last_name": "Bront\u00eb",
+        "author_dob": "1816",
+        "author_dod": "1855"
+    },
+    {
+        "book_id": "100",
+        "author_id": "21",
+        "author_first_name": "Edgar Allan",
+        "author_last_name": "Poe",
+        "author_dob": "1809",
+        "author_dod": "1849"
+    },
+    {
+        "book_id": "104",
+        "author_id": "303",
+        "author_first_name": "Howard",
+        "author_last_name": "Pyle",
+        "author_dob": "1853",
+        "author_dod": "1911"
+    },
+    {
+        "book_id": "105",
+        "author_id": "4108",
+        "author_first_name": "Elizabeth Cleghorn",
+        "author_last_name": "Gaskell",
+        "author_dob": "1810",
+        "author_dod": "1865"
+    },
+    {
+        "book_id": "106",
+        "author_id": [
+            "4109",
+            "18"
+        ],
+        "author_name": [
+            "Mary E. Burt",
+            " Various"
+        ],
+        "author_dob": [
+            "1850",
+            null
+        ],
+        "author_dod": [
+            "1918",
+            null
+        ]
+    },
+    {
+        "book_id": "119",
+        "author_id": "3534",
+        "author_first_name": null,
+        "author_last_name": "Sun Tzu \u5b59\u6b66",
+        "author_dob": "554 BCE",
+        "author_dod": "496 BCE"
+    },
+    {
+        "book_id": "120",
+        "author_id": "431",
+        "author_first_name": "Alexandre",
+        "author_last_name": "Dumas",
+        "author_dob": "1802",
+        "author_dod": "1870"
+    },
+    {
+        "book_id": "121",
+        "author_id": "181",
+        "author_first_name": null,
+        "author_last_name": "Aesop",
+        "author_dob": "c. 620 BCE",
+        "author_dod": "564"
+    },
+    {
+        "book_id": "122",
+        "author_id": "4111",
+        "author_first_name": null,
+        "author_last_name": "Louis Segond Bible",
+        "author_dob": "1810",
+        "author_dod": "1855"
+    },
+    {
+        "book_id": "123",
+        "author_id": "1096",
+        "author_first_name": "E. W.",
+        "author_last_name": "Hornung",
+        "author_dob": "1866",
+        "author_dod": "1921"
+    },
+    {
+        "book_id": "124",
+        "author_id": "801",
+        "author_first_name": "Gene",
+        "author_last_name": "Stratton-Porter",
+        "author_dob": "1863",
+        "author_dod": "1924"
+    },
+    {
+        "book_id": "126",
+        "author_id": "1405",
+        "author_first_name": "Florence Louisa",
+        "author_last_name": "Barclay",
+        "author_dob": "1862",
+        "author_dod": "1921"
+    },
+    {
+        "book_id": "127",
+        "author_id": [
+            "4112",
+            "6210"
+        ],
+        "author_name": [
+            "Jerry Bonnell",
+            "Robert Nemiroff"
+        ],
+        "author_dob": [
+            null,
+            null
+        ],
+        "author_dod": [
+            null,
+            null
+        ]
+    },
+    {
+        "book_id": "128",
+        "author_id": "1776",
+        "author_first_name": "E. F.",
+        "author_last_name": "Benson",
+        "author_dob": "1867",
+        "author_dod": "1940"
+    },
+    {
+        "book_id": "131",
+        "author_id": "608",
+        "author_first_name": "Charles",
+        "author_last_name": "Perrault",
+        "author_dob": "1628",
+        "author_dod": "1703"
+    },
+    {
+        "book_id": "132",
+        "author_id": "1286",
+        "author_first_name": "James Fenimore",
+        "author_last_name": "Cooper",
+        "author_dob": "1789",
+        "author_dod": "1851"
+    }
+]

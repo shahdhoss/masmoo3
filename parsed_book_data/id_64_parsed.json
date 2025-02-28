@@ -1,9 +1,12 @@
 {
+    "id": "64",
     "title": "Heart of Darkness by Joseph Conrad (1857 - 1924)",
     "image": "https://archive.org/download/heart_of_darkness/Heart_of_Darkness.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Set in a time of oppressive colonisation, when large areas of the world were still unknown to Europe, and Africa was literally on maps and minds as a mysterious shadow, Heart of Darkness famously explores the rituals of civilisation and barbarism, and the frighteningly fine line between them.<br /><br />    We get the tale through a classic unreliable narrator, relating as Marlow, a ship\u2019s captain, tells how he was sent by the Company to retrieve the wayward Kurtz, and was shaken to discover the true depths of darkness in that creature\u2019s, and in his own, soul. Conrad based the work closely on his own terrible experience in the Congo.<br /><br />    This work has been reinterpreted and adapted into many modern forms, the most well known being the film Apocalypse Now.<br />    (Summary written by Marlo Dianne)",
+    "author_first_name": "Joseph",
+    "author_last_name": "Conrad",
     "episodes": [
         {
             "chapter_title": "Chapter 1 Part 1",

@@ -1,9 +1,12 @@
 {
+    "id": "74",
     "title": "Mother Goose in Prose by L. Frank Baum (1856 - 1919)",
     "image": "https://archive.org/download/mother_goose_prose_librivox/Mother_Goose_Prose_1107.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Whether Mother Goose was a real person or a myth, the songs that are attributed to her name are what we remember from our childhood. Some of these nursery rhymes are complete tales in themselves.  There are others which are mere suggestions, leaving the imagination to weave in the details of the story. Many of the rhymes\u2019 origins even at the time of this books writing, could be traced back decades or centuries. L Frank Baum in 1897, while living in Chicago, collected the rhymes and created short stories around them which add context and understanding for children who are drawn to the familiar melodies. (Summary by Westwinds12)",
+    "author_first_name": "L. Frank",
+    "author_last_name": "Baum",
     "episodes": [
         {
             "chapter_title": "Introduction",

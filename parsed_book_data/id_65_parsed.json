@@ -1,9 +1,12 @@
 {
+    "id": "65",
     "title": "Odyssey, The by Homer (c. 8th cen - c. 8th cen)",
     "image": "https://www.archive.org/download/librivox_cd_covers/odyssey.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "The Odyssey is one of the two major ancient Greek epic poems (the other being the Iliad), attributed to the poet Homer. The poem is commonly dated to between 800 and 600 BC. The poem is, in part, a sequel to the Iliad, and concerns the events that befall the Greek hero Odysseus in his long journey back to his native land Ithaca after the fall of Troy.<br /><br />It takes Odysseus ten years to return to his native land of Ithaca after ten years of war; during his 20-year absence, his son Telemachus and his wife Penelope must deal with a group of unruly suitors who have moved into Odysseus' home to compete for Penelope's hand in marriage, since most have assumed that Odysseus has died.<br /><br />The poem is a fundamental text in the Western canon and continues to be read in both Homeric Greek and translations around the world. (Summary from Wikipedia)",
+    "author_first_name": null,
+    "author_last_name": "Homer",
     "episodes": [
         {
             "chapter_title": "Book 01",

@@ -1,9 +1,12 @@
 {
+    "id": "128",
     "title": "Queen Lucia by E. F. Benson (1867 - 1940)",
     "image": "https://archive.org/download/queen_lucia_librivox/Queen_Lucia_1107.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "E. F. Benson was born at Wellington College in Berkshire, where his father, who later went on to become the Archbishop of Canterbury, was the first Headmaster. He wrote 105 books in all.<br /><br />Queen Lucia (first published in 1920) was the first of Benson\u2019s \u2018Mapp and Lucia\u2019 novels of which there were six. This first book is a comedy of manners based in the provincial village of Riseholme, where Emmeline Lucas (the Queen Lucia of the title) presides over the social and artistic universe of the gullible residents. Her aide-de-camp in these matters is the somewhat effete Georgie Pillson and the chief competitor for her \u2018crown\u2019 is Daisy Quantock. The scandal of the Guru, the psychical goings on with Princess Popoffski and the arrival into the sleepy village of a famous Prima Donna all conspire to threaten her supremacy\u2026 </br>(summary by Martin Clifton)",
+    "author_first_name": "E. F.",
+    "author_last_name": "Benson",
     "episodes": [
         {
             "chapter_title": "Chapter 01",

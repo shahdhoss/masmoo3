@@ -1,9 +1,12 @@
 {
+    "id": "68",
     "title": "Unbeaten Tracks in Japan by Isabella L. Bird (1831 - 1904)",
     "image": "https://archive.org/download/LibrivoxCdCoverArt28/unbeatentracksjapan_1212.jpg",
     "language": "eng",
     "category": "Literature",
     "description": "Isabella Lucy Bird was a 19th century English traveller, writer, and natural historian. She was a sickly child, however, while she was travelling she was almost always healthy. Her first trip, in 1854, took her to America, visiting relatives. Her first book, <i>The Englishwoman in America</i> was published anonymously two years later.<br /><br /><i>Unbeaten Tracks in Japan</i> is compiled of the letters she sent to her sister during her 7 months sojourn in Japan in 1878. Her travels there took her from Edo (now called Tokyo) through the interior - where she was often the first foreigner the locals had met - to Niigata, and from there to Aomori. There she crossed over to Yezo (Hokkaido), and her account on the life of the Ainu, an indigenous people of Japan, provides an interesting glimpse of days long past. (Summary by Availle)",
+    "author_first_name": "Isabella L.",
+    "author_last_name": "Bird",
     "episodes": [
         {
             "chapter_title": "Preface",

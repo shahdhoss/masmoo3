@@ -1,9 +1,12 @@
 {
+    "id": "82",
     "title": "Winnetou I by Karl May (1842 - 1912)",
     "image": "https://archive.org/download/winnetou1_librivox/winnetou_1.jpg",
     "language": "deu",
     "category": "Literature",
     "description": "Der deutsche Vermessungsingenieur Old Shatterhand kommt betr\u00fcgerischen Machenschaften bei der Verlegung einer neuen Eisenbahnlinie durch das Gebiet der Apachen auf die Spur. Nachdem er den H\u00e4uptlingssohn Winnetou vor dem Marterpfahl der feindlichen Kiowas gerettet hat, wird er von ihm in einem Kampf schwer verletzt und in das Indianerlager verschleppt... (Zusammenfassung aus Wikipedia)",
+    "author_first_name": "Karl",
+    "author_last_name": "May",
     "episodes": [
         {
             "chapter_title": "Einleitung",

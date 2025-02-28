@@ -1,9 +1,12 @@
 {
+    "id": "122",
     "title": "Bible (LSG, 1910) NT 04: \u00c9vangile selon Jean by Louis Segond Bible (1810 - 1855)",
     "image": "https://archive.org/download/jean_lsg_librivox/Evangile_Jean_1109.jpg",
     "language": "fra",
     "category": "Literature",
     "description": "Ce quarante-troisi\u00e8me livre de la Bible, traduite par Louis Segond, au XIXe si\u00e8cle et publi\u00e9e au d\u00e9but du si\u00e8cle suivant, nous est parvenu comme \u00e9tant le t\u00e9moignage du <em>disciple que J\u00e9sus aimait</em>. <br /><br />L'auteur a \u00e9crit ces choses \u00ab afin que vous croyiez que J\u00e9sus est le Christ, le Fils de Dieu, et qu'en croyant vous ayez la vie en son nom \u00bb.<br />(Summary by Ezwa)",
+    "author_first_name": null,
+    "author_last_name": "Louis Segond Bible",
     "episodes": [
         {
             "chapter_title": "Chapitres 1-5",
