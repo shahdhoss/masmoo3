@@ -242,22 +242,18 @@
     },
     {
         "book_id": "96",
-        "author_id": [
-            "6279",
-            "4106"
-        ],
-        "author_name": [
-            "William Allan Neilson",
-            "William Patten"
-        ],
-        "author_dob": [
-            "1869",
-            "1868"
-        ],
-        "author_dod": [
-            "1946",
-            "1936"
-        ]
+        "author_id": "6279",
+        "author_first_name": "William Allan",
+        "author_last_name": "Neilson",
+        "author_dob": "1869",
+        "author_dod": "1946"
+    },
+    {
+        "book_id": "96",
+        "author_id": "4106",
+        "author_name": "William Patten",
+        "author_dob": "1868",
+        "author_dod":"1936"
     },
     {
         "book_id": "97",
@@ -301,22 +297,18 @@
     },
     {
         "book_id": "106",
-        "author_id": [
-            "4109",
-            "18"
-        ],
-        "author_name": [
-            "Mary E. Burt",
-            " Various"
-        ],
-        "author_dob": [
-            "1850",
-            null
-        ],
-        "author_dod": [
-            "1918",
-            null
-        ]
+        "author_id": "4109",
+        "author_first_name": "Mary E.",
+        "author_last_name": "Burt",
+        "author_dob": "1850",
+        "author_dod": "1918"
+    },
+    {
+        "book_id": "106",
+        "author_id": "18",
+        "author_name": " Various",
+        "author_dob": null,
+        "author_dod":null
     },
     {
         "book_id": "119",
@@ -376,22 +368,18 @@
     },
     {
         "book_id": "127",
-        "author_id": [
-            "4112",
-            "6210"
-        ],
-        "author_name": [
-            "Jerry Bonnell",
-            "Robert Nemiroff"
-        ],
-        "author_dob": [
-            null,
-            null
-        ],
-        "author_dod": [
-            null,
-            null
-        ]
+        "author_id": "4112",
+        "author_first_name": "Jerry",
+        "author_last_name": "Bonnell",
+        "author_dob": null,
+        "author_dod": null
+    },
+    {
+        "book_id": "127",
+        "author_id": "6210",
+        "author_name": "Robert Nemiroff",
+        "author_dob": null,
+        "author_dod": null
     },
     {
         "book_id": "128",
