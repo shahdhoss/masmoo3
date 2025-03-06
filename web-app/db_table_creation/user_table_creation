@@ -1,0 +1,9 @@
+const connection = require('./init_connection');
+const client = connection;
+const createTableUser = `create table users (id serial primary key,
+    first_name varchar(255),
+    last_name varchar(255),
+    email varchar(255) unique not null,
+    password varchar(255) not null)`
+
+client.query(createTableUser).then(() => console.log("Table created successfully")).catch(err => console.error("Error creating table", err.stack)).finally(() => client.end())
