@@ -4,6 +4,7 @@ import "../Assets/css/style.css";
 import "../Assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css";
 import registrationImg from "../Assets/images/registration-form-1.png";
 import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
+import axios from "axios";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -14,17 +15,49 @@ const RegistrationForm = () => {
     confirmPassword: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    if (formData.password !== formData.confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password) {
+      alert('Please fill in all fields');
+      return;
+    }
+    if (formData.password.length < 6) {
+      alert('Password must be at least 6 characters long');
+      return;
+    }
+    axios.post("http://localhost:8080/user", {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      email: formData.email,
+      password: formData.password,
+    })
+    .then(() => {
+      navigate("/login");
+    })
+    .catch((error) => {
+      console.error("There was an error registering the user!", error);
+    })
+    .finally(() => {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+    });
   };
   
-  const navigate = useNavigate();
-
   return (
     <div className="wrapper" style={{ backgroundImage: `url(${backgroundImage})` }}>      
     <div className="inner">
@@ -90,7 +123,7 @@ const RegistrationForm = () => {
         <span onClick={() => navigate("/login")} style={{ color: "blue", cursor: "pointer" }}> Login</span>
       </p>
           </div>
-          <button type="submit">
+          <button type="submit" >
             Register
             <i className="zmdi zmdi-arrow-right"></i>
           </button>
@@ -99,5 +132,4 @@ const RegistrationForm = () => {
     </div>
   );
 };
-
 export default RegistrationForm;

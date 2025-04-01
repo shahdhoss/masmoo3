@@ -4,7 +4,6 @@ import "../Assets/fonts/material-design-iconic-font/css/material-design-iconic-f
 import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
 import registrationImg from "../Assets/images/image.png";
 
-
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: "",
