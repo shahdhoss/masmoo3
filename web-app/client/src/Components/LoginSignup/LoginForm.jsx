@@ -3,20 +3,50 @@ import "../Assets/css/style.css";
 import "../Assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css";
 import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
 import registrationImg from "../Assets/images/image.png";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    if (!formData.email || !formData.password) {
+      alert('Please fill in all fields');
+      return;
+    }
+    if (formData.password.length < 6) {
+      alert('Password must be at least 6 characters long');
+      return;
+    }
+    axios.post("http://localhost:8080/user/login", {
+      email: formData.email,
+      password: formData.password,
+    })
+    .then((response) => {
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      navigate("/success");
+    })
+    .catch((error) => {
+      console.error("There was an error logging in!", error);
+      const message = error.response?.data?.message || 'Something went wrong';
+      setErrorMessage(message)
+    })
+    .finally(() => {
+      setFormData({
+        email: "",
+        password: ""
+      });
+    });
   };
 
   return (
@@ -49,6 +79,15 @@ const LoginForm = () => {
               onChange={handleChange}
             />
             <i className="zmdi zmdi-lock"></i>
+          </div>
+          <div className="form-group">
+          {errorMessage ? <p>Error: {errorMessage}</p> : null}
+          </div>
+          <div className="form-group">
+          <p>
+        Don't have an account yet?{" "}
+        <span onClick={() => navigate("/signup")} style={{ color: "blue", cursor: "pointer" }}> Sign up</span>
+      </p>
           </div>
           <button type="submit">
             Submit

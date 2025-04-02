@@ -7,6 +7,7 @@ import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
 import axios from "axios";
 
 const RegistrationForm = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -46,6 +47,8 @@ const RegistrationForm = () => {
     })
     .catch((error) => {
       console.error("There was an error registering the user!", error);
+      const message = error.response?.data?.message || 'Something went wrong';
+      setErrorMessage(message);
     })
     .finally(() => {
       setFormData({
@@ -118,10 +121,11 @@ const RegistrationForm = () => {
             <i className="zmdi zmdi-lock"></i>
           </div>
           <div className="form-group">
-          <p>
+          {errorMessage ? <p>Error: {errorMessage}</p> : null}
+          </div>
+          <div className="form-group">
         Already have an account?{" "}
         <span onClick={() => navigate("/login")} style={{ color: "blue", cursor: "pointer" }}> Login</span>
-      </p>
           </div>
           <button type="submit" >
             Register
