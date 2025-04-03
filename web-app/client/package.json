@@ -3,23 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.1",
-    "@tailwindcss/postcss": "^4.1.1",
+    "@tailwindcss/cli": "^4.1.2",
+    "@tailwindcss/postcss": "^4.1.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< Updated upstream
-=======
     "axios": "^1.8.4",
     "install": "^0.13.0",
     "npm": "^11.2.0",
     "postcss": "^8.5.3",
->>>>>>> Stashed changes
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
-    "tailwindcss": "^4.1.1",
+    "tailwindcss": "^4.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

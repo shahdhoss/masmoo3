@@ -1,26 +1,6 @@
 import logo from './logo.svg';
 import './Components/Assets/css/tailwind.css';
 import './App.css';
-<<<<<<< Updated upstream
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-=======
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RegistrationForm from './Components/LoginSignup/RegistrationForm';
 import LoginForm from './Components/LoginSignup/LoginForm';
@@ -37,7 +17,6 @@ function App() {
         <Route path='/success' element={<Logintest/>}></Route>
       </Routes>
     </Router>
->>>>>>> Stashed changes
     </div>
   );
 }
