@@ -1,1 +1,5 @@
-@import "tailwindcss"
+@import "tailwindcss" important;
+
+@theme{
+    --color-orange-site: #faae2b;
+}
