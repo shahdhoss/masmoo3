@@ -3,7 +3,7 @@ import SearchCard from "./SearchComp/SearchCard";
 
 const SearchPage = () => {
     return (
-        <div className="flex justify-start p-4 space-x-10 flex-wrap space-y-12">
+        <div className="flex justify-start p-15 space-x-10 flex-wrap space-y-12 ">
             <SearchCard/>
             <SearchCard/>
             <SearchCard/>
