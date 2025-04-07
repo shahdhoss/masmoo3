@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 const db = require('./models')
 const userRouter = require('./routes/userRouter')
+const audioBookRouter = require('./routes/audioBookRouter')
 const port = 8080
 const initialiseBooks = require('./initialiseBooks.js')
 
@@ -14,6 +15,7 @@ initialiseBooks(); // you can comment after initialising
 app.use(cors())
 app.use(express.json())
 app.use('/user',userRouter)
+app.use('/audiobook',audioBookRouter)
 
 app.get('/', (req, res) => {
       res.send('Hello from our server!')

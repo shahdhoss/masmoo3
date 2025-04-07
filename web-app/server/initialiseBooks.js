@@ -12,7 +12,7 @@ const AudioBook = require("./models/audioBook.js");
 //     .catch((err) => console.error("MongoDB connection error:", err));
 
 // Directory containing parsed JSON files
-const parsedDataDir = "E:/alhusseain/masmoo3/masmoo3/parsed_book_data";
+const parsedDataDir = path.join(__dirname, "../../parsed_book_data");;
 
 // Function to insert JSON data into the AudioBook collection
 const insertParsedData = async () => {
@@ -35,9 +35,7 @@ const insertParsedData = async () => {
         console.log("All JSON files have been inserted.");
     } catch (err) {
         console.error("Error inserting data:", err);
-    } finally {
-        mongoose.connection.close();
-    }
+    } 
 };
 
 
