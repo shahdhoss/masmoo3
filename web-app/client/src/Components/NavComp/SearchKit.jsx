@@ -1,14 +1,18 @@
-import react from 'react'
-import "../css/tailwind.css"
-import icon from "../images/search.png"
+import "../Assets/css/tailwind.css"
+import icon from "../Assets/images/search.png"
 
-const Searchkit = () => {
+const Searchkit = ({searchWord,setSearchWord}) => {
+
     return (
         <div className='w-128 flex justify relative'>
             <input 
                 type="text" 
                 placeholder="Search for an AudioBook or Podcast..." 
                 className="border border-gray-300 rounded-lg p-2 w-full pr-10"
+                value={searchWord}
+                onChange={(e) => {
+                    setSearchWord(e.target.value)
+                }}
             />
             <img 
                 src={icon} 
