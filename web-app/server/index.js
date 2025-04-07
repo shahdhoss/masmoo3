@@ -4,6 +4,12 @@ const cors = require('cors')
 const db = require('./models')
 const userRouter = require('./routes/userRouter')
 const port = 8080
+const initialiseBooks = require('./initialiseBooks.js')
+
+
+db.connectToMongo();
+
+initialiseBooks(); // you can comment after initialising
 
 app.use(cors())
 app.use(express.json())
