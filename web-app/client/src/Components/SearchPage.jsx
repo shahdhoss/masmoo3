@@ -30,13 +30,15 @@ const SearchPage = () => {
             <div className="flex justify-start space-x-10 flex-wrap space-y-12 ">
             {
                 audioBooks.filter((audioBook) => {
+                    if(keyword === undefined) return true;
                     return audioBook.title.toLowerCase().includes(keyword.toLowerCase()) ||
                         audioBook.author.toLowerCase().includes(keyword.toLowerCase())
                 }).map((audioBook) => {
                     return (
-                        <SearchCard
+                     <SearchCard
+                            id={audioBook.id}
                             key={audioBook.id}
-                            img={audioBook.coverImage}
+                            img={audioBook.image}
                             description={audioBook.description}
                             title={audioBook.title}
                             author={audioBook.author}

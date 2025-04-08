@@ -1,10 +1,13 @@
 import "../Assets/css/tailwind.css";
 import { useState } from "react";
 import bookmark from "../Assets/images/bookmark.png";
+import { Link } from "react-router-dom";
 
-const SearchCard = ({img,description,title,author}) => {
+const SearchCard = ({id,img,description,title,author}) => {
     const [image,setImage] = useState(img);
     return (
+        <>
+        <Link to={`/book/${id}`} className="flex justify-center items-center">        
         <div className="border-2 border-green-site flex justify-center items-center p-4  rounded-lg w-80 h-64 space-x-4 bg-gray-50 shadow-lg">
             <div className="relative h-56 bg-gray-900 w-32">
                 <img src={bookmark} alt="Bookmark" className="absolute top-0 right-0 w-8 h-8" />
@@ -18,6 +21,9 @@ const SearchCard = ({img,description,title,author}) => {
                 </div>
             </div>
         </div>
+        </Link>
+
+        </>
     );
 };
 
