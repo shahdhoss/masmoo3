@@ -5,7 +5,6 @@ import axios from "axios";
 
 const SearchPage = () => {
 
-    const [searchResults, setSearchResults] = useState([]);
     return (
         <div className="p-15 space-y-8">
             <FilterBar/>

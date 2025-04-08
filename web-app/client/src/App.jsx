@@ -9,19 +9,13 @@ import NavBar from './Components/NavBar';
 import SearchPage from './Components/SearchPage';
 
 function App() {
-  const [searchWord, setSearchWord] = useState("");
   return (
     <div>
-      <nav><NavBar searchWord={searchWord} setSearchWord={setSearchWord} /></nav>
-      {searchWord ? (
-        <SearchPage searchWord={searchWord} />
-      ) : (
-        <div className="flex justify-center items-center h-screen">
-          <h1 className="text-2xl font-bold">Welcome to the App!</h1>
-        </div>
-      )}
       <Router>
+        <nav><NavBar/></nav>
         <Routes>
+          <Route path='/search' element={<SearchPage />} />
+          <Route path='/search/:keyword' element={<SearchPage />} />
           <Route path='/signup' element={<RegistrationForm />} />
           <Route path='/login' element={<LoginForm />} />
           <Route path='/success' element={<Logintest />} />

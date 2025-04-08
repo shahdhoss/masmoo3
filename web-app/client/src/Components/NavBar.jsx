@@ -6,12 +6,12 @@ import options from "./Assets/images/Options.png"
 import Searchkit from "./NavComp/SearchKit";
 import PlayBack from "./NavComp/PlayBack";
 import masmoo3 from "./Assets/images/masmoo3.png";
-const NavBar = ({searchWord,setSearchWord}) => {
+const NavBar = () => {
     return(
     <div>
         <div className="flex justify-between items-center bg-gray-50 shadow-sm p-4 ps-10 space-x-3">
             <div className="shrink-0"><a href="/home"><img src={masmoo3} className="size-8"/></a></div>
-            <Searchkit searchWord = {searchWord} setSearchWord={setSearchWord}/>
+            <Searchkit/>
             <div className="flex justify-center items-center space-x-4">
                 <PlayBack/>
                 <div className="flex justify-between items-center space-x-5 pe-10 shrink-0">
