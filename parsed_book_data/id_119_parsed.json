@@ -5,8 +5,8 @@
     "language": "eng",
     "category": "Literature",
     "description": "\"The Art of War is a Chinese military treatise written during the 6th century BC by Sun Tzu. Composed of 13 chapters, each of which is devoted to one aspect of warfare, it has long been praised as the definitive work on military strategies and tactics of its time. The Art of War is one of the oldest and most famous studies of strategy and has had a huge influence on both military planning and beyond. The Art of War has also been applied, with much success, to business and managerial strategies.\" (summary from Wikipedia)",
-    "author_first_name": null,
-    "author_last_name": "Sun Tzu \u5b59\u6b66",
+    "author_first_name": "Sun",
+    "author_last_name": "Tzu",
     "episodes": [
         {
             "chapter_title": "01 - Laying Plans / 02 - Waging War",

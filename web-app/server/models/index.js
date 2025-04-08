@@ -9,6 +9,20 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+const mongoose = require('mongoose');
+
+const connectToMongo = async () => {
+  try {
+    await mongoose.connect('mongodb://127.0.0.1:27017/masmoo3');
+    console.log('Database Connected!');
+  } catch (err) {
+    console.error('Database Connection Failed:', err);
+    process.exit(1);
+  }
+};
+
+
+
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
@@ -39,5 +53,6 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.connectToMongo  = connectToMongo;
 
 module.exports = db;
