@@ -14,8 +14,7 @@ const audioBookSchema = new mongoose.Schema({
     language: { type: String, required: true },
     category: { type: String, required: true },
     description: { type: String, required: true },
-    author_first_name: { type: String, required: false },
-    author_last_name: { type: String, required: true },
+    author: { type: String, required: true },
     episodes: [episodeSchema], // Array of episodes
 });
 

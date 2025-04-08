@@ -2,7 +2,7 @@ const audioBook = require('../models/audioBook');
 
 exports.getAll = async (req, res) => {
     try {
-        const audioBooks = await audioBook.find().select('-episodes -_id');
+        const audioBooks = await audioBook.find().select('-episodes -_id -_v');
         res.status(200).json(audioBooks);
     } catch (error) {
         console.error(error);
