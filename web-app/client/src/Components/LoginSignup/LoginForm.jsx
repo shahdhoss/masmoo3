@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Assets/css/style.css"; 
 import "../Assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css";
 import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
-import registrationImg from "../Assets/images/image.png";
+import registrationImg from "../Assets/images/loginpic.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -34,7 +34,7 @@ const LoginForm = () => {
     .then((response) => {
       const token = response.data.token;
       localStorage.setItem("token", token);
-      navigate("/success");
+      navigate("/user");
     })
     .catch((error) => {
       console.error("There was an error logging in!", error);

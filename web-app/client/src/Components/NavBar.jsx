@@ -14,7 +14,7 @@ const NavBar = () => {
             <Searchkit/>
             <div className="flex jusify-between space-x-10 pe-10">
                 <a href="/login"><img src={download} className="size-7"/></a>
-                <a href="/home"><img  src={profile} className="size-7"/></a>
+                <a href="/user"><img  src={profile} className="size-7"/></a>
                 <a href="/signup"><img  src={options} className="size-7"/></a>
             </div>
         </div>

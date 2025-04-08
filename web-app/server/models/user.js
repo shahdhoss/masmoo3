@@ -21,6 +21,32 @@ const users = sequelize.define('users', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    fav_books:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0,
+    },
+    listen_later:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0,
+    },
+    reviews:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0,
+    },
+    bio:{
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    profile_pic:{
+        type: DataTypes.BLOB("medium"),
+        allowNull: true,
+    },
 })
+sequelize.sync({ alter: true })
+  .then(() => console.log('Database synced with alter mode 🛠️'))
+  .catch(err => console.error('Sync failed:', err));
 return users
 }

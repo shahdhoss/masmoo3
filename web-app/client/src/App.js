@@ -4,8 +4,9 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RegistrationForm from './Components/LoginSignup/RegistrationForm';
 import LoginForm from './Components/LoginSignup/LoginForm';
-import Logintest from './Components/LoginSignup/Logintest';
 import NavBar from './Components/NavBar';
+import User from './Components/User/User';
+import Edit from './Components/Edit_profile/Edit';
 function App() {
   return (
     <div >
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/signup' element={<RegistrationForm/>}></Route>
         <Route path='/login' element={<LoginForm/>}></Route>
-        <Route path='/success' element={<Logintest/>}></Route>
+        <Route path='/user' element={<User/>} ></Route>
       </Routes>
     </Router>
     </div>

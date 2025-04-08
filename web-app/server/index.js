@@ -5,11 +5,12 @@ const db = require('./models')
 const userRouter = require('./routes/userRouter')
 const port = 8080
 
-app.use(cors())
+app.use(cors({origin:"http://localhost:3000"}))
 app.use(express.json())
-app.use('/user',userRouter)
 
-app.get('/', (req, res) => {
+app.use('/user', userRouter)
+
+app.get('/',(req, res) => {
       res.send('Hello from our server!')
 })
 
