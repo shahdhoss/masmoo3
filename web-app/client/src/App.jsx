@@ -7,6 +7,7 @@ import LoginForm from './Components/LoginSignup/LoginForm';
 import NavBar from './Components/NavBar';
 import SearchPage from './Components/SearchPage';
 import User from './Components/User/User';
+import BookPage from './Components/BookPage/BookPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/signup' element={<RegistrationForm />} />
           <Route path='/login' element={<LoginForm />} />
           <Route path='/user' element={<User/>}/>
+          <Route path='/book/:id' element={<BookPage />} />
         </Routes>
       </Router>
     </div>
