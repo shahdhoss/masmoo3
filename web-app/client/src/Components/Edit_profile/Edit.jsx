@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Edit_profile/editstyles.css'; // Import your CSS file for styling
 import axios from 'axios';
 
-const Edit_profile = ({ closeModal }) => {
+const Edit = ({ closeModal }) => {
   // State for the input fields
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -101,4 +101,4 @@ const Edit_profile = ({ closeModal }) => {
   );
 };
 
-export default Edit_profile;
+export default Edit;
