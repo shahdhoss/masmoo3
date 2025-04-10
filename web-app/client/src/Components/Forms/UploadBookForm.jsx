@@ -14,12 +14,13 @@ const UploadBookForm = ({ closeModal }) => {
   const handleNoOfEpisodesChange = (e) => {
     const value = e.target.value;
     setNoOfEpisodes(value);
-
     const count = parseInt(value, 10);
     if (!isNaN(count) && count >= 0) {
       setEpisodes((prev) => {
         const updated = [...prev];
-        while (updated.length < count) updated.push('');
+        while (updated.length < count) {
+          updated.push({ chapter_title: '', audio_link: '', episode_no: '', duration: '' });
+        }
         return updated.slice(0, count);
       });
     } else {
@@ -27,9 +28,9 @@ const UploadBookForm = ({ closeModal }) => {
     }
   };
 
-  const handleEpisodeChange = (index, value) => {
+  const handleEpisodeChange = (index, field ,value) => {
     const updatedEpisodes = [...episodes];
-    updatedEpisodes[index] = value;
+    updatedEpisodes[index][field] = value;
     setEpisodes(updatedEpisodes);
   };
 
@@ -147,15 +148,38 @@ const UploadBookForm = ({ closeModal }) => {
               <div className="mb-3">
                 <label className="form-label">Episodes</label>
                 {episodes.map((ep, index) => (
-                  <input
-                    key={index}
-                    type="text"
-                    className="form-control mb-2"
-                    placeholder={`Episode ${index + 1} URL`}
-                    value={ep}
-                    onChange={(e) => handleEpisodeChange(index, e.target.value)}
-                  />
+                  <div key={index} className="mb-4 border p-3 rounded">
+                    <input
+                      type="text"
+                      className="form-control mb-2"
+                      placeholder={`Episode ${index + 1} Title`}
+                      value={ep.chapter_title}
+                      onChange={(e) => handleEpisodeChange(index, 'chapter_title', e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      className="form-control mb-2"
+                      placeholder={`Episode ${index + 1} Audio URL`}
+                      value={ep.audio_link}
+                      onChange={(e) => handleEpisodeChange(index, 'audio_link', e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      className="form-control mb-2"
+                      placeholder={`Episode ${index + 1} Duration`}
+                      value={ep.duration}
+                      onChange={(e) => handleEpisodeChange(index, 'duration', e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      className="form-control mb-2"
+                      placeholder={`Episode ${index + 1} Number`}
+                      value={ep.episode_no}
+                      onChange={(e) => handleEpisodeChange(index, 'episode_no', e.target.value)}
+                    />
+                  </div>
                 ))}
+
               </div>
             </div>
             <div className="modal-footer">
