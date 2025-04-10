@@ -1,13 +1,15 @@
 import axios from "axios";
 import UploadBookForm from "../Forms/UploadBookForm";
+import AddEpisodesForm from "../Forms/AddEpisodesForm";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Assets/css/userprofilestyles.css";
-import { FaTrashAlt } from 'react-icons/fa';  
-
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
 const UserBookUpload = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddBookModalOpen, setIsAddBookModalOpen] = useState(false);
+  const [isAddEpisodesModalOpen, setIsAddEpisodeModalOpen] = useState(false);
+  const [currentEditingBookId, setCurrentEditingBookId] = useState(null);
   const [visibleCount, setVisibleCount] = useState(4);
   const [loadingStates, setLoadingStates] = useState({});
   const [books, setBooks] = useState([]);
@@ -17,12 +19,22 @@ const UserBookUpload = () => {
     navigate(`/book/${id}`);
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openAddBookModal = () => {
+    setIsAddBookModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeAddBookModal = () => {
+    setIsAddBookModalOpen(false);
+  };
+
+  const openAddEpisodesModal = (bookId) => {
+    setCurrentEditingBookId(bookId);
+    setIsAddEpisodeModalOpen(true);
+  };
+
+  const closeEpisodesBookModal = () => {
+    setCurrentEditingBookId(null);
+    setIsAddEpisodeModalOpen(false);
   };
 
   const handleLoadMore = () => {
@@ -42,20 +54,21 @@ const UserBookUpload = () => {
       [bookId]: "error",
     }));
   };
+
   const handleDeleteBook = (bookId) => {
-    axios.delete("http://localhost:8080/audiobook/" + bookId).then((response) => {
-      console.log("Book deleted successfully", response.data);
-      setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
-      setLoadingStates((prev) => ({
-        ...prev,
-        [bookId]: "deleted",
-      }));
-    }).catch((error) => {
-      console.error("Error deleting book:", error);
-    });
-    console.log(`Deleting book with ID: ${bookId}`);
+    axios.delete(`http://localhost:8080/audiobook/${bookId}`)
+      .then((response) => {
+        console.log("Book deleted successfully", response.data);
+        setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
+        setLoadingStates((prev) => ({
+          ...prev,
+          [bookId]: "deleted",
+        }));
+      })
+      .catch((error) => {
+        console.error("Error deleting book:", error);
+      });
   };
-  
 
   const fetchBooks = () => {
     const initialLoadingStates = {};
@@ -64,19 +77,18 @@ const UserBookUpload = () => {
     });
     setLoadingStates(initialLoadingStates);
 
-    axios
-      .get("http://localhost:8080/user/uploadedbooks", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      })
+    axios.get("http://localhost:8080/user/uploadedbooks", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((response) => {
         const uploadedBooks = response.data;
         setBooks(uploadedBooks);
 
         const newLoadingStates = {};
         uploadedBooks.forEach((book) => {
-          newLoadingStates[book.id] = "loading"; 
+          newLoadingStates[book.id] = "loading";
         });
         setLoadingStates(newLoadingStates);
       })
@@ -109,14 +121,16 @@ const UserBookUpload = () => {
               <div className="heading-section">
                 <h4>
                   <em>Your uploaded</em> books
-                  <button className="plus-button" onClick={openModal}>
+                  <button className="plus-button" onClick={openAddBookModal}>
                     <span className="plus-sign">+</span>
                   </button>
                 </h4>
-                {isModalOpen && <UploadBookForm closeModal={closeModal} fetchBooks={fetchBooks} />}
+                {isAddBookModalOpen && (
+                  <UploadBookForm closeAddBookModal={closeAddBookModal} fetchBooks={fetchBooks} />
+                )}
               </div>
             </div>
-            
+
             {books.slice(0, visibleCount).map((book) => (
               <div className="col-lg-3 col-sm-5" key={book.id}>
                 <div className="item">
@@ -133,15 +147,20 @@ const UserBookUpload = () => {
                           borderRadius: "10px",
                         }}
                       >
-                        <span>{loadingStates[book.id] === "error" ? "Image not available" : "Loading..."}</span>
+                        <span>
+                          {loadingStates[book.id] === "error"
+                            ? "Image not available"
+                            : "Loading..."}
+                        </span>
                       </div>
                     )}
+
                     <img
                       src={book.image || "/placeholder.svg"}
                       alt={`Cover for ${book.title}`}
                       onLoad={() => handleImageLoad(book.id)}
                       onError={() => handleImageError(book.id)}
-                      onClick={() => goToBook(book.id)}  // Add onClick only here
+                      onClick={() => goToBook(book.id)}
                       style={{
                         display: loadingStates[book.id] === "loaded" ? "block" : "none",
                         width: "100%",
@@ -151,10 +170,25 @@ const UserBookUpload = () => {
                       }}
                     />
                   </div>
-                  <div className="down-content" style={{ margin: "15px", display: "flex", alignItems: "center" }}>
+
+                  <div
+                    className="down-content"
+                    style={{ margin: "15px", display: "flex", alignItems: "center" }}
+                  >
                     <h4 style={{ marginRight: "10px" }}>{book.title}</h4>
-                    <button onClick={() => handleDeleteBook(book.id)} aria-label="Delete book" className="delete-icon-button">
+                    <button
+                      onClick={() => handleDeleteBook(book.id)}
+                      aria-label="Delete book"
+                      className="delete-icon-button"
+                    >
                       <FaTrashAlt />
+                    </button>
+                    <button
+                      onClick={() => openAddEpisodesModal(book.id)}
+                      aria-label="Edit episodes"
+                      className="delete-icon-button"
+                    >
+                      <FaEdit />
                     </button>
                   </div>
                 </div>
@@ -171,6 +205,12 @@ const UserBookUpload = () => {
               </div>
             )}
 
+            {isAddEpisodesModalOpen && currentEditingBookId && (
+              <AddEpisodesForm
+                closeEpisodesBookModal={closeEpisodesBookModal}
+                bookId={currentEditingBookId}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ const User = () => {
                   </div>
                   <div className="col-lg-4 align-self-center">
                     <div className="main-info header-text">
-                      <h4>{data["first_name"]} {data["last_name"]}</h4>
+                      <h3>{data["first_name"]} {data["last_name"]}</h3>
                       <p>{data["bio"]}</p>
                       <div className="main-button">
                       <a onClick={()=>openModal()}>Edit Info</a>
@@ -103,16 +103,6 @@ const User = () => {
                   <li><h4>Dota 2</h4><span>Sandbox</span></li>
                   <li><h4>Date Added</h4><span>24/08/2036</span></li>
                   <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div className="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
-                </ul>
-              </div>
-              <div className="item">
-                <ul>
-                  <li><img src={game2} alt="" className="templatemo-item"/></li>
-                  <li><h4>Fortnite</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>22/06/2036</span></li>
-                  <li><h4>Hours Played</h4><span>745 H 22 Mins</span></li>
                   <li><h4>Currently</h4><span>Downloaded</span></li>
                   <li><div className="main-border-button border-no-active"><a href="#">Donwloaded</a></div></li>
                 </ul>

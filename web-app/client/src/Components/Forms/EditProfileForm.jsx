@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const EditProfileForm = ({ closeModal }) => {
+const EditProfileForm = ({ closeModal, bookId }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [bio, setBio] = useState('');

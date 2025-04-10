@@ -50,7 +50,7 @@ exports.create = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 }
-exports.delete = async(req,res)=>{
+exports.delete = async(req,res) => {
     try{
         const {id} = req.params;
         const book = await audiobooks.findOne({where: {id}});
@@ -65,3 +65,31 @@ exports.delete = async(req,res)=>{
         res.status(500).json({message: 'Internal server error'});
     }
 }
+exports.addEpisodes = async(req, res) => {
+    try {
+    const { id } = req.params;
+    const book = await audiobooks.findOne({ where: { id } });
+    if (!book) {
+        return res.status(404).json({ message: 'Book not found' });
+    }
+    const { episodes: newEpisodes } = req.body;
+    const currentEpisodes = book.episodes || []; 
+    const combinedEpisodes = [...currentEpisodes, ...newEpisodes];
+    const updatedBook = await audiobooks.update(
+        { 
+          episodes: combinedEpisodes,
+          noOfEpisodes: combinedEpisodes.length 
+        }, 
+        { where: { id } }
+      );
+      
+      res.status(200).json({ 
+        message: 'Episodes added successfully', 
+        updatedBook,
+        episodesCount: combinedEpisodes.length
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  }

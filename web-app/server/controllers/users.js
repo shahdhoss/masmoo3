@@ -2,6 +2,9 @@ const {users, audiobooks} = require('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
+const multer = require('multer');
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 dotenv.config();
 
 exports.createUser = async (req, res) => {
@@ -78,6 +81,7 @@ exports.updateUser = async (req, res) =>{
         res.status(500).json({message: 'Internal server error'});
     }
 }
+  
 
 exports.getBooksByUser = async (req, res) => {
     try{

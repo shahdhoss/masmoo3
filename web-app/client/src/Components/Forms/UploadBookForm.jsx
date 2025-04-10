@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const UploadBookForm = ({ closeModal , fetchBooks}) => {
+const UploadBookForm = ({ closeAddBookModal , fetchBooks}) => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [language, setLanguage] = useState('');
@@ -57,7 +57,7 @@ const UploadBookForm = ({ closeModal , fetchBooks}) => {
     )
     .then((response) => {
       console.log('Book added', response.data);
-      closeModal();
+      closeAddBookModal();
       fetchBooks();
     })
     .catch((error) => {
@@ -71,7 +71,7 @@ const UploadBookForm = ({ closeModal , fetchBooks}) => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Upload Book</h5>
-            <button type="button" className="btn-close" onClick={closeModal}></button>
+            <button type="button" className="btn-close" onClick={closeAddBookModal}></button>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -195,7 +195,7 @@ const UploadBookForm = ({ closeModal , fetchBooks}) => {
               </div>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={closeModal}>
+              <button type="button" className="btn btn-secondary" onClick={closeAddBookModal}>
                 Cancel
               </button>
               <button type="submit" className="btn btn-primary">
