@@ -1,21 +1,46 @@
-const mongoose = require("mongoose");
-
-const episodeSchema = new mongoose.Schema({
-    chapter_title: { type: String, required: true },
-    audio_link: { type: String, required: true },
-    episode_no: { type: Number, required: true },
-    duration: { type: String, required: true },
-});
-
-const audioBookSchema = new mongoose.Schema({
-    id: { type: String, required: true, unique: true },
-    title: { type: String, required: true },
-    image: { type: String, required: true },
-    language: { type: String, required: true },
-    category: { type: String, required: true },
-    description: { type: String, required: true },
-    author: { type: String, required: true },
-    episodes: [episodeSchema], // Array of episodes
-});
-
-module.exports = mongoose.model("AudioBook", audioBookSchema);
+module.exports = (sequelize, DataTypes) => {
+    const audiobooks = sequelize.define('audiobooks', {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
+        },
+        uploader_id:{
+            type: DataTypes.INTEGER,
+            defaultValue: 21,
+        },
+        title: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        }, 
+        language: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        category :{
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        author:{
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },  
+        episodes:{
+            type: DataTypes.JSON,
+            allowNull: false,
+        }
+    })
+sequelize.sync({ alter: true })
+  .then(() => console.log('Database synced with alter mode '))
+  .catch(err => console.error('Sync failed:', err));
+return audiobooks
+}

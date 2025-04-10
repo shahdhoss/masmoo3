@@ -14,12 +14,16 @@ const RegistrationForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    admincheck: false,
   });
 
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' 
+    ? e.target.checked    
+    : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -41,6 +45,7 @@ const RegistrationForm = () => {
       last_name: formData.lastName,
       email: formData.email,
       password: formData.password,
+      role: formData.checked ? "admin" : "user",
     })
     .then(() => {
       navigate("/login");
@@ -57,10 +62,10 @@ const RegistrationForm = () => {
         email: "",
         password: "",
         confirmPassword: "",
+        checked: false
       });
     });
-  };
-  
+  }
   return (
     <div className="wrapper" style={{ backgroundImage: `url(${backgroundImage})` }}>      
     <div className="inner">
@@ -120,10 +125,20 @@ const RegistrationForm = () => {
             />
             <i className="zmdi zmdi-lock"></i>
           </div>
+          <div className="form-group" style={{ display: "flex", alignItems: "center", marginBlock: "20px" }}>
+            <label htmlFor="admincheck">Are you an admin?</label>
+          <input
+              type="checkbox"
+              name="admincheck"
+              onChange={handleChange}
+              checked={formData.admincheck}
+            />
+          </div>
           <div className="form-group">
           {errorMessage ? <p>Error: {errorMessage}</p> : null}
           </div>
-          <div className="form-group">
+
+          <div className="form-wrapper">
         Already have an account?{" "}
         <span onClick={() => navigate("/login")} style={{ color: "blue", cursor: "pointer" }}> Login</span>
           </div>

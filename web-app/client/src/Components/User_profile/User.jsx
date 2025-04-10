@@ -1,20 +1,18 @@
 import "../Assets/css/userprofilestyles.css"; 
 import profile from "../Assets/images/pfp_placeholder.png";
-import clip1 from "../Assets/images/images/clip-01.jpg";
-import clip2 from "../Assets/images/images/clip-02.jpg";
-import clip3 from "../Assets/images/images/clip-03.jpg";
-import clip4 from "../Assets/images/images/clip-04.jpg";
 import game1 from "../Assets/images/images/game-01.jpg";
 import game2 from "../Assets/images/images/game-02.jpg";
 import game3 from "../Assets/images/images/game-03.jpg";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Edit_profile from "../Edit_profile/Edit";
+import UserBookUpload from "./UserBookUpload";
+import {jwtDecode} from 'jwt-decode';
+import EditProfileForm from "../Forms/EditProfileForm";
 
 const User = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState({});
-  
+  const [role, setRole] = useState(null)
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -24,6 +22,12 @@ const User = () => {
   };
   
   useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
+    link.id = "bootstrap-css";
+    document.head.appendChild(link);
+
     axios.get("http://localhost:8080/user/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -31,31 +35,42 @@ const User = () => {
     })
     .then((response) => {
       setData(response.data);
+      const token = localStorage.getItem("token");
+      if (token) {
+        const decoded_token = jwtDecode(token);
+        console.log(decoded_token);
+        setRole(decoded_token.role);
+      } else {
+        console.error("No token found in localStorage");
+      }
     })
     .catch((error) => {
       console.error("There was an error fetching the user data!", error);
     });
-})
-return (
-  <div className="container">
+    return () => {
+      const existing = document.getElementById("bootstrap-css");
+      if (existing) existing.remove();
+    };
+  }, [isModalOpen]);
+  
+  return(
     <div className="row">
       <div className="col-lg-12">
         <div className="page-content">
-
           <div className="row">
             <div className="col-lg-12">
               <div className="main-profile ">
                 <div className="row">
-                  <div className="col-lg-4">
+                  <div className="col-lg-3">
                     <img src= {data["profile_pic"] || profile}  alt="" style={{ borderRadius: '23px' }}/>
                   </div>
                   <div className="col-lg-4 align-self-center">
                     <div className="main-info header-text">
                       <h4>{data["first_name"]} {data["last_name"]}</h4>
                       <p>{data["bio"]}</p>
-                      <div className="main-border-button main-button">
+                      <div className="main-button">
                       <a onClick={()=>openModal()}>Edit Info</a>
-                      {isModalOpen && (<Edit_profile closeModal={closeModal} />)}                      
+                      {isModalOpen && (<EditProfileForm closeModal={closeModal} />)}                      
                       </div>
                     </div>
                   </div>
@@ -68,67 +83,8 @@ return (
                     </ul>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-lg-12">
-                    <div className="clips">
-                      <div className="row">
-                        <div className="col-lg-12">
-                          <div className="heading-section">
-                            <h4> <em>Your uploaded </em> books</h4>
-                          </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                          <div className="item">
-                            <div className="thumb">
-                              <img src={clip1} alt="" style={{ borderRadius: '23px' }}/>
-                            </div>
-                            <div className="down-content">
-                              <h4>First Clip</h4>
-                              <span><i className="fa fa-eye"></i> 250</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                          <div className="item">
-                            <div className="thumb">
-                              <img src={clip2} alt="" style={{ borderRadius: '23px' }}/>
-                            </div>
-                            <div className="down-content">
-                              <h4>Second Clip</h4>
-                              <span><i className="fa fa-eye"></i> 183</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                          <div className="item">
-                            <div className="thumb">
-                              <img src={clip3} alt="" style={{ borderRadius: '23px' }}/>
-                            </div>
-                            <div className="down-content">
-                              <h4>Third Clip</h4>
-                              <span><i className="fa fa-eye"></i> 141</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                          <div className="item">
-                            <div className="thumb">
-                              <img src={clip4} alt="" style={{ borderRadius: '23px' }}/>
-                            </div>
-                            <div className="down-content">
-                              <h4>Fourth Clip</h4>
-                              <span><i className="fa fa-eye"></i> 91</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-lg-12">
-                          <div className="main-button">
-                            <a href="#">Load More Clips</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div>
+                {role === "admin" && <UserBookUpload/>}
                 </div>
               </div>
             </div>
@@ -174,9 +130,7 @@ return (
         </div>
       </div>
     </div>
-  </div>
-  
-)
+  )
 }
 
 export default User

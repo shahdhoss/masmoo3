@@ -4,6 +4,7 @@ const users = sequelize.define('users', {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
+        allowNull: false,
     },
     first_name: {
         type: DataTypes.STRING,
@@ -44,9 +45,14 @@ const users = sequelize.define('users', {
         type: DataTypes.BLOB("medium"),
         allowNull: true,
     },
+    role:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: 'user',
+    },
 })
 sequelize.sync({ alter: true })
-  .then(() => console.log('Database synced with alter mode 🛠️'))
+  .then(() => console.log('Database synced with alter mode '))
   .catch(err => console.error('Sync failed:', err));
 return users
 }

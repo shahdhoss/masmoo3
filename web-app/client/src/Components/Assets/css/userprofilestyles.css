@@ -1169,7 +1169,7 @@ Live Stream Style
 }
 
 .live-stream .down-content h4 {
-  margin-top: 8px;
+  margin-top: 15px;
   font-size: 20px;
   font-weight: 700;
   margin-left: 61px;
@@ -1499,15 +1499,25 @@ Profile Style
 }
 
 .clips .item  {
+  margin: 20px;
   border-radius: 23px;
-  padding: 30px 15px;
-  background-color: #f2f7f5;
-  margin-bottom: 30px;
+  padding: 10px 10px;
+  background-color: hsl(156, 24%, 96%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
 }
 
+.clips .item:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+.audiobook-cover {
+  width: 220px;
+  margin-right: 30px;
+  position: relative;
+  margin: 0 auto;
+}
 .clips .item .thumb {
   position: relative;
-  margin-bottom: 15px;
 }
 
 .clips .item .thumb a {

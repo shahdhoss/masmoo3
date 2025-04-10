@@ -1,28 +1,35 @@
-/* Modal Overlay */
-.modal-overlay {
+.custom-modal .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
 }
 
-/* Modal Content */
-.modal-content {
+.custom-modal .modal-overlay.show {
+  visibility: visible; 
+}
+
+.custom-modal .modal-content {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  width: 600px; 
+  max-width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 400px; 
+  overflow-y: auto;
 }
 
-/* Close Button */
-.modal-close-btn {
+.custom-modal .modal-close-btn {
   background: transparent;
   border: none;
   font-size: 1.5rem;
@@ -33,33 +40,33 @@
 }
 
 /* Form Inputs */
-.modal-form-group {
+.custom-modal .modal-form-group {
   margin-bottom: 15px;
 }
 
-.modal-label {
+.custom-modal .modal-label {
   display: block;
   margin-bottom: 5px;
 }
 
-.modal-input[type="text"], .modal-textarea {
+.custom-modal .modal-input[type="text"], .custom-modal .modal-textarea {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-.modal-textarea {
+.custom-modal .modal-textarea {
   height: 100px;
 }
 
-.modal-footer {
+.custom-modal .modal-footer {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
 }
 
-.modal-btn {
+.custom-modal .modal-btn {
   padding: 8px 15px;
   background-color: #007bff;
   color: white;
@@ -68,6 +75,6 @@
   cursor: pointer;
 }
 
-.modal-btn:hover {
+.custom-modal .modal-btn:hover {
   background-color: #0056b3;
 }

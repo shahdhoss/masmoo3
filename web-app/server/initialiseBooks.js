@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const mongoose = require("mongoose");
-const AudioBook = require("./models/audioBook.js");
+const {audiobooks} = require("./models");
 
 // Directory containing parsed JSON files
 const parsedDataDir = path.join(__dirname, "../../parsed_book_data");
@@ -10,7 +9,7 @@ const parsedDataDir = path.join(__dirname, "../../parsed_book_data");
 const insertParsedData = async () => {
     try {
         const files = fs.readdirSync(parsedDataDir);
-
+        
         for (const file of files) {
             console.log(`Processing data from ${file}`);
             if (path.extname(file) === ".json") {
@@ -18,7 +17,7 @@ const insertParsedData = async () => {
                 const jsonData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
                 // Skip if the audiobook already exists in the database
-                if (await AudioBook.findOne({ id: jsonData.id })) {
+                if (await audiobooks.findOne({where:{ id: jsonData.id }})) {
                     continue;
                 }
 
@@ -36,7 +35,7 @@ const insertParsedData = async () => {
                 delete jsonData.author_last_name; // Remove the original field
 
                 // Insert data into the AudioBook collection
-                await AudioBook.create(jsonData);
+                await audiobooks.create(jsonData);
                 console.log(`Inserted data from ${file}`);
             }
         }
