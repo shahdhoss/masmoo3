@@ -88,7 +88,7 @@ exports.getBooksByUser = async (req, res) => {
         const books = await audiobooks.findAll({where: {uploader_id: user.id}});
         res.status(200).json(books);
     }
-    catch{
+    catch(error){
         console.error(error);
         res.status(500).json({message: 'Internal server error'});
     }
