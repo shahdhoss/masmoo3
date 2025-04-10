@@ -6,7 +6,7 @@ dotenv.config();
 
 exports.createUser = async (req, res) => {
     try{
-        const {first_name, last_name, email, password} = req.body;
+        const {first_name, last_name, email, password, role} = req.body;
         const existingUser = await users.findOne({where: {email}});
         if(existingUser){
             return res.status(400).json({message: 'User already exists'});
@@ -16,6 +16,7 @@ exports.createUser = async (req, res) => {
             last_name,
             email,
             password : await bcrypt.hash(password, 10),
+            role
         });
         res.status(201).json(newUser);
     }catch(error){
@@ -37,7 +38,7 @@ exports.loginUser = async (req, res) => {
         }
 
         const token = jwt.sign({ id: user.id, role: user.role }, "sherlock_holmes", { expiresIn: '1h' });
-        return res.status(200).json({ token });
+        return res.status(200).json({ token , user: { id: user.id, first_name: user.first_name, last_name: user.last_name, email: user.email, role: user.role } });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Internal server error' });

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const UploadBookForm = ({ closeModal }) => {
+const UploadBookForm = ({ closeModal , fetchBooks}) => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [language, setLanguage] = useState('');
@@ -39,7 +39,7 @@ const UploadBookForm = ({ closeModal }) => {
 
     axios.post('http://localhost:8080/audiobook/',
       {
-        uploader_id: localStorage.getItem('userId'),
+        uploader_id: parseInt(localStorage.getItem('userId')),
         title,
         image,
         language,
@@ -58,6 +58,7 @@ const UploadBookForm = ({ closeModal }) => {
     .then((response) => {
       console.log('Book added', response.data);
       closeModal();
+      fetchBooks();
     })
     .catch((error) => {
       console.error('Error uploading book:', error);
@@ -83,6 +84,7 @@ const UploadBookForm = ({ closeModal }) => {
                   placeholder="Title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -93,6 +95,7 @@ const UploadBookForm = ({ closeModal }) => {
                   placeholder="Image URL"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -103,6 +106,7 @@ const UploadBookForm = ({ closeModal }) => {
                   placeholder="Language"
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -113,6 +117,7 @@ const UploadBookForm = ({ closeModal }) => {
                   placeholder="Category"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -123,6 +128,7 @@ const UploadBookForm = ({ closeModal }) => {
                   rows="3"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  required
                 ></textarea>
               </div>
               <div className="mb-3">
@@ -133,6 +139,7 @@ const UploadBookForm = ({ closeModal }) => {
                   placeholder="Author"
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -143,6 +150,7 @@ const UploadBookForm = ({ closeModal }) => {
                   min="0"
                   value={noOfEpisodes}
                   onChange={handleNoOfEpisodesChange}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -155,6 +163,7 @@ const UploadBookForm = ({ closeModal }) => {
                       placeholder={`Episode ${index + 1} Title`}
                       value={ep.chapter_title}
                       onChange={(e) => handleEpisodeChange(index, 'chapter_title', e.target.value)}
+                      required
                     />
                     <input
                       type="text"
@@ -162,6 +171,7 @@ const UploadBookForm = ({ closeModal }) => {
                       placeholder={`Episode ${index + 1} Audio URL`}
                       value={ep.audio_link}
                       onChange={(e) => handleEpisodeChange(index, 'audio_link', e.target.value)}
+                      required
                     />
                     <input
                       type="text"
@@ -169,6 +179,7 @@ const UploadBookForm = ({ closeModal }) => {
                       placeholder={`Episode ${index + 1} Duration`}
                       value={ep.duration}
                       onChange={(e) => handleEpisodeChange(index, 'duration', e.target.value)}
+                      required
                     />
                     <input
                       type="text"
@@ -176,6 +187,7 @@ const UploadBookForm = ({ closeModal }) => {
                       placeholder={`Episode ${index + 1} Number`}
                       value={ep.episode_no}
                       onChange={(e) => handleEpisodeChange(index, 'episode_no', e.target.value)}
+                      required
                     />
                   </div>
                 ))}

@@ -6,9 +6,9 @@ import "../Assets/css/userprofilestyles.css";
 
 const UserBookUpload = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [data, setData] = useState([]);
   const [visibleCount, setVisibleCount] = useState(4);
   const [loadingStates, setLoadingStates] = useState({});
+  const [books, setBooks] = useState([]);  
   const navigate = useNavigate();
   
   const goToBook = (id) => {
@@ -41,6 +41,28 @@ const UserBookUpload = () => {
     }));
   };
 
+  const fetchBooks = () => {
+    axios.all([
+      axios.get("http://localhost:8080/user/uploadedbooks", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+    ])
+    .then(axios.spread((uploadedBooksResponse) => {
+      const uploadedBooks = uploadedBooksResponse.data;
+      setBooks(uploadedBooks)
+      const initialLoadingStates = {};
+      books.forEach(book => {
+        initialLoadingStates[book.id] = 'loading';
+      });
+      setLoadingStates(initialLoadingStates);
+    }))
+    .catch((error) => {
+      console.error('Error fetching books:', error);
+    });
+  };
+
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -48,23 +70,7 @@ const UserBookUpload = () => {
     link.id = "bootstrap-css";
     document.head.appendChild(link);
   
-    axios.get("http://localhost:8080/user/uploadedbooks", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => {
-        setData(res.data);
-        const initialLoadingStates = {};
-        console.log(data)
-        res.data.forEach(book => {
-          initialLoadingStates[book.id] = 'loading';
-        });
-        setLoadingStates(initialLoadingStates);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    fetchBooks();
   
     return () => {
       const existing = document.getElementById("bootstrap-css");
@@ -85,11 +91,11 @@ const UserBookUpload = () => {
                     <span className="plus-sign">+</span>
                   </button>
                 </h4>
-                {isModalOpen && (<UploadBookForm closeModal={closeModal} />)}
+                {isModalOpen && (<UploadBookForm closeModal={closeModal} fetchBooks={fetchBooks} />)}
               </div>
             </div>
             
-            {data.slice(0, visibleCount).map((book) => (
+            {books.slice(0, visibleCount).map((book) => (
               <div className="col-lg-3 col-sm-5" key={book.id}>
                 <div className="item">
                   <a onClick={() => goToBook(book.id)} style={{ cursor: 'pointer' }}>
@@ -127,7 +133,7 @@ const UserBookUpload = () => {
               </div>
             ))}
 
-            {visibleCount < data.length && (
+            {visibleCount < books.length && (
               <div className="col-lg-12">
                 <div className="main-button">
                   <a onClick={handleLoadMore} style={{ cursor: 'pointer' }}>

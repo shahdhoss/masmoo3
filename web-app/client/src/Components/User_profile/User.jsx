@@ -53,7 +53,9 @@ const User = () => {
     };
   }, [isModalOpen]);
   
+  
   return(
+    
     <div className="row">
       <div className="col-lg-12">
         <div className="page-content">
