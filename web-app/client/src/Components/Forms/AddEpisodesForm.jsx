@@ -68,7 +68,7 @@ const AddEpisodesForm = ({ closeEpisodesBookModal, bookId }) => {
           <form onSubmit={handleSubmit}>
             <div className="modal-body" style={{ maxHeight: '400px', overflowY: 'auto' }}>
               <div className="mb-3">
-                <label className="form-label">Number of Episodes</label>
+                <label className="form-label">Number of Episodes to be added</label>
                 <input
                   type="number"
                   className="form-control"

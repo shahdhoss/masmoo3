@@ -1,8 +1,6 @@
 import "../Assets/css/userprofilestyles.css"; 
 import profile from "../Assets/images/pfp_placeholder.png";
-import game1 from "../Assets/images/images/game-01.jpg";
-import game2 from "../Assets/images/images/game-02.jpg";
-import game3 from "../Assets/images/images/game-03.jpg";
+import placeholder from "../Assets/images/book-cover-placeholder.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import UserBookUpload from "./UserBookUpload";
@@ -13,6 +11,7 @@ const User = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState({});
   const [role, setRole] = useState(null)
+  const [numberofaddedbooks, setNumberOfAddedBooks] = useState(0);
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -46,13 +45,23 @@ const User = () => {
     })
     .catch((error) => {
       console.error("There was an error fetching the user data!", error);
+    }); 
+
+    axios.get("http://localhost:8080/user/numberofaddedbooks", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }). then((response) => {
+      setNumberOfAddedBooks(response.data.numberOfBooks);
+    })
+    .catch((error) => {
+      console.error("There was an error fetching the number of added books!", error);
     });
     return () => {
       const existing = document.getElementById("bootstrap-css");
       if (existing) existing.remove();
     };
   }, [isModalOpen]);
-  
   
   return(
     
@@ -68,7 +77,7 @@ const User = () => {
                   </div>
                   <div className="col-lg-4 align-self-center">
                     <div className="main-info header-text">
-                      <h3>{data["first_name"]} {data["last_name"]}</h3>
+                      <h4>{data["first_name"]} {data["last_name"]}</h4>
                       <p>{data["bio"]}</p>
                       <div className="main-button">
                       <a onClick={()=>openModal()}>Edit Info</a>
@@ -81,7 +90,7 @@ const User = () => {
                       <li>Favorited books<span>{data["fav_books"]}</span></li>
                       <li>Listen later<span>{data["listen_later"]}</span></li>
                       <li>Reviews<span>{data["reviews"]}</span></li>
-                      <li>Uploaded books<span>0</span></li>
+                      <li>Uploaded books<span>{numberofaddedbooks}</span></li>
                     </ul>
                   </div>
                 </div>
@@ -99,8 +108,8 @@ const User = () => {
               </div>
               <div className="item">
                 <ul>
-                  <li><img src={game1} alt="" className="templatemo-item"/></li>
-                  <li><h4>Dota 2</h4><span>Sandbox</span></li>
+                  <li><img src={placeholder} alt="" className="templatemo-item"/></li>
+                  <li><h4>1984</h4><span>Sandbox</span></li>
                   <li><h4>Date Added</h4><span>24/08/2036</span></li>
                   <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
                   <li><h4>Currently</h4><span>Downloaded</span></li>
@@ -109,8 +118,8 @@ const User = () => {
               </div>
               <div className="item last-item">
                 <ul>
-                  <li><img src={game3} alt="" className="templatemo-item"/></li>
-                  <li><h4>CS-GO</h4><span>Sandbox</span></li>
+                  <li><img src={placeholder} alt="" className="templatemo-item"/></li>
+                  <li><h4>Ketab 7ayaty</h4><span>Sandbox</span></li>
                   <li><h4>Date Added</h4><span>21/04/2022</span></li>
                   <li><h4>Hours Played</h4><span>632 H 46 Mins</span></li>
                   <li><h4>Currently</h4><span>Downloaded</span></li>

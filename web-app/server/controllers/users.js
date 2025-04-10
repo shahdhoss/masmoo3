@@ -97,3 +97,18 @@ exports.getBooksByUser = async (req, res) => {
         res.status(500).json({message: 'Internal server error'});
     }
 }
+
+exports.getNumberOfAddedBooks = async(req,res) =>{
+    try{
+        const user = await users.findOne({where: {id: req.user.id}});
+        if (!user) {
+            return res.status(404).json({message: 'User not found'});
+        }
+        const books = await audiobooks.findAll({where: {uploader_id: user.id}});
+        res.status(200).json({numberOfBooks: books.length});
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).json({message: 'Internal server error'});
+    }
+}
