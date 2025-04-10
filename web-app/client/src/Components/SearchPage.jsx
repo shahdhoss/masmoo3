@@ -25,17 +25,17 @@ const SearchPage = () => {
         ,[]
     )
     return (
-        <div className="p-15 space-y-8">
-            <FilterBar/>
-            <div className="flex justify-start space-x-10 flex-wrap space-y-12 ">
+        <div className="pt-8 space-y-8">
+            <FilterBar />
+            <div className="flex justify-center pt-15 xl:justify-start xl:pl-15 gap-10 flex-wrap">
             {
                 audioBooks.filter((audioBook) => {
-                    if(keyword === undefined) return true;
+                    if (keyword === undefined) return true;
                     return audioBook.title.toLowerCase().includes(keyword.toLowerCase()) ||
-                        audioBook.author.toLowerCase().includes(keyword.toLowerCase())
+                        audioBook.author.toLowerCase().includes(keyword.toLowerCase());
                 }).map((audioBook) => {
                     return (
-                     <SearchCard
+                        <SearchCard
                             id={audioBook.id}
                             key={audioBook.id}
                             img={audioBook.image}
@@ -43,7 +43,7 @@ const SearchPage = () => {
                             title={audioBook.title}
                             author={audioBook.author}
                         />
-                    )
+                    );
                 })
             }
             </div>
