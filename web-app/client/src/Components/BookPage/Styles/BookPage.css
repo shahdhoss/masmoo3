@@ -655,3 +655,32 @@
 .review-user-name {
   font-weight: 600;
 }
+/* Add these styles to your existing CSS */
+.book-rating {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.book-rating .rating-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.book-rating .star-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.average-rating {
+  margin-left: 8px;
+  font-weight: 600;
+  color: #faae2b;
+}
+
+.reviews-count {
+  margin-left: 4px;
+  color: #666;
+  font-size: 14px;
+}

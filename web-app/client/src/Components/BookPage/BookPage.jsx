@@ -298,6 +298,12 @@ const BookPage = () => {
     return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
   }
 
+  function calculateAverageRating() {
+    if (!reviews || reviews.length === 0) return 0
+    const sum = reviews.reduce((total, review) => total + review.rating, 0)
+    return (sum / reviews.length).toFixed(1)
+  }
+
   const getUserName = (userId) => {
     if (usersData[userId]) {
       return `${usersData[userId].first_name} ${usersData[userId].last_name}`
@@ -391,6 +397,25 @@ const BookPage = () => {
           <div className="book-meta">
             <div className="book-tags">
               <span className="tag genre">{book.category}</span>
+            </div>
+            <div className="book-rating">
+              <div className="rating-stars">
+                {[1, 2, 3, 4, 5].map((star) => {
+                  const averageRating = calculateAverageRating()
+                  const value = averageRating / 2 // Convert from 10-scale to 5-scale
+                  return (
+                    <Star
+                      key={star}
+                      className={`star-icon ${star <= value ? "active" : ""}`}
+                      fill={star <= value ? "#faae2b" : "none"}
+                      stroke={star <= value ? "#faae2b" : "currentColor"}
+                      size={18}
+                    />
+                  )
+                })}
+                <span className="average-rating">{calculateAverageRating()}/10</span>
+                <span className="reviews-count">({reviews.length} reviews)</span>
+              </div>
             </div>
           </div>
         </div>
