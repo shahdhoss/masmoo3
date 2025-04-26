@@ -11,10 +11,14 @@ import { Link } from "react-router-dom";
 
 const NavBar = ({ searchWord, setSearchWord }) => {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const [token, setToken] = useState(localStorage.getItem("token"))
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
+
+    const handleLogout = ()=>{
+        setToken(localStorage.removeItem("token"))
+    } 
 
     return (
         <div>
@@ -34,7 +38,7 @@ const NavBar = ({ searchWord, setSearchWord }) => {
                         <a href="/user" className="hidden sm:block">
                             <img src={profile} className="size-5" alt="Profile" />
                         </a>
-                        <a href="/login" className="hidden sm:block">
+                        <a href="/login" className="hidden sm:block" onClick={handleLogout}>
                             <img src={logout} className="size-5" alt="Logout" />
                         </a>
 
