@@ -1,6 +1,5 @@
 const initialiseReviews = async () => {
     try {
-      // Check if the reviews table exists, if not create it
       await db.sequelize.query(`
         CREATE TABLE IF NOT EXISTS reviews (
           id SERIAL PRIMARY KEY,
