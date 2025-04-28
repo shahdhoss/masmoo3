@@ -10,11 +10,11 @@ const reviewRouter = require('./routes/reviewRouter');
 const initialiseReviews = require("./initializeReviews.js")
 
 
-db.connectToMongo();
+// db.connectToMongo();
 
-//initialiseBooks(); // you can comment after initialising
+initialiseBooks(); // you can comment after initialising
 
-app.use(cors({origin:"http://localhost:3000"}))
+app.use(cors())
 app.use(express.json())
 
 app.use('/user', userRouter)
@@ -26,7 +26,7 @@ app.get('/',(req, res) => {
 
 db.sequelize.sync().then(() => {
       app.listen(8080, () => {
-            console.log(`Server is running on http://localhost:${port}`)
+            console.log(`Server is running on ${port}`)
       })
 }).catch((error) => {
       console.error('Unable to connect to the database:', error)

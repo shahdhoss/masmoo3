@@ -3,7 +3,7 @@ const path = require("path");
 const {audiobooks} = require("./models");
 
 // Directory containing parsed JSON files
-const parsedDataDir = path.join(__dirname, "../../parsed_book_data");
+const parsedDataDir = "./parsed_book_data";
 
 // Function to insert JSON data into the AudioBook collection
 const insertParsedData = async () => {
