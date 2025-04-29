@@ -58,6 +58,7 @@ exports.getUser = async (req, res) => {
             profile_pic= `data:${mime_type};base64,${profile_pic.toString('base64')}`
         }
         res.json({
+            id: user.id,
             first_name: user.first_name,
             last_name: user.last_name,
             bio: user.bio,
