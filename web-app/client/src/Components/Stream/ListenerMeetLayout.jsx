@@ -5,37 +5,7 @@ import Peer from "simple-peer";
 import { io } from "socket.io-client";
 import axios from 'axios';
 import Chat from "./Chat";
-
-const UserAvatar = ({ user }) => {
-  useEffect(()=>{
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-    link.id = "bootstrap-css";
-    document.head.appendChild(link);
-    return () => {
-      const existing = document.getElementById("bootstrap-css");
-      if (existing) existing.remove();
-    };
-  })
-  return (
-    <div className="d-flex flex-column align-items-center mb-4">
-      <div className="position-relative">
-        <img 
-          src={user.profile_pic} 
-          className="rounded-circle" 
-          alt={`${user.first_name}'s profile`}
-          style={{ width: '150px', height: '150px', objectFit: 'cover' }} // Increased width and height
-        />
-        {user.isSpeaking && (
-          <div className="position-absolute top-0 start-0 w-100 h-100 rounded-circle border border-2 border-success" 
-               style={{ animation: 'pulse 1.5s infinite' }}></div>
-        )}
-      </div>
-      <p className="mt-2 fw-medium">{user.first_name}</p>
-    </div>
-  );
-}
+import UserAvatar from "./UserAvatar";
 
 const SIGNALING_SERVER_URL = "http://localhost:8080";
 const ListenerMeetLayout = () => {
