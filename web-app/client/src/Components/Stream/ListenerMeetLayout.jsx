@@ -21,9 +21,9 @@ const UserAvatar = ({ user }) => {
     <div className="d-flex flex-column align-items-center mb-4">
       <div className="position-relative">
         <img 
-          src={user.picture} 
+          src={user.profile_pic} 
           className="rounded-circle" 
-          alt={`${user.name}'s profile`}
+          alt={`${user.first_name}'s profile`}
           style={{ width: '150px', height: '150px', objectFit: 'cover' }} // Increased width and height
         />
         {user.isSpeaking && (
@@ -31,7 +31,7 @@ const UserAvatar = ({ user }) => {
                style={{ animation: 'pulse 1.5s infinite' }}></div>
         )}
       </div>
-      <p className="mt-2 fw-medium">{user.name}</p>
+      <p className="mt-2 fw-medium">{user.first_name}</p>
     </div>
   );
 }
@@ -170,7 +170,6 @@ const ListenerMeetLayout = () => {
           socket.emit("peer:signal", streamerId, data);
         });
 
-        // Request peers list after connection
         socket.on("connect", () => {
           setTimeout(() => {
             socket.emit("get_peers");
@@ -179,7 +178,6 @@ const ListenerMeetLayout = () => {
         
         socket.on("peers_list", (peersList) => {
           console.log("peers list received: ", peersList);
-          // Filter out duplicates by ID
           const uniquePeers = [];
           const seenIds = new Set();
           
@@ -231,7 +229,6 @@ const ListenerMeetLayout = () => {
           console.error("Listener: Room name is not available in the URL.");
         }
       } else {
-        // Handle disconnection
         if (socketRef.current) {
           socketRef.current.disconnect();
         }

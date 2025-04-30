@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef, useActionState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Peer from "simple-peer";
 import { io } from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios';
+import {getSocket, disconnectSocket} from "../../socket_instance.js"
 
 const UserAvatar = ({ user }) => {
-  useEffect(()=>{
+  useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
@@ -16,7 +17,8 @@ const UserAvatar = ({ user }) => {
       const existing = document.getElementById("bootstrap-css");
       if (existing) existing.remove();
     };
-  })
+  }, []);
+  
   return (
     <div className="d-flex flex-column align-items-center mb-4">
       <div className="position-relative">
@@ -38,7 +40,7 @@ const UserAvatar = ({ user }) => {
 
 // Chat Component
 const Chat = () => {
-  useEffect(()=>{
+  useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
@@ -48,7 +50,8 @@ const Chat = () => {
       const existing = document.getElementById("bootstrap-css");
       if (existing) existing.remove();
     };
-  })
+  }, []);
+  
   const messages = [
     { user: 'Abhiraj', message: 'Hello everyone!', time: '10:45 AM' },
     { user: 'Sarah', message: 'Hi Abhiraj, how are you?', time: '10:46 AM' },
@@ -57,59 +60,60 @@ const Chat = () => {
 
   return (
     <div className="text-white d-flex flex-column" style={{ width: '300px', backgroundColor: "#FFFFFF" }}> 
-  <div className="p-3 border-bottom border-secondary" style={{ backgroundColor: "#FFFFFF" }}> 
-    <h5 style={{ color: "#343A40" }}>Chat</h5> 
-  </div>
+      <div className="p-3 border-bottom border-secondary" style={{ backgroundColor: "#FFFFFF" }}> 
+        <h5 style={{ color: "#343A40" }}>Chat</h5> 
+      </div>
 
-  <div className="flex-grow-1 overflow-auto p-3">
-    {messages.map((msg, idx) => (
-      <div key={idx} className={`d-flex ${msg.user === 'You' ? 'justify-content-end' : ''} mb-3`}>
-        <div
-          style={{
-            backgroundColor: msg.user === 'You' ? "#29ABE2" : "#F0F0F0",
-            color: "#343A40",
-            maxWidth: '80%',
-          }}
-          className="rounded p-2"
-        >
-          {msg.user !== 'You' && <p className="fw-medium small mb-1" style={{ color: "#343A40" }}>{msg.user}</p>} 
-          <p className="small mb-1">{msg.message}</p>
-          <p className="text-muted small mb-0 text-end">{msg.time}</p> 
+      <div className="flex-grow-1 overflow-auto p-3">
+        {messages.map((msg, idx) => (
+          <div key={idx} className={`d-flex ${msg.user === 'You' ? 'justify-content-end' : ''} mb-3`}>
+            <div
+              style={{
+                backgroundColor: msg.user === 'You' ? "#29ABE2" : "#F0F0F0",
+                color: "#343A40",
+                maxWidth: '80%',
+              }}
+              className="rounded p-2"
+            >
+              {msg.user !== 'You' && <p className="fw-medium small mb-1" style={{ color: "#343A40" }}>{msg.user}</p>} 
+              <p className="small mb-1">{msg.message}</p>
+              <p className="text-muted small mb-0 text-end">{msg.time}</p> 
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="p-3 border-top border-secondary" style={{ backgroundColor: "#FFFFFF" }}> 
+        <div className="d-flex">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Type a message..."
+            style={{ height: '40px', flexGrow: 1, backgroundColor: "#F8F9FA", color: "#343A40", borderColor: "#CED4DA" }}
+          />
+          <button className="btn btn-primary ms-2" style={{ height: '40px', backgroundColor: "#00C7BE", borderColor: "#00C7BE" }}>
+            <i className="bi bi-send"></i>
+          </button>
         </div>
       </div>
-    ))}
-  </div>
-
-  <div className="p-3 border-top border-secondary" style={{ backgroundColor: "#FFFFFF" }}> {/* White Input Background */}
-    <div className="d-flex">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Type a message..."
-        style={{ height: '40px', flexGrow: 1, backgroundColor: "#F8F9FA", color: "#343A40", borderColor: "#CED4DA" }} // Light Gray Input, Dark Text
-      />
-      <button className="btn btn-primary ms-2" style={{ height: '40px', backgroundColor: "#00C7BE", borderColor: "#00C7BE" }}> {/* Vibrant Teal Send Button */}
-        <i className="bi bi-send"></i>
-      </button>
     </div>
-  </div>
-</div>
   );
 };
-const SIGNALING_SERVER_URL = "http://localhost:8080";
+
 
 const StreamerMeetLayout = () => {
   const { roomName } = useParams();
-  const [isStreaming, setIsStreaming] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const [streamId, setStreamId] = useState(roomName);
   const [myStream, setMyStream] = useState(null);
   const [listeners, setListeners] = useState([]);
   const [userData, setUserData] = useState({});
   const peers = useRef({});
   const socketRef = useRef(null);
+  const audioTrackRef = useRef(null);
   const navigate = useNavigate();
+  const socketInitialized = useRef(false);
 
-  // Load user data and Bootstrap CSS
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -131,100 +135,72 @@ const StreamerMeetLayout = () => {
     }
   }, []);
 
-  // Set up streaming and socket connections
+
   useEffect(() => {
-    if (!isStreaming || !streamId) return;
+    if (!streamId || !userData?.id || socketInitialized.current) return;
+    socketInitialized.current = true;
 
     let stream;
+    const socket = getSocket();
+
     const setupStreaming = async () => {
       try {
         stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         setMyStream(stream);
+        audioTrackRef.current = stream.getAudioTracks()[0];
 
-        const socket = io(SIGNALING_SERVER_URL);
+        socket.connect(); 
         socketRef.current = socket;
 
-        // Register user data as soon as connected
         socket.on("connect", () => {
-          console.log(`Streamer connected with socket ID: ${socket.id}`);
-          
-          // Register user data first before joining room
+          console.log(`Connected with socket ID: ${socket.id}`);
           socket.emit("register_user", {
             id: userData.id,
             first_name: userData.first_name || "Streamer",
             profile_pic: userData.profile_pic || "",
           });
-          
-          // Then join the room
           socket.emit("room:join", streamId);
           socket.emit("room:streamer-connected", socket.id);
         });
 
         socket.on("room:listener-joined", (listenerId, listenerInfo) => {
-          console.log(`New listener joined: ${listenerId}`);
-          console.log("listener info: ", listenerInfo);
-
-          // Safely add listener with fallbacks for missing data
+          console.log("Listener joined: ", listenerInfo);
           setListeners(prev => {
             if (prev.some(l => l.socketId === listenerId)) return prev;
-            
-            return [
-              ...prev,
-              {
-                id: listenerInfo?.id || listenerId,
-                socketId: listenerId,
-                name: listenerInfo?.first_name || `User ${listenerId.slice(0, 4)}`,
-                picture: listenerInfo?.profile_pic || "",
-                isSpeaking: false
-              }
-            ];
+            return [...prev, {
+              id: listenerInfo?.id || listenerId,
+              socketId: listenerId,
+              name: listenerInfo?.first_name || `User ${listenerId.slice(0, 4)}`,
+              picture: listenerInfo?.profile_pic || "",
+              isSpeaking: false,
+            }];
           });
 
           if (!peers.current[listenerId]) {
-            const peer = new Peer({
-              initiator: true,
-              stream: stream,
-            });
-
-            peer.on("signal", (data) => {
-              socket.emit("peer:signal", listenerId, data);
-            });
-
-            peer.on("connect", () => {
-              console.log(`Connected to listener ${listenerId}`);
-            });
-
-            peer.on("error", (err) => {
-              console.error(`Peer error with ${listenerId}`, err);
-            });
-
+            const peer = new Peer({ initiator: true, stream });
+            peer.on("signal", data => socket.emit("peer:signal", listenerId, data));
+            peer.on("connect", () => console.log(`Connected to ${listenerId}`));
+            peer.on("error", err => console.error(`Peer error ${listenerId}:`, err));
             peers.current[listenerId] = peer;
           }
         });
 
         socket.on("room:listener-left", (listenerId) => {
-          console.log(`Listener left: ${listenerId}`);
-          
+          console.log("Listener left: ", listenerId);
           setListeners(prev => prev.filter(l => l.socketId !== listenerId));
-        
           if (peers.current[listenerId]) {
             peers.current[listenerId].destroy();
             delete peers.current[listenerId];
           }
         });
-        
+
         socket.on("peer:signal", (originId, data) => {
           const peer = peers.current[originId];
-          if (peer) {
-            peer.signal(data);
-          } else {
-            console.warn(`No peer found for signal from ${originId}`);
-          }
+          if (peer) peer.signal(data);
+          else console.warn(`No peer for ${originId}`);
         });
       } catch (err) {
-        console.error("Streamer setup failed:", err);
-        setIsStreaming(false);
-        setMyStream(null);
+        console.error("Setup failed:", err);
         if (socketRef.current) socketRef.current.disconnect();
       }
     };
@@ -232,80 +208,72 @@ const StreamerMeetLayout = () => {
     setupStreaming();
 
     return () => {
-      if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-      }
-
-      if (socketRef.current) {
-        socketRef.current.disconnect();
-      }
-
-      Object.values(peers.current).forEach(peer => peer.destroy());
+      socketInitialized.current = false;
+      if (stream) stream.getTracks().forEach(t => t.stop());
+      disconnectSocket();
+      Object.values(peers.current).forEach(p => p.destroy());
       peers.current = {};
-      setMyStream(null);
       setListeners([]);
+      setMyStream(null);
     };
-  }, [isStreaming, streamId, userData]);
+  }, [streamId, userData]);
 
-  const startStream = () => {
-    setIsStreaming(true);
+  const toggleMute = () => {
+    if (audioTrackRef.current) {
+      audioTrackRef.current.enabled = isMuted;
+      setIsMuted(!isMuted);
+    }
   };
 
-  const stopStream = () => {
-    setIsStreaming(false);
-    setStreamId("");
+  const handleGoHome = () => {
+    navigate("/");
   };
-
+  
   const streamer = {
     name: userData.first_name || "Streamer",
     picture: userData.profile_pic || "",
-    isSpeaking: true
+    isSpeaking: !isMuted
   };
   
-  const handleGoHome = () => {
-    navigate("/home")
-  }
-  
   const users = [streamer, ...listeners];
-  console.log("users: ", users)
+  console.log("users: ", users);
   
   return (
-   <div className="d-flex vh-100 overflow-hidden" style={{ backgroundColor: "#F8F9FA" }}>
-    <div className="d-flex flex-column flex-grow-1">
-      <div className="flex-grow-1 overflow-auto p-4">
-        <div className="row g-4">
-          {users.map((user, idx) => (
-            <div key={idx} className="col-6 col-md-4 col-lg-3">
-              <UserAvatar user={user} />
-            </div>
-          ))}
+    <div className="d-flex vh-100 overflow-hidden" style={{ backgroundColor: "#F8F9FA" }}>
+      <div className="d-flex flex-column flex-grow-1">
+        <div className="flex-grow-1 overflow-auto p-4">
+          <div className="row g-4">
+            {users.map((user, idx) => (
+              <div key={idx} className="col-6 col-md-4 col-lg-3">
+                <UserAvatar user={user} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="p-3 d-flex justify-content-center gap-3" style={{ backgroundColor: "#FFFFFF" }}>
+          <button
+            onClick={toggleMute}
+            className="btn rounded-circle"
+            style={{
+              width: '60px',
+              height: '60px',
+              backgroundColor: isMuted ? "#FF6B6B" : "#29ABE2",
+              color: "#FFFFFF",
+            }}
+          >
+            <i className={`bi ${isMuted ? "bi-mic-mute" : "bi-mic"} fs-4`}></i>
+          </button>
+          <button 
+            onClick={handleGoHome}
+            className="btn btn-danger rounded-circle d-flex align-items-center justify-content-center"
+            style={{ width: '60px', height: '60px', backgroundColor: "#FF6B6B", color: "#FFFFFF" }}
+          >
+            <i className="bi bi-box-arrow-right fs-4"></i>
+          </button>
         </div>
       </div>
-      <div className="p-3 d-flex justify-content-center gap-3" style={{ backgroundColor: "#FFFFFF" }}>
-        <button
-          onClick={startStream}
-          disabled={isStreaming}
-          className="btn rounded-circle"
-          style={{
-            width: '60px',
-            height: '60px',
-            backgroundColor: isStreaming ? "#B0E0E6" : "#29ABE2",
-            color: "#FFFFFF",
-          }}
-        >
-          <i className="bi bi-mic fs-4"></i>
-        </button>
-        <button 
-          onClick={handleGoHome}
-          className="btn btn-danger rounded-circle d-flex align-items-center justify-content-center"
-          style={{ width: '60px', height: '60px', backgroundColor: "#FF6B6B", color: "#FFFFFF" }}
-        >
-          <i className="bi bi-box-arrow-right fs-4"></i>
-        </button>
-      </div>
+      <Chat style={{ backgroundColor: "#FFFFFF" }} />
     </div>
-    <Chat style={{ backgroundColor: "#FFFFFF" }} />
-  </div>
   );
 };
 
