@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Peer from "simple-peer";
-import { io } from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios';
 import {getSocket, disconnectSocket} from "../../socket_instance.js"
+import Chat from "./Chat.jsx";
 
 const UserAvatar = ({ user }) => {
   useEffect(() => {
@@ -37,70 +37,6 @@ const UserAvatar = ({ user }) => {
     </div>
   );
 }
-
-// Chat Component
-const Chat = () => {
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-    link.id = "bootstrap-css";
-    document.head.appendChild(link);
-    return () => {
-      const existing = document.getElementById("bootstrap-css");
-      if (existing) existing.remove();
-    };
-  }, []);
-  
-  const messages = [
-    { user: 'Abhiraj', message: 'Hello everyone!', time: '10:45 AM' },
-    { user: 'Sarah', message: 'Hi Abhiraj, how are you?', time: '10:46 AM' },
-    { user: 'You', message: 'Welcome to the meeting!', time: '10:47 AM' }
-  ];
-
-  return (
-    <div className="text-white d-flex flex-column" style={{ width: '300px', backgroundColor: "#FFFFFF" }}> 
-      <div className="p-3 border-bottom border-secondary" style={{ backgroundColor: "#FFFFFF" }}> 
-        <h5 style={{ color: "#343A40" }}>Chat</h5> 
-      </div>
-
-      <div className="flex-grow-1 overflow-auto p-3">
-        {messages.map((msg, idx) => (
-          <div key={idx} className={`d-flex ${msg.user === 'You' ? 'justify-content-end' : ''} mb-3`}>
-            <div
-              style={{
-                backgroundColor: msg.user === 'You' ? "#29ABE2" : "#F0F0F0",
-                color: "#343A40",
-                maxWidth: '80%',
-              }}
-              className="rounded p-2"
-            >
-              {msg.user !== 'You' && <p className="fw-medium small mb-1" style={{ color: "#343A40" }}>{msg.user}</p>} 
-              <p className="small mb-1">{msg.message}</p>
-              <p className="text-muted small mb-0 text-end">{msg.time}</p> 
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="p-3 border-top border-secondary" style={{ backgroundColor: "#FFFFFF" }}> 
-        <div className="d-flex">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Type a message..."
-            style={{ height: '40px', flexGrow: 1, backgroundColor: "#F8F9FA", color: "#343A40", borderColor: "#CED4DA" }}
-          />
-          <button className="btn btn-primary ms-2" style={{ height: '40px', backgroundColor: "#00C7BE", borderColor: "#00C7BE" }}>
-            <i className="bi bi-send"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
 const StreamerMeetLayout = () => {
   const { roomName } = useParams();
   const [isMuted, setIsMuted] = useState(false);
@@ -111,8 +47,8 @@ const StreamerMeetLayout = () => {
   const peers = useRef({});
   const socketRef = useRef(null);
   const audioTrackRef = useRef(null);
-  const navigate = useNavigate();
-  const socketInitialized = useRef(false);
+  const navigate = useNavigate()
+  const socketInitialized = useRef(false)
 
   useEffect(() => {
     const link = document.createElement("link");
@@ -193,7 +129,7 @@ const StreamerMeetLayout = () => {
             delete peers.current[listenerId];
           }
         });
-
+        
         socket.on("peer:signal", (originId, data) => {
           const peer = peers.current[originId];
           if (peer) peer.signal(data);
@@ -228,6 +164,7 @@ const StreamerMeetLayout = () => {
   const handleGoHome = () => {
     navigate("/");
   };
+  
   
   const streamer = {
     name: userData.first_name || "Streamer",
@@ -272,7 +209,7 @@ const StreamerMeetLayout = () => {
           </button>
         </div>
       </div>
-      <Chat style={{ backgroundColor: "#FFFFFF" }} />
+      <Chat style={{ backgroundColor: "#FFFFFF" }} socketRef={socketRef} streamId={streamId} userId={userData.id}/>
     </div>
   );
 };
