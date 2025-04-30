@@ -37,6 +37,7 @@ const UserAvatar = ({ user }) => {
     </div>
   );
 }
+
 const StreamerMeetLayout = () => {
   const { roomName } = useParams();
   const [isMuted, setIsMuted] = useState(false);
@@ -47,8 +48,7 @@ const StreamerMeetLayout = () => {
   const peers = useRef({});
   const socketRef = useRef(null);
   const audioTrackRef = useRef(null);
-  const navigate = useNavigate()
-  const socketInitialized = useRef(false)
+  const navigate = useNavigate();
 
   useEffect(() => {
     const link = document.createElement("link");
@@ -73,18 +73,18 @@ const StreamerMeetLayout = () => {
 
 
   useEffect(() => {
-    if (!streamId || !userData?.id || socketInitialized.current) return;
-    socketInitialized.current = true;
+    if (!streamId || !userData?.id) return;
 
     let stream;
-    const socket = getSocket();
-
+    let socket;
+    
     const setupStreaming = async () => {
       try {
         stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         setMyStream(stream);
         audioTrackRef.current = stream.getAudioTracks()[0];
 
+        socket = getSocket();
         socket.connect(); 
         socketRef.current = socket;
 
@@ -137,22 +137,38 @@ const StreamerMeetLayout = () => {
         });
       } catch (err) {
         console.error("Setup failed:", err);
-        if (socketRef.current) socketRef.current.disconnect();
+        cleanupResources(socket, stream);
       }
     };
 
     setupStreaming();
 
     return () => {
-      socketInitialized.current = false;
-      if (stream) stream.getTracks().forEach(t => t.stop());
-      disconnectSocket();
-      Object.values(peers.current).forEach(p => p.destroy());
-      peers.current = {};
-      setListeners([]);
-      setMyStream(null);
+      cleanupResources(socketRef.current, stream);
     };
-  }, [streamId, userData]);
+  }, [streamId, userData?.id]);
+
+  const cleanupResources = (socket, stream) => {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+    }
+    
+    Object.values(peers.current).forEach(peer => {
+      if (peer && typeof peer.destroy === 'function') {
+        peer.destroy();
+      }
+    });
+    peers.current = {};
+    
+    if (socket) {
+      socket.disconnect();
+    }
+    
+    disconnectSocket();
+    
+    setListeners([]);
+    setMyStream(null);
+  };
 
   const toggleMute = () => {
     if (audioTrackRef.current) {
@@ -162,9 +178,9 @@ const StreamerMeetLayout = () => {
   };
 
   const handleGoHome = () => {
+    cleanupResources(socketRef.current);
     navigate("/");
   };
-  
   
   const streamer = {
     name: userData.first_name || "Streamer",
@@ -173,7 +189,6 @@ const StreamerMeetLayout = () => {
   };
   
   const users = [streamer, ...listeners];
-  console.log("users: ", users);
   
   return (
     <div className="d-flex vh-100 overflow-hidden" style={{ backgroundColor: "#F8F9FA" }}>
