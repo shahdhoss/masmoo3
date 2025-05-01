@@ -32,7 +32,7 @@ const NavBar = ({ searchWord, setSearchWord }) => {
                 <div className="flex justify-center items-center space-x-4">
                     <PlayBack />
                     <div className="flex justify-between items-center space-x-5 pe-10 shrink-0">
-                        <a href="/offline" className="sm:block">
+                        <a href="/offline" className="hidden sm:block">
                             <img src={download} className="size-5" alt="Download" />
                         </a>
                         <a href="/user" className="hidden sm:block">
