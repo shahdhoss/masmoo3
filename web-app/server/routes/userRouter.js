@@ -1,5 +1,5 @@
 const express = require('express')
-const {createUser, loginUser, getUser,updateUser, getBooksByUser, getNumberOfAddedBooks} = require('../controllers/users')
+const {createUser, loginUser, getUser,updateUser, getBooksByUser, getNumberOfAddedBooks} = require('../controllers/users.js')
 const {authenticateToken} = require('../middleware')
 const multer = require('multer')
 const upload = multer({ storage: multer.memoryStorage() });
