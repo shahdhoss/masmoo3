@@ -16,7 +16,6 @@ const db = {};
 
 
 
-console.log(env);
 const mongoose = require('mongoose');
 
 const connectToMongo = async () => {
@@ -32,14 +31,8 @@ const connectToMongo = async () => {
 
 
 let sequelize;
-console.log(config);
 if(env == 'production') sequelize = new Sequelize(process.env.PG_URI);
-else
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+else sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 fs
   .readdirSync(__dirname)
