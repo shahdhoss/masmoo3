@@ -7,7 +7,7 @@ const Sequelize = require('sequelize');
 const process = require('process');
 
 dotenv.config();
-
+console.log(`${env} mode !`)
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config.js')[env] ||
@@ -39,10 +39,11 @@ const connectToMongo = async () => {
 
 let sequelize;
 if(env == 'production') {
-  console.log('here');
   sequelize = new Sequelize(process.env.PG_URI);
 }
-else sequelize = new Sequelize(config.database, config.username, config.password, config);
+else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
 
 fs
   .readdirSync(__dirname)

@@ -20,8 +20,8 @@ const io = new Server(server, {
 });
 const port = 8080;
 
-db.connectToMongo();
-initialiseBooks();
+// db.connectToMongo();
+// initialiseBooks();
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
