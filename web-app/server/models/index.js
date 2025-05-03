@@ -10,10 +10,16 @@ dotenv.config();
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require('../config/config.js')[env];
+const config = require('../config/config.js')[env] ||
+{"username": null,
+    "password": null,
+    "database": null,
+    "host": null,
+    "dialect":null
+};
+
 const db = {};
 
-console.log(config);
 
 
 
