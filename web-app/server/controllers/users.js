@@ -1,5 +1,3 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 const {users, audiobooks} = require('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');

@@ -17,4 +17,11 @@ module.exports = {
       
       }
   },
+  "production": {
+    "username": null,
+    "password": null,
+    "database": null,
+    "host": null,
+    "dialect":null
+  },
 }
