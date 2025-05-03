@@ -37,7 +37,7 @@ const BookPage = () => {
         const decodedToken = jwtDecode(token)
         setUserData(decodedToken)
 
-        fetch("http://localhost:8080/user/me", {
+        fetch("key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -78,7 +78,7 @@ const BookPage = () => {
 
     const fetchBook = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/audiobook/${id}`, {
+        const response = await fetch(`https://key-gertrudis-alhusseain-8243cb58.koyeb.app/audiobook/${id}`, {
           signal,
           headers: token
             ? {
@@ -126,7 +126,7 @@ const BookPage = () => {
       const token = localStorage.getItem("token")
 
       try {
-        const response = await fetch(`http://localhost:8080/reviews/book/${id}`, {
+        const response = await fetch(`https://key-gertrudis-alhusseain-8243cb58.koyeb.app/reviews/book/${id}`, {
           headers: token
             ? {
                 Authorization: `Bearer ${token}`,
@@ -266,7 +266,7 @@ const BookPage = () => {
       const currentDate = new Date().toISOString()
       const token = localStorage.getItem("token")
 
-      const response = await fetch("http://localhost:8080/reviews", {
+      const response = await fetch("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

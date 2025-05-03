@@ -13,7 +13,7 @@ const SearchPage = () => {
 
             async function fetchAudioBooks() {
                 try {
-                    const response = await axios.get("http://localhost:8080/audiobook")
+                    const response = await axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/audiobook")
                     setAudioBooks(response.data)
                     console.log("fetched")
                 } catch (error) {
