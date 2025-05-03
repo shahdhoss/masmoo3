@@ -7,10 +7,10 @@ const Sequelize = require('sequelize');
 const process = require('process');
 
 dotenv.config();
-console.log(`${env} mode !`)
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config.js')[env] ||
+
 {"username": null,
     "password": null,
     "database": null,
@@ -18,6 +18,7 @@ const config = require('../config/config.js')[env] ||
     "dialect":'postgres'
 };
 
+console.log(`${env} mode !`)
 const db = {};
 
 
