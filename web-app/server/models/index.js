@@ -15,7 +15,7 @@ const config = require('../config/config.js')[env] ||
     "password": null,
     "database": null,
     "host": null,
-    "dialect":null
+    "dialect":'postgres'
 };
 
 const db = {};
@@ -38,7 +38,10 @@ const connectToMongo = async () => {
 
 
 let sequelize;
-if(env == 'production') sequelize = new Sequelize(process.env.PG_URI);
+if(env == 'production') {
+  console.log('here');
+  sequelize = new Sequelize(process.env.PG_URI);
+}
 else sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 fs
