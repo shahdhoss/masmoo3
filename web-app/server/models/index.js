@@ -40,6 +40,7 @@ const connectToMongo = async () => {
 
 let sequelize;
 if(env == 'production') {
+  console.log(`connecting to ${process.env.PG_URI}`);
   sequelize = new Sequelize(process.env.PG_URI);
 }
 else {
