@@ -1,14 +1,17 @@
 const CACHE_NAME = 'cache-v1';
-importScripts('./cache-manifest.js');
+importScripts('./cache-manifest.js'); 
+const OFFLINE_URL = '/index.html';
 
 self.addEventListener('install', (event) => {
   console.log('SW installing...');
-
-  self.skipWaiting(); 
+  self.skipWaiting();
 
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(FILES_TO_CACHE);
+      const filesToCache = [FILES_TO_CACHE,'/'];
+      return cache.addAll(filesToCache).catch(err => {
+        console.error('Failed to cache some files:', err);
+      });
     })
   );
 });
@@ -32,9 +35,26 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log('SW fetching:', event.request.url);
 
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') return;
+  
+  // Handle navigation requests
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => {
+          return caches.match(OFFLINE_URL) 
+            .then(response => {
+              return response || caches.match('/') || new Response('Offline fallback');
+            });
+        })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request); 
+      return cachedResponse || fetch(event.request);
     })
   );
 });

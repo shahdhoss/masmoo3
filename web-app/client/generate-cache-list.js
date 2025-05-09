@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BUILD_DIR = path.join(__dirname, 'build');
-const OUTPUT_FILE = path.join(__dirname, 'src', 'cache-manifest.js');
+const OUTPUT_FILE = path.join(__dirname, 'public', 'cache-manifest.js');
 const IGNORE_FILES = [/\.map$/, /sw\.js$/, /precache-manifest\./];
 
 const getFiles = (dir) => {
