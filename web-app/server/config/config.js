@@ -1,4 +1,5 @@
-{
+const pg = require('pg')
+module.exports = {
   "development": {
     "username": "postgres",
     "password": "1234",
@@ -11,13 +12,16 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      
+      }
   },
   "production": {
-    "username": "root",
+    "username": null,
     "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  }
+    "database": null,
+    "host": null,
+    "dialect":null
+  },
 }

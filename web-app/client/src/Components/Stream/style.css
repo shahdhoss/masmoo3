@@ -1,0 +1,12 @@
+/* styles.css */
+.btn-primary {
+    --bs-btn-bg: #a7c9fa;
+    --bs-btn-border-color: #a7c9fa;
+    --bs-btn-hover-bg: #8ab4f8;
+    --bs-btn-hover-border-color: #8ab4f8;
+    --bs-btn-active-bg: #709df6;
+    --bs-btn-active-border-color: #709df6;
+  }
+  .text-primary {
+    color: #a7c9fa !important;
+  }

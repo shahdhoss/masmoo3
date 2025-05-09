@@ -1,1 +1,3 @@
 web-app/node_modules
+web-app/server/.env
+web-app/server/node_modules

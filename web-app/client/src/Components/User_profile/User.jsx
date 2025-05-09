@@ -6,12 +6,15 @@ import { useEffect, useState } from "react";
 import UserBookUpload from "./UserBookUpload";
 import {jwtDecode} from 'jwt-decode';
 import EditProfileForm from "../Forms/EditProfileForm";
+import { useNavigate } from 'react-router-dom';
+
 
 const User = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState({});
   const [role, setRole] = useState(null)
   const [numberofaddedbooks, setNumberOfAddedBooks] = useState(0);
+  const navigate = useNavigate();
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -73,15 +76,21 @@ const User = () => {
               <div className="main-profile ">
                 <div className="row">
                   <div className="col-lg-3">
-                    <img src= {data["profile_pic"] || profile}  alt="" style={{ borderRadius: '23px' }}/>
+                  <img
+                    src={data["profile_pic"] || profile}
+                    alt="Profile"
+                    style={{ borderRadius: '23px' }}
+                  />
+                 
                   </div>
                   <div className="col-lg-4 align-self-center">
                     <div className="main-info header-text">
                       <h4>{data["first_name"]} {data["last_name"]}</h4>
                       <p>{data["bio"]}</p>
                       <div className="main-button">
-                      <a onClick={()=>openModal()}>Edit Info</a>
-                      {isModalOpen && (<EditProfileForm closeModal={closeModal} />)}                      
+                      <a onClick={()=>openModal()} style={{ marginRight: '10px' }}>Edit Info</a>
+                      <a  onClick={()=> navigate("/stream")}>Go live</a>
+                      {isModalOpen && (<EditProfileForm closeModal={closeModal} data= {data}/>)}                      
                       </div>
                     </div>
                   </div>
