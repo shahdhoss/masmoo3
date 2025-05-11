@@ -391,23 +391,7 @@ const BookPage = () => {
         <div className="book-info">
           <h1 className="book-title">{book.title}</h1>
           
-          {/* Add this button right here */}
-          <button 
-            onClick={logBookData}
-            style={{
-              padding: "8px 12px",
-              backgroundColor: "#faae2b",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              marginTop: "10px",
-              marginBottom: "10px",
-              cursor: "pointer",
-              fontWeight: "bold"
-            }}
-          >
-            LOG TRACKING DATA
-          </button>
+         
           
           <p className="book-author">
             {book.author_first_name} {book.author_last_name}
