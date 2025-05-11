@@ -1,0 +1,173 @@
+/* Spotify-inspired Home page styling */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  color: #121212;
+}
+
+/* Remove the welcome header styling */
+.welcome-header {
+  display: none; /* Hide the welcome header completely */
+}
+
+/* Enhanced recommendation notice with wave pattern */
+.recommendation-notice {
+  background: linear-gradient(135deg, #faae2b 0%, #f4be60 100%);
+  padding: 32px;
+  border-radius: 12px;
+  margin-bottom: 48px;
+  color: #333;
+  box-shadow: 0 8px 24px rgba(250, 174, 43, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.recommendation-notice::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'/%3E%3C/svg%3E")
+    no-repeat;
+  background-size: cover;
+}
+
+.recommendation-notice h2 {
+  font-size: 28px;
+  font-weight: 900; /* Bolder text */
+  margin-bottom: 12px;
+  color: #333;
+  margin-top: -5px; /* Move text upwards */
+}
+
+.recommendation-notice p {
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 80%;
+  font-weight: 600; /* Make paragraph text bolder too */
+  margin-top: -2px; /* Move paragraph text upwards slightly */
+}
+
+/* Enhanced section headers with decorative elements */
+.recommendation-section {
+  margin-bottom: 60px;
+}
+
+.recommendation-section h2 {
+  font-size: 15px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  color: #121212;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.recommendation-section h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #faae2b 0%, rgba(250, 174, 43, 0.1) 100%);
+}
+
+.recommendation-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #faae2b;
+  border-radius: 4px;
+}
+
+.section-title-icon {
+  margin-right: 12px;
+  font-size: 24px;
+  background: linear-gradient(135deg, #faae2b 0%, #f4be60 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+/* Keep the original books grid styling */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Loading animation */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #faae2b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.loading-container p {
+  font-size: 18px;
+  color: #555;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recommendation-notice {
+    padding: 24px;
+  }
+
+  .recommendation-notice p {
+    max-width: 100%;
+  }
+
+  .recommendation-section h2 {
+    font-size: 22px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendation-notice h2 {
+    font-size: 22px;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title-icon {
+    font-size: 20px;
+  }
+}

@@ -235,4 +235,50 @@
       padding: 5px;
     }
   }
-  
+  /* Add these styles to handle the fully hidden state */
+.mini-player.hidden {
+  transform: translateY(100%);
+}
+
+/* Small floating button that appears when player is hidden */
+.mini-player-restore {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #faae2b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: none;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.mini-player-restore:hover {
+  transform: translateY(-3px);
+}
+
+.mini-player-restore.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Add a hide button next to the expand button */
+.mini-player-hide {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  padding: 8px;
+  margin-left: 8px;
+}
+
+.mini-player-hide:hover {
+  color: #faae2b;
+}
