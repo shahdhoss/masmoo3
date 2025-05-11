@@ -30,7 +30,7 @@ const User = () => {
     link.id = "bootstrap-css";
     document.head.appendChild(link);
 
-    axios.get("http://localhost:8080/user/me", {
+    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -50,7 +50,7 @@ const User = () => {
       console.error("There was an error fetching the user data!", error);
     }); 
 
-    axios.get("http://localhost:8080/user/numberofaddedbooks", {
+    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/numberofaddedbooks", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

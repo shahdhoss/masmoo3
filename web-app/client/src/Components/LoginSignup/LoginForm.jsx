@@ -27,7 +27,7 @@ const LoginForm = () => {
       alert('Password must be at least 6 characters long');
       return;
     }
-    axios.post("http://localhost:8080/user/login", {
+    axios.post("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/login", {
       email: formData.email,
       password: formData.password,
     })

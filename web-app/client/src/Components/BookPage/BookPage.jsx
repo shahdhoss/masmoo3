@@ -5,8 +5,23 @@ import { useParams } from "react-router-dom"
 import { processDescription } from "./Styles/text-helpers"
 import "./Styles/BookPage.css"
 import { jwtDecode } from "jwt-decode"
-import { Star } from "lucide-react"
+import { Star } from 'lucide-react'
 import AudioPlayer from "./audio-player"
+
+// Cookie utility functions
+const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+const setCookie = (name, value, days = 30) => {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
+}
 
 const BookPage = () => {
   const { id } = useParams()
@@ -24,6 +39,85 @@ const BookPage = () => {
   const [userData, setUserData] = useState(null)
   const [usersData, setUsersData] = useState({})
   const isInitialMount = useRef(true)
+  
+  // Function to track book visit in cookies
+  const trackBookVisit = (bookData) => {
+    if (!bookData) return;
+    
+    // Get existing tracking data from cookies or initialize
+    let languageCounts = {};
+    let authorCounts = {};
+    let categoryCounts = {};
+    
+    // Try to get existing data
+    try {
+      const languageData = getCookie('book_languages');
+      const authorData = getCookie('book_authors');
+      const categoryData = getCookie('book_categories');
+      
+      languageCounts = languageData ? JSON.parse(languageData) : {};
+      authorCounts = authorData ? JSON.parse(authorData) : {};
+      categoryCounts = categoryData ? JSON.parse(categoryData) : {};
+    } catch (error) {
+      console.error('Error parsing cookie data:', error);
+      // Reset if there's an error
+      languageCounts = {};
+      authorCounts = {};
+      categoryCounts = {};
+    }
+    
+    // Update counts
+    const language = bookData.language || 'unknown';
+    const author = bookData.author || `${bookData.author_first_name || ''} ${bookData.author_last_name || ''}`.trim();
+    const category = bookData.category || 'unknown';
+    
+    languageCounts[language] = (languageCounts[language] || 0) + 1;
+    authorCounts[author] = (authorCounts[author] || 0) + 1;
+    categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    
+    // Save updated counts back to cookies
+    setCookie('book_languages', JSON.stringify(languageCounts));
+    setCookie('book_authors', JSON.stringify(authorCounts));
+    setCookie('book_categories', JSON.stringify(categoryCounts));
+    
+    console.log('Updated tracking data:', {
+      languages: languageCounts,
+      authors: authorCounts,
+      categories: categoryCounts
+    });
+    
+    return {
+      languages: languageCounts,
+      authors: authorCounts,
+      categories: categoryCounts
+    };
+  }
+  
+  // Function to log book data and tracking info
+  const logBookData = () => {
+    if (!book) return;
+    
+    console.log("BOOK DATA:", book);
+    
+    // Get current tracking data
+    try {
+      const languageData = getCookie('book_languages');
+      const authorData = getCookie('book_authors');
+      const categoryData = getCookie('book_categories');
+      
+      const trackingData = {
+        languages: languageData ? JSON.parse(languageData) : {},
+        authors: authorData ? JSON.parse(authorData) : {},
+        categories: categoryData ? JSON.parse(categoryData) : {}
+      };
+      
+      console.log("TRACKING DATA:", trackingData);
+      alert("Book and tracking data logged to console. Press F12 to view.");
+    } catch (error) {
+      console.error('Error parsing cookie data:', error);
+      alert("Error reading tracking data. See console for details.");
+    }
+  }
 
   useEffect(() => {
     const token = localStorage.getItem("token")
@@ -88,6 +182,9 @@ const BookPage = () => {
 
         if (isMounted) {
           setBook(data)
+          
+          // Track this book visit
+          trackBookVisit(data);
 
           if (data.episodes && data.episodes.length > 0) {
             const firstEpisode = data.episodes.find((ep) => ep.episode_no === 0) || data.episodes[0]
@@ -137,9 +234,9 @@ const BookPage = () => {
             setUsersData((prev) => ({
               ...prev,
               [userData.id]: {
-                first_name: userData.first_name,
-                last_name: userData.last_name,
-                profile_pic: userData.profile_pic,
+                first_name: data.first_name,
+                last_name: data.last_name,
+                profile_pic: data.profile_pic,
               },
             }))
           }
@@ -293,6 +390,25 @@ const BookPage = () => {
 
         <div className="book-info">
           <h1 className="book-title">{book.title}</h1>
+          
+          {/* Add this button right here */}
+          <button 
+            onClick={logBookData}
+            style={{
+              padding: "8px 12px",
+              backgroundColor: "#faae2b",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              marginTop: "10px",
+              marginBottom: "10px",
+              cursor: "pointer",
+              fontWeight: "bold"
+            }}
+          >
+            LOG TRACKING DATA
+          </button>
+          
           <p className="book-author">
             {book.author_first_name} {book.author_last_name}
           </p>

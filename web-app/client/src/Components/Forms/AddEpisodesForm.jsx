@@ -41,7 +41,7 @@ const AddEpisodesForm = ({ closeEpisodesBookModal, bookId }) => {
       return;
     }
   
-    axios.patch(`http://localhost:8080/audiobook/${bookId}`, {
+    axios.patch(`https://key-gertrudis-alhusseain-8243cb58.koyeb.app/audiobook/${bookId}`, {
       episodes: episodes,
       noOfEpisodes: episodes.length,
     }, {

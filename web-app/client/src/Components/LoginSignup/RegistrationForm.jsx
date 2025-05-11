@@ -40,7 +40,7 @@ const RegistrationForm = () => {
       alert('Password must be at least 6 characters long');
       return;
     }
-    axios.post("http://localhost:8080/user", {
+    axios.post("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user", {
       first_name: formData.firstName,
       last_name: formData.lastName,
       email: formData.email,

@@ -7,6 +7,7 @@ import NavBar from "./Components/NavBar"
 import SearchPage from "./Components/SearchPage"
 import User from "./Components/User_profile/User"
 import BookPage from "./Components/BookPage/BookPage"
+import Home from "./Components/home"
 import PrivateRoute from "./Components/PrivateRoute"
 import AudioRoom from "./Components/Stream/BookClubPage"
 import StreamerMeetLayout from "./Components/Stream/StreamerMeetLayout"
@@ -37,6 +38,8 @@ function App() {
                 }
               />
               <Route path="/book/:id" element={<BookPage />} />
+              <Route path="/" element={<Home />} />
+
               <Route path="/stream" element={<AudioRoom />} />
               <Route path="/streamerLayout/:roomName" element={<StreamerMeetLayout />} />
               <Route path="/listenerLayout/:roomName" element={<ListenerMeetLayout />} />
