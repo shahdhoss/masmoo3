@@ -29,22 +29,26 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
+      const staticJsFiles = [
+        '/static/js/bundle.js',
+        '/static/js/main.js',
+        '/static/js/runtime~main.js',
+        '/static/js/1.chunk.js',
+        '/static/js/2.chunk.js',
+        '/static/js/main.chunk.js'
+      ].filter(Boolean);
+
       const filesToCache = [
-        ...FILES_TO_CACHE, 
+        ...FILES_TO_CACHE,
         '/',
-        '/static/js/bundle.js'
+        ...staticJsFiles
       ];
 
       await Promise.all(
         filesToCache.map((file) => 
-          fetch(file)
-            .then(response => {
-              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-              return cache.put(file, response);
-            })
-            .catch(err => {
-              console.warn(`Skipping ${file} (failed to cache):`, err);
-            })
+          cache.add(file).catch((err) => {
+            console.warn(`Skipping ${file} (failed to cache):`, err);
+          })
         )
       );
       console.log('Caching completed (some files may be skipped)');
