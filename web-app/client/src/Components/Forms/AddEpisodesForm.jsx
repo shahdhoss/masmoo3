@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+
 const AddEpisodesForm = ({ closeEpisodesBookModal, bookId }) => {
   const [noOfEpisodes, setNoOfEpisodes] = useState('');
   const [episodes, setEpisodes] = useState([]);
@@ -41,7 +44,7 @@ const AddEpisodesForm = ({ closeEpisodesBookModal, bookId }) => {
       return;
     }
   
-    axios.patch(`https://key-gertrudis-alhusseain-8243cb58.koyeb.app/audiobook/${bookId}`, {
+    axios.patch(`${hosting}/audiobook/${bookId}`, {
       episodes: episodes,
       noOfEpisodes: episodes.length,
     }, {

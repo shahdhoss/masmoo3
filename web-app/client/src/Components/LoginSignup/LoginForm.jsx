@@ -6,6 +6,8 @@ import registrationImg from "../Assets/images/loginpic.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+
 const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
@@ -27,7 +29,7 @@ const LoginForm = () => {
       alert('Password must be at least 6 characters long');
       return;
     }
-    axios.post("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/login", {
+    axios.post(`${hosting}/user/login`, {
       email: formData.email,
       password: formData.password,
     })

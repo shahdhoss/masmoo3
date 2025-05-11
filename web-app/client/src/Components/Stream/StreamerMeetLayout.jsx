@@ -7,6 +7,8 @@ import {getSocket, disconnectSocket} from "../../socket_instance.js"
 import Chat from "./Chat.jsx";
 import UserAvatar from "./UserAvatar.jsx";
 
+const hosting= "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+
 const StreamerMeetLayout = () => {
   const { roomName } = useParams();
   const [isMuted, setIsMuted] = useState(false);
@@ -26,7 +28,7 @@ const StreamerMeetLayout = () => {
     link.id = "bootstrap-css";
     document.head.appendChild(link);
 
-    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
+    axios.get(`${hosting}/user/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }

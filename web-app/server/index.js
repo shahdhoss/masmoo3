@@ -14,11 +14,6 @@ const downloadRouter = require('./routes/downloadRouter.js')
 const app = express();
 const server = http.createServer(app);
 
-const io = new Server(server, {
-  cors: {
-    origin: "*",
-  },
-});
 const port = 8080;
 
 // db.connectToMongo();

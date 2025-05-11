@@ -6,6 +6,8 @@ import registrationImg from "../Assets/images/registration-form-1.png";
 import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
 import axios from "axios";
 
+const hosting= "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+
 const RegistrationForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
@@ -40,7 +42,7 @@ const RegistrationForm = () => {
       alert('Password must be at least 6 characters long');
       return;
     }
-    axios.post("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user", {
+    axios.post(`${hosting}/user`, {
       first_name: formData.firstName,
       last_name: formData.lastName,
       email: formData.email,
