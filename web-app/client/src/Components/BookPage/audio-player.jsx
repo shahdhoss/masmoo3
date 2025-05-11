@@ -50,7 +50,7 @@ export default function AudioPlayer({ currentBookEpisode, episodes, onEpisodeSel
       onEpisodeSelect(episode)
     }
   }
-
+  {console.log(bookData)}
   // Sort episodes by episode number
   const sortedEpisodes = [...episodes].sort((a, b) => a.episode_no - b.episode_no)
 
@@ -158,8 +158,15 @@ export default function AudioPlayer({ currentBookEpisode, episodes, onEpisodeSel
                 className="control-btn download-btn"
                 aria-label="Download episode"
                 onClick={() => {
-                  // The user will implement the download functionality
-                  console.log("Download episode:", currentEpisode)
+                  if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.ready.then((registration) => {
+                      registration.active.postMessage({
+                        type: 'CACHE_CARD',
+                        card: bookData ,
+                        episode: currentEpisode
+                      });
+                  });
+  }
                 }}
               >
                 <svg

@@ -1,6 +1,7 @@
 const CACHE_NAME = 'cache-v1';
 importScripts('./cache-manifest.js'); 
 const OFFLINE_URL = '/index.html';
+const SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 
 self.addEventListener('install', (event) => {
   console.log('SW installing...');
@@ -60,12 +61,15 @@ self.addEventListener('fetch', (event) => {
 });
 
 self.addEventListener('message', async (event) => {
-  if (event.data?.type === 'CACHE_AUDIO' && event.data.url) {
-    console.log('SW caching:', event.data.url);
+  if (event.data?.type === 'CACHE_CARD' && event.data.card && event.data.episode) {
+    console.log('SW caching:',episode.audio_link);
 
     const cache = await caches.open(CACHE_NAME);
-    const response = await fetch(event.data.url);
+    const response = await fetch(event.data.episode.audio_link);
+    caches.match(`${SERVER_URL}/audiobook`).then(response){
+      console.log(response)
+    }
 
-    if (response.ok) await cache.put(event.data.url, response);
+    if (response.ok) await cache.put(episode.audio_link, response);
   }
 });

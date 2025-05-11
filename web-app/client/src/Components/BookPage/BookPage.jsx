@@ -115,7 +115,6 @@ const BookPage = () => {
 
   useEffect(() => {
     if (!id) return
-
     const fetchReviews = async () => {
       setReviewLoading(true)
       const token = localStorage.getItem("token")
@@ -277,7 +276,7 @@ const BookPage = () => {
   }
 
   const { text: formattedDescription } = processDescription(book.description)
-
+  console.log(book)
   return (
     <div className="book-page">
       <div className="book-header">
