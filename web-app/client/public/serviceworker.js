@@ -3,6 +3,26 @@ importScripts('./cache-manifest.js');
 const OFFLINE_URL = '/index.html';
 const SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 
+const BinarySearchInsert = (episodes,episode)=>{
+    let low = 0;
+    let high = episodes.length - 1;
+    let insertAt = episodes.length;
+    
+    while (low <= high) {
+        const mid = (low + high) >>> 1;
+        if (episodes[mid].episode_no === newEpisode.episode_no) {
+            return false; 
+        } else if (episodes[mid].episode_no < newEpisode.episode_no) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+            insertAt = mid;
+        }
+    }
+    
+    episodes.splice(insertAt, 0, newEpisode);
+}
+
 self.addEventListener('install', (event) => {
   console.log('SW installing...');
   self.skipWaiting();
@@ -36,10 +56,10 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   console.log('SW fetching:', event.request.url);
 
-  // Skip non-GET requests
+  
   if (event.request.method !== 'GET') return;
   
-  // Handle navigation requests
+  
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -55,6 +75,7 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
+      if(cachedResponse)console.log("Found in Cache!");
       return cachedResponse || fetch(event.request);
     })
   );
@@ -62,18 +83,42 @@ self.addEventListener('fetch', (event) => {
 
 self.addEventListener('message', async (event) => {
   if (event.data?.type === 'CACHE_CARD' && event.data.card && event.data.episode) {
-    console.log('SW caching:',episode.audio_link);
+    console.log('SW caching:',event.data.episode.audio_link);
 
     const cache = await caches.open(CACHE_NAME);
-    const response = await fetch(event.data.episode.audio_link,{
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      }
+    await fetch(`http://localhost:8080/download?url=${encodeURI(event.data.episode.audio_link)}`).then(res=>res.blob())
+    .then((blb)=>{
+      const response = new Response(blb,{
+        headers:{
+          'Content-Length':blb.size
+        }
+      });
+      cache.put(event.data.episode.audio_link,response);
+      console.log("put successfully: "+response)
     });
-    caches.match(`${SERVER_URL}/audiobook`).then((response)=>{
-      console.log(response)
+
+    await caches.match(`${SERVER_URL}/audiobook`).then(async (response)=>{
+      let BooksList;
+      if(!response){
+        BooksList = [];
+      }
+      else BooksList = response;
+      let found = false;
+      BooksList.forEach((card)=>{
+        if(card.id == event.card.id){
+          found = true;
+          BinarySearchInsert(card.episodes,event.data.episode.audio_link);
+          return;
+        }
+      })
+      if(!found){
+        let card = event.data.card;
+        card.episodes = [event.data.episode];
+        BooksList.push(card);
+      }
+      console.log(BooksList);
+      const response2 = new Response(BooksList);
+      await cache.put(`${SERVER_URL}/audiobook`,response2);
     })
 
-    if (response.ok) await cache.put(episode.audio_link, response);
-  }
-});
+}});

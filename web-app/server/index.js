@@ -9,6 +9,7 @@ const reviewRouter = require('./routes/reviewRouter');
 const initialiseBooks = require('./initialiseBooks.js');
 const initialiseReviews = require('./initializeReviews.js');
 const initializeSocket = require('./socket.js');
+const downloadRouter = require('./routes/downloadRouter.js')
 
 const app = express();
 const server = http.createServer(app);
@@ -29,6 +30,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/audiobook', audioBookRouter);
 app.use('/reviews', reviewRouter);
+app.use('/download',downloadRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello from our server!');
