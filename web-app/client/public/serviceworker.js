@@ -30,7 +30,7 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      const filesToCache = [...FILES_TO_CACHE, '/','/static/js/bundle.js'];
+      const filesToCache = ['/','/index.html'];
       return cache.addAll(filesToCache).catch(err => {
         console.error('Failed to cache some files:', err);
       });
