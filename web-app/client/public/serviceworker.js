@@ -29,15 +29,8 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
-      const staticJsFiles = [
-        '/static/js/bundle.js',
-        '/static/js/main.js',
-        '/static/js/runtime~main.js',
-        '/static/js/1.chunk.js',
-        '/static/js/2.chunk.js',
-        '/static/js/main.chunk.js'
-      ].filter(Boolean);
-
+      const staticJsFiles = await getStaticJsFiles();
+      
       const filesToCache = [
         ...FILES_TO_CACHE,
         '/',
@@ -51,10 +44,20 @@ self.addEventListener('install', (event) => {
           })
         )
       );
-      console.log('Caching completed (some files may be skipped)');
+      console.log('Caching completed');
     })
   );
 });
+
+async function getStaticJsFiles() {
+  const jsFilePatterns = [
+    '/static/js/main.*.js',
+    '/static/js/runtime~main.*.js',
+    '/static/js/[0-9].*.chunk.js'
+  ];
+  
+  return jsFilePatterns;
+}
 
 self.addEventListener('activate', (event) => {
   console.log('SW activating...');
