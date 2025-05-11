@@ -1,28 +1,72 @@
 "use client"
 import { useAudioPlayer } from "./audio-player-context"
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
 import "./Styles/mini-player.css"
 
 export default function MiniPlayer() {
-    const {
-      currentEpisode,
-      book,
-      isPlaying,
-      togglePlay,
-      currentTime,
-      totalDuration,
-      seek,
-      formatTime,
-      skipForward,
-      skipBackward,
-      isMinimized,
-      setIsMinimized,
-    } = useAudioPlayer()
-  
-    if (!currentEpisode || !isMinimized) return null
-  
-    return (
-      <div className="mini-player">
+  const {
+    currentEpisode,
+    book,
+    isPlaying,
+    togglePlay,
+    currentTime,
+    totalDuration,
+    seek,
+    formatTime,
+    skipForward,
+    skipBackward,
+    isMinimized,
+    setIsMinimized,
+  } = useAudioPlayer()
+
+  // New state to track if the player is completely hidden
+  const [isHidden, setIsHidden] = useState(false)
+
+  // If the player is not minimized, we should reset the hidden state
+  useEffect(() => {
+    if (!isMinimized) {
+      setIsHidden(false)
+    }
+  }, [isMinimized])
+
+  // If there's no current episode or the player is not minimized, don't render
+  if (!currentEpisode || !isMinimized) return null
+
+  // Function to hide the player completely
+  const hidePlayer = () => {
+    setIsHidden(true)
+  }
+
+  // Function to restore the player
+  const restorePlayer = () => {
+    setIsHidden(false)
+  }
+
+  return (
+    <>
+      {/* Floating restore button that appears when player is hidden */}
+      <button
+        className={`mini-player-restore ${!isHidden ? "hidden" : ""}`}
+        onClick={restorePlayer}
+        aria-label="Show player"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </button>
+
+      <div className={`mini-player ${isHidden ? "hidden" : ""}`}>
         {/* Progress bar positioned at the top of the mini player */}
         <div className="mini-player-progress-container">
           <span className="mini-time">{formatTime(currentTime)}</span>
@@ -36,7 +80,7 @@ export default function MiniPlayer() {
           />
           <span className="mini-time">{formatTime(totalDuration)}</span>
         </div>
-  
+
         <div className="mini-player-content">
           <div className="mini-player-info">
             <Link to={`/book/${book?.id}`} className="mini-player-cover">
@@ -51,9 +95,8 @@ export default function MiniPlayer() {
               <div className="mini-player-book-title">{book?.title}</div>
             </div>
           </div>
-  
+
           <div className="mini-player-center">
-            
             <div className="mini-player-controls">
               <button onClick={skipBackward} className="mini-control-btn" aria-label="Rewind 10 seconds">
                 <svg
@@ -152,24 +195,44 @@ export default function MiniPlayer() {
               </button>
             </div>
           </div>
-  
-          <button className="mini-player-expand" onClick={() => setIsMinimized(false)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-          </button>
+
+          <div className="mini-player-actions">
+            {/* Hide button (down arrow) */}
+            <button className="mini-player-hide" onClick={hidePlayer} aria-label="Hide player">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            {/* Expand button (up arrow) */}
+            <button className="mini-player-expand" onClick={() => setIsMinimized(false)} aria-label="Expand player">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    )
-  }
-  
+    </>
+  )
+}
