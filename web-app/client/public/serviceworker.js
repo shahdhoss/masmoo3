@@ -1,5 +1,5 @@
 const CACHE_NAME = 'cache-v1';
-importScripts('./cache-manifest.js'); 
+importScripts('../src/cache-manifest.js'); 
 const OFFLINE_URL = '/index.html';
 const SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 // const SERVER_URL = "http://localhost:8080"
@@ -31,15 +31,9 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       const filesToCache = [FILES_TO_CACHE, '/','/static/js/bundle.js'];
-      for(const request of filesToCache){
-        try{
-          cache.add(request);
-        }
-        catch(err){
-          console.log(err);
-          continue;
-        }
-      }
+      return cache.addAll(filesToCache).catch(err => {
+        console.error('Failed to cache some files:', err);
+      });
     })
   );
 });
