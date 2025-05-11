@@ -2,7 +2,6 @@ const CACHE_NAME = 'cache-v1';
 importScripts('./cache-manifest.js'); 
 const OFFLINE_URL = '/index.html';
 const SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
-// const SERVER_URL = "http://localhost:8080"
 
 const BinarySearchInsert = (episodes,episode)=>{
     let low = 0;
@@ -38,9 +37,14 @@ self.addEventListener('install', (event) => {
 
       await Promise.all(
         filesToCache.map((file) => 
-          cache.add(file).catch((err) => {
-            console.warn(`Skipping ${file} (failed to cache):`, err);
-          })
+          fetch(file)
+            .then(response => {
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              return cache.put(file, response);
+            })
+            .catch(err => {
+              console.warn(`Skipping ${file} (failed to cache):`, err);
+            })
         )
       );
       console.log('Caching completed (some files may be skipped)');
@@ -119,11 +123,9 @@ self.addEventListener('message', async (event) => {
         try {
           BooksList = await response.json();
           if (!Array.isArray(BooksList)) {
-            console.warn('Cached data was not an array, resetting');
             BooksList = [];
           }
         } catch (e) {
-          console.error('Failed to parse cached books:', e);
           BooksList = [];
         }
       }
