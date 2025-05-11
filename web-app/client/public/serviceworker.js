@@ -65,10 +65,14 @@ self.addEventListener('message', async (event) => {
     console.log('SW caching:',episode.audio_link);
 
     const cache = await caches.open(CACHE_NAME);
-    const response = await fetch(event.data.episode.audio_link);
-    caches.match(`${SERVER_URL}/audiobook`).then(response){
+    const response = await fetch(event.data.episode.audio_link,{
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
+    });
+    caches.match(`${SERVER_URL}/audiobook`).then((response)=>{
       console.log(response)
-    }
+    })
 
     if (response.ok) await cache.put(episode.audio_link, response);
   }

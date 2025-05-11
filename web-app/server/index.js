@@ -23,7 +23,7 @@ const port = 8080;
 // db.connectToMongo();
 // initialiseBooks();
 
-app.use(cors("*"));
+app.use(cors());
 app.use(express.json());
 
 app.use('/user', userRouter);
