@@ -32,15 +32,6 @@ self.addEventListener('install', async (event) => {
   await cache.addAll(['/', ...assets]);
 });
 
-async function getStaticJsFiles() {
-  const jsFilePatterns = [
-    '/static/js/main.*.js',
-    '/static/js/runtime~main.*.js',
-    '/static/js/[0-9].*.chunk.js'
-  ];
-  
-  return jsFilePatterns;
-}
 
 self.addEventListener('activate', (event) => {
   console.log('SW activating...');
