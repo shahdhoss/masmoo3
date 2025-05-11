@@ -20,7 +20,7 @@ const EditProfileForm = ({ closeModal, data }) => {
       formData.append('profile_pic', profilePic)
     }
 
-    axios.patch("http://localhost:8080/user/update", formData, {
+    axios.patch("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/update", formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
         'Content-Type': 'multipart/form-data',
