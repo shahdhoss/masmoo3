@@ -17,7 +17,8 @@ const getFiles = (dir) => {
       results = results.concat(getFiles(fullPath));
     } else {
       if (!IGNORE_FILES.some(regex => regex.test(file))) {
-        results.push(fullPath.replace(BUILD_DIR, ''));
+        // Replace backslashes with forward slashes
+        results.push(fullPath.replace(BUILD_DIR, '').replace(/\\/g, '/'));
       }
     }
   });
