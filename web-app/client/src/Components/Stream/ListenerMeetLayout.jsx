@@ -7,7 +7,9 @@ import axios from 'axios';
 import Chat from "./Chat";
 import UserAvatar from "./UserAvatar";
 
-const SIGNALING_SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app";
+const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+const SIGNALING_SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+
 const ListenerMeetLayout = () => {
     const { roomName } = useParams();
     const [isListening, setIsListening] = useState(false);
@@ -24,7 +26,7 @@ const ListenerMeetLayout = () => {
         link.id = "bootstrap-css";
         document.head.appendChild(link);
 
-        axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
+        axios.get(`${hosting}/user/me`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

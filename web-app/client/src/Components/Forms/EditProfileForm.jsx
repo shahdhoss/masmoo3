@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import profile from "../Assets/images/pfp_placeholder.png";
 
+const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 const EditProfileForm = ({ closeModal, data }) => {
   const [firstName, setFirstName] = useState(data.first_name || '')
   const [lastName, setLastName] = useState(data.last_name || '')
@@ -20,7 +21,7 @@ const EditProfileForm = ({ closeModal, data }) => {
       formData.append('profile_pic', profilePic)
     }
 
-    axios.patch("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/update", formData, {
+    axios.patch(`${hosting}/user/update`, formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
         'Content-Type': 'multipart/form-data',

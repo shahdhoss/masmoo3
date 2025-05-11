@@ -8,6 +8,7 @@ import {jwtDecode} from 'jwt-decode';
 import EditProfileForm from "../Forms/EditProfileForm";
 import { useNavigate } from 'react-router-dom';
 
+const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 
 const User = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +31,7 @@ const User = () => {
     link.id = "bootstrap-css";
     document.head.appendChild(link);
 
-    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
+    axios.get(`${hosting}/user/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -50,7 +51,7 @@ const User = () => {
       console.error("There was an error fetching the user data!", error);
     }); 
 
-    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/numberofaddedbooks", {
+    axios.get(`${hosting}/user/numberofaddedbooks`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

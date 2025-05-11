@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import "../Assets/css/userprofilestyles.css";
 import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
+const hosting= "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+
 const UserBookUpload = () => {
   const [isAddBookModalOpen, setIsAddBookModalOpen] = useState(false);
   const [isAddEpisodesModalOpen, setIsAddEpisodeModalOpen] = useState(false);
@@ -56,7 +58,7 @@ const UserBookUpload = () => {
   };
 
   const handleDeleteBook = (bookId) => {
-    axios.delete(`https://key-gertrudis-alhusseain-8243cb58.koyeb.app/audiobook/${bookId}`)
+    axios.delete(`${hosting}/audiobook/${bookId}`)
       .then((response) => {
         console.log("Book deleted successfully", response.data);
         setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
@@ -77,7 +79,7 @@ const UserBookUpload = () => {
     });
     setLoadingStates(initialLoadingStates);
 
-    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/uploadedbooks", {
+    axios.get(`${hosting}/user/uploadedbooks`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
