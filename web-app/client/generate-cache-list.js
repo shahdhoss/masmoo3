@@ -34,5 +34,3 @@ const FILES_TO_CACHE = ${JSON.stringify(files, null, 2)};
 fs.writeFileSync(OUTPUT_FILE, jsContent);
 console.log(`Generated cache list with ${files.length} files in ${OUTPUT_FILE}`);
 
-
-for(const file in FILES) console.log(file);

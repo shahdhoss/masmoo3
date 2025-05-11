@@ -1,5 +1,5 @@
 const CACHE_NAME = 'cache-v1';
-importScripts('../src/cache-manifest.js'); 
+importScripts('./real.js'); 
 const OFFLINE_URL = '/index.html';
 const SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 // const SERVER_URL = "http://localhost:8080"
