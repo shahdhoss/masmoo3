@@ -8,7 +8,6 @@ router.get('/',async (req,res)=>{
         console.log(url); 
         const response = await axios.get(url,{responseType: 'arraybuffer'})
         res.set({
-            'Content-Type':'audio/mpeg',
             'Content-Length':response.headers['content-length'],
             'Accept-Ranges':'bytes'
         });
