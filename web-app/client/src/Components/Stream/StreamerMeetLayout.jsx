@@ -26,7 +26,7 @@ const StreamerMeetLayout = () => {
     link.id = "bootstrap-css";
     document.head.appendChild(link);
 
-    axios.get("http://localhost:8080/user/me", {
+    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }

@@ -56,7 +56,7 @@ const UserBookUpload = () => {
   };
 
   const handleDeleteBook = (bookId) => {
-    axios.delete(`http://localhost:8080/audiobook/${bookId}`)
+    axios.delete(`https://key-gertrudis-alhusseain-8243cb58.koyeb.app/audiobook/${bookId}`)
       .then((response) => {
         console.log("Book deleted successfully", response.data);
         setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
@@ -77,7 +77,7 @@ const UserBookUpload = () => {
     });
     setLoadingStates(initialLoadingStates);
 
-    axios.get("http://localhost:8080/user/uploadedbooks", {
+    axios.get("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/uploadedbooks", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

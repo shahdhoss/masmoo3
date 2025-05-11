@@ -2,9 +2,9 @@ const pg = require('pg')
 module.exports = {
   "development": {
     "username": "postgres",
-    "password": "1234",
+    "password": "user",
     "database": "audiobook",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
