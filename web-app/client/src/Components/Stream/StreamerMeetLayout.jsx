@@ -7,8 +7,8 @@ import {getSocket, disconnectSocket} from "../../socket_instance.js"
 import Chat from "./Chat.jsx";
 import UserAvatar from "./UserAvatar.jsx";
 
-const hosting = "http://localhost:8080"
-// const hosting= "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+// const hosting = "http://localhost:8080"
+const hosting= "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 
 const StreamerMeetLayout = () => {
   const { roomName } = useParams();

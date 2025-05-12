@@ -6,9 +6,9 @@ const rooms = new Map();
 function initializeSocket(server) {
   const io = new Server(server, {
     cors: {
-  origin: ["https://masmoo3-git-main-alhusseains-projects.vercel.app"],
-  methods: ["GET", "POST"],
-  credentials: true}
+      origin: ["https://masmoo3-git-main-alhusseains-projects.vercel.app"],
+      methods: ["GET", "POST"],
+      credentials: true}
   })
 
   io.on("connection", (socket) => {
