@@ -7,7 +7,7 @@ import backgroundImage from "../Assets/images/bg-registration-form-1.jpg";
 import axios from "axios";
 
 const hosting= "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
-
+// const hosting = "http://localhost:8080"
 const RegistrationForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({

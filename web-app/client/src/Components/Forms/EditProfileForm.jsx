@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import profile from "../Assets/images/pfp_placeholder.png";
-
+ 
 const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
+// const hosting = "http://localhost:8080"
 const EditProfileForm = ({ closeModal, data }) => {
   const [firstName, setFirstName] = useState(data.first_name || '')
   const [lastName, setLastName] = useState(data.last_name || '')

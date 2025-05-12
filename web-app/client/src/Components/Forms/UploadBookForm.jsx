@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
-
+// const hosting = "http://localhost:8080"
 const UploadBookForm = ({ closeAddBookModal , fetchBooks}) => {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');

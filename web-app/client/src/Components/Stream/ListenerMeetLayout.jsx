@@ -7,6 +7,8 @@ import axios from 'axios';
 import Chat from "./Chat";
 import UserAvatar from "./UserAvatar";
 
+// const hosting = "http://localhost:8080"
+// const SIGNALING_SERVER_URL = "http://localhost:8080"
 const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 const SIGNALING_SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 

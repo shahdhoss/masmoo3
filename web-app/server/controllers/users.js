@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
 const multer = require('multer');
+const { reviews } = require("../models");
+
 dotenv.config();
 
 exports.createUser = async (req, res) => {
@@ -125,5 +127,26 @@ exports.getNumberOfAddedBooks = async(req,res) =>{
     catch(error){
         console.log(error)
         res.status(500).json({message: 'Internal server error'});
+    }
+}
+
+exports.getUsersReviews = async(req,res)=>{
+    try{
+        const user_reviews = await reviews.findAll({where: {userid: req.user.id}})
+        if(!user_reviews){
+            return res.status(404).json({message: "User does not have any reviews"})
+        }
+        const audiobookIds = user_reviews.map(user_reviews => user_reviews.audiobookid)
+        const books = await audiobooks.findAll({where: {id: audiobookIds}})
+        if(!books){
+            return res.status(404).json({message: "User does not have any reviews"})
+        }
+        const book_map = new Map()
+        books.forEach(book => book_map.set(book.id, book))
+        const result = user_reviews.map(review => ({...review.toJSON(), audiobook: (({ title, image, author }) => ({ title, image, author }))(book_map.get(review.audiobookid))}))
+        res.status(200).json({ reviews: result })
+    }catch(error){
+        console.log(error)
+        res.status(500).json({message: "An error happened while fetching reviews"})
     }
 }

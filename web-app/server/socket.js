@@ -1,4 +1,3 @@
-// socket.js
 const { Server } = require('socket.io');
 
 const connected_users = new Map();
@@ -10,7 +9,7 @@ function initializeSocket(server) {
   origin: ["https://masmoo3-git-main-alhusseains-projects.vercel.app"],
   methods: ["GET", "POST"],
   credentials: true}
-  });
+  })
 
   io.on("connection", (socket) => {
     console.log(`User connected ${socket.id}`);

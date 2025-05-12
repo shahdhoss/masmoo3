@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
-
+// const hosting = "http://localhost:8080"
 const AddEpisodesForm = ({ closeEpisodesBookModal, bookId }) => {
   const [noOfEpisodes, setNoOfEpisodes] = useState('');
   const [episodes, setEpisodes] = useState([]);

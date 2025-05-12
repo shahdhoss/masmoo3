@@ -126,7 +126,7 @@ const BookPage = () => {
         const decodedToken = jwtDecode(token)
         setUserData(decodedToken)
 
-        fetch("key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
+        fetch("https://key-gertrudis-alhusseain-8243cb58.koyeb.app/user/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
