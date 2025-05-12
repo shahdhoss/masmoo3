@@ -2,7 +2,7 @@ const CACHE_NAME = 'cache-v1';
 importScripts('./cache-manifest.js'); 
 const OFFLINE_URL = '/index.html';
 const SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
-// const SERVER_URL = "http://localhost:8080"
+const ASSET_MANIFEST = '/asset-manifest.json';
 
 const BinarySearchInsert = (episodes,episode)=>{
     let low = 0;
@@ -24,29 +24,14 @@ const BinarySearchInsert = (episodes,episode)=>{
     episodes.splice(insertAt, 0, episode);
 }
 
-self.addEventListener('install', (event) => {
-  console.log('SW installing...');
-  self.skipWaiting();
 
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(async (cache) => {
-      const filesToCache = [
-        ...FILES_TO_CACHE, 
-        '/',
-        '/static/js/bundle.js'
-      ];
-
-      await Promise.all(
-        filesToCache.map((file) => 
-          cache.add(file).catch((err) => {
-            console.warn(`Skipping ${file} (failed to cache):`, err);
-          })
-        )
-      );
-      console.log('Caching completed (some files may be skipped)');
-    })
-  );
+self.addEventListener('install', async (event) => {
+  const cache = await caches.open(CACHE_NAME);
+  const manifest = await fetch(ASSET_MANIFEST).then(r => r.json());
+  const assets = Object.values(manifest.files);
+  await cache.addAll(['/', ...assets]);
 });
+
 
 self.addEventListener('activate', (event) => {
   console.log('SW activating...');
@@ -119,11 +104,9 @@ self.addEventListener('message', async (event) => {
         try {
           BooksList = await response.json();
           if (!Array.isArray(BooksList)) {
-            console.warn('Cached data was not an array, resetting');
             BooksList = [];
           }
         } catch (e) {
-          console.error('Failed to parse cached books:', e);
           BooksList = [];
         }
       }
