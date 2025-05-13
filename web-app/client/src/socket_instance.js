@@ -4,7 +4,7 @@ let socket = null;
 
 export const getSocket = () => {
   if (!socket) {
-    socket = io("http://localhost:8080", {
+    socket = io("https://key-gertrudis-alhusseain-8243cb58.koyeb.app", {
       autoConnect: false,
     });
   }
