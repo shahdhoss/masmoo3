@@ -8,10 +8,12 @@ import PlayBack from "./NavComp/PlayBack";
 import masmoo3 from "./Assets/images/masmoo3.png";
 import logout from "./Assets/images/Logout.png";
 import { Link } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 const NavBar = ({ searchWord, setSearchWord }) => {
+    const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [token, setToken] = useState(localStorage.getItem("token"))
+    if(location.pathname == '/login' || location.pathname == '/signup') return null;
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
