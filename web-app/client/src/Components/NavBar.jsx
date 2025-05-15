@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Assets/css/tailwind.css";
 import profile from "./Assets/images/profile.png";
 import download from "./Assets/images/download-arrow.png";
@@ -55,16 +55,19 @@ const NavBar = ({ searchWord, setSearchWord }) => {
             </div>
 
             {menuOpen && (
-                <div className="absolute right-4 top-16 bg-white shadow-lg rounded-lg p-4 space-y-2">
+                <div className="absolute right-4 top-16 bg-white shadow-lg rounded-lg p-4 space-y-2 z-50">
                     <a href="/offline" className="block text-gray-700 hover:text-gray-900">
                         Download
                     </a>
                     <a href="/user" className="block text-gray-700 hover:text-gray-900">
                         Profile
                     </a>
-                    <a href="/login" className="block text-gray-700 hover:text-gray-900">
+                    {token && <a href="/login" className="block text-gray-700 hover:text-gray-900">
                         Logout
-                    </a>
+                    </a>}
+                    {!token && <a href="/login" className="block text-gray-700 hover:text-gray-900">
+                        Login
+                    </a>}
                 </div>
             )}
         </div>
