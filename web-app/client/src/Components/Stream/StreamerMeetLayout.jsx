@@ -11,65 +11,65 @@ import UserAvatar from "./UserAvatar.jsx";
 const hosting = "https://key-gertrudis-alhusseain-8243cb58.koyeb.app"
 
 const StreamerMeetLayout = () => {
-  const { roomName } = useParams();
-  const [isMuted, setIsMuted] = useState(false);
-  const [streamId, setStreamId] = useState(roomName);
-  const [myStream, setMyStream] = useState(null);
-  const [listeners, setListeners] = useState([]);
-  const [userData, setUserData] = useState({});
-  const peers = useRef({});
-  const socketRef = useRef(null);
-  const audioTrackRef = useRef(null);
-  const navigate = useNavigate();
+  const { roomName } = useParams()
+  const [isMuted, setIsMuted] = useState(false)
+  const [streamId, setStreamId] = useState(roomName)
+  const [myStream, setMyStream] = useState(null)
+  const [listeners, setListeners] = useState([])
+  const [userData, setUserData] = useState({})
+  const peers = useRef({})
+  const socketRef = useRef(null)
+  const audioTrackRef = useRef(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-    link.id = "bootstrap-css";
-    document.head.appendChild(link);
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    link.id = "bootstrap-css"
+    document.head.appendChild(link)
 
     axios.get(`${hosting}/user/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
     }).then((response) => {
-      setUserData(response.data);
-    });
+      setUserData(response.data)
+    })
     
     return () => {
-      const existing = document.getElementById("bootstrap-css");
+      const existing = document.getElementById("bootstrap-css")
       if (existing) existing.remove();
     }
-  }, []);
+  }, [])
 
 
   useEffect(() => {
     if (!streamId || !userData?.id) return;
 
-    let stream;
-    let socket;
+    let stream
+    let socket
     
     const setupStreaming = async () => {
       try {
-        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        setMyStream(stream);
-        audioTrackRef.current = stream.getAudioTracks()[0];
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+        setMyStream(stream)
+        audioTrackRef.current = stream.getAudioTracks()[0]
 
-        socket = getSocket();
-        socket.connect(); 
-        socketRef.current = socket;
+        socket = getSocket()
+        socket.connect()
+        socketRef.current = socket
 
         socket.on("connect", () => {
-          console.log(`Connected with socket ID: ${socket.id}`);
+          console.log(`Connected with socket ID: ${socket.id}`)
           socket.emit("register_user", {
             id: userData.id,
             first_name: userData.first_name || "Streamer",
             profile_pic: userData.profile_pic || "",
-          });
-          socket.emit("room:join", streamId);
-          socket.emit("room:streamer-connected", socket.id);
-        });
+          })
+          socket.emit("room:join", streamId)
+          socket.emit("room:streamer-connected", socket.id)
+        })
 
         socket.on("room:listener-joined", (listenerId, listenerInfo) => {
           console.log("Listener joined: ", listenerInfo);
@@ -81,56 +81,56 @@ const StreamerMeetLayout = () => {
               name: listenerInfo?.first_name || `User ${listenerId.slice(0, 4)}`,
               picture: listenerInfo?.profile_pic || "",
               isSpeaking: false,
-            }];
-          });
+            }]
+          })
 
           if (!peers.current[listenerId]) {
-            const peer = new Peer({ initiator: true, stream });
-            peer.on("signal", data => socket.emit("peer:signal", listenerId, data));
-            peer.on("connect", () => console.log(`Connected to ${listenerId}`));
-            peer.on("error", err => console.error(`Peer error ${listenerId}:`, err));
-            peers.current[listenerId] = peer;
+            const peer = new Peer({ initiator: true, stream })
+            peer.on("signal", data => socket.emit("peer:signal", listenerId, data))
+            peer.on("connect", () => console.log(`Connected to ${listenerId}`))
+            peer.on("error", err => console.error(`Peer error ${listenerId}:`, err))
+            peers.current[listenerId] = peer
           }
-        });
+        })
 
         socket.on("room:listener-left", (listenerId) => {
           console.log("Listener left: ", listenerId);
           setListeners(prev => prev.filter(l => l.socketId !== listenerId));
           if (peers.current[listenerId]) {
-            peers.current[listenerId].destroy();
-            delete peers.current[listenerId];
+            peers.current[listenerId].destroy()
+            delete peers.current[listenerId]
           }
-        });
+        })
         
         socket.on("peer:signal", (originId, data) => {
-          const peer = peers.current[originId];
-          if (peer) peer.signal(data);
-          else console.warn(`No peer for ${originId}`);
-        });
+          const peer = peers.current[originId]
+          if (peer) peer.signal(data)
+          else console.warn(`No peer for ${originId}`)
+        })
       } catch (err) {
-        console.error("Setup failed:", err);
-        cleanupResources(socket, stream);
+        console.error("Setup failed:", err)
+        cleanupResources(socket, stream)
       }
-    };
+    }
 
-    setupStreaming();
+    setupStreaming()
 
     return () => {
       cleanupResources(socketRef.current, stream);
-    };
-  }, [streamId, userData?.id]);
+    }
+  }, [streamId, userData?.id])
 
   const cleanupResources = (socket, stream) => {
     if (stream) {
-      stream.getTracks().forEach(track => track.stop());
+      stream.getTracks().forEach(track => track.stop())
     }
     
     Object.values(peers.current).forEach(peer => {
       if (peer && typeof peer.destroy === 'function') {
-        peer.destroy();
+        peer.destroy()
       }
-    });
-    peers.current = {};
+    })
+    peers.current = {}
     
     if (socket) {
       socket.disconnect();
@@ -140,14 +140,14 @@ const StreamerMeetLayout = () => {
     
     setListeners([]);
     setMyStream(null);
-  };
+  }
 
   const toggleMute = () => {
     if (audioTrackRef.current) {
-      audioTrackRef.current.enabled = isMuted;
+      audioTrackRef.current.enabled = isMuted
       setIsMuted(!isMuted);
     }
-  };
+  }
 
   const handleGoHome = () => {
     cleanupResources(socketRef.current);

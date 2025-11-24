@@ -14,40 +14,40 @@ const SIGNALING_SERVER_URL = "https://key-gertrudis-alhusseain-8243cb58.koyeb.ap
 
 const ListenerMeetLayout = () => {
     const { roomName } = useParams();
-    const [isListening, setIsListening] = useState(false);
-    const [userData, setUserData] = useState({});
-    const [peers, setPeers] = useState([]);
-    const socketRef = useRef(null);
-    const peerRef = useRef(null);
-    const navigate = useNavigate();
+    const [isListening, setIsListening] = useState(false)
+    const [userData, setUserData] = useState({})
+    const [peers, setPeers] = useState([])
+    const socketRef = useRef(null)
+    const peerRef = useRef(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-        link.id = "bootstrap-css";
-        document.head.appendChild(link);
+        link.rel = "stylesheet"
+        link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        link.id = "bootstrap-css"
+        document.head.appendChild(link)
 
         axios.get(`${hosting}/user/me`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }
         }).then((response) => {
-            setUserData(response.data);
+            setUserData(response.data)
         });
         return ()=>{
         const existing = document.getElementById("bootstrap-css");
         if (existing) existing.remove();
         }
-    }, []);
+    }, [])
 
     useEffect(() => {
-        if (!isListening) return;
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-        link.id = "bootstrap-css";
-        document.head.appendChild(link);
+        if (!isListening) return
+        const link = document.createElement("link")
+        link.rel = "stylesheet"
+        link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        link.id = "bootstrap-css"
+        document.head.appendChild(link)
         
         if (!userData) { 
           console.log("User data not available");
@@ -59,104 +59,103 @@ const ListenerMeetLayout = () => {
           return;
         }
 
-        const socket = io(SIGNALING_SERVER_URL);
-        socketRef.current = socket;
+        const socket = io(SIGNALING_SERVER_URL)
+        socketRef.current = socket
         
-        const peer = new Peer({ initiator: false });
-        peerRef.current = peer;
+        const peer = new Peer({ initiator: false })
+        peerRef.current = peer
 
-        let streamerId;
-        console.log(`Listener: Joining room: ${roomName}`);
-        socket.emit("register_user", userData);
-        socket.emit("room:join", roomName);
+        let streamerId
+        console.log(`Listener: Joining room: ${roomName}`)
+        socket.emit("register_user", userData)
+        socket.emit("room:join", roomName)
 
         socket.once("room:streamer-connected", (originId) => {
-          streamerId = originId;
-          console.log("Listener: Streamer connected:", streamerId);
-        });
+          streamerId = originId
+          console.log("Listener: Streamer connected:", streamerId)
+        })
 
         socket.on("peer:signal", (_, data) => {
-          console.log("Listener: Received peer signal:", data);
-          peer.signal(data);
-        });
+          console.log("Listener: Received peer signal:", data)
+          peer.signal(data)
+        })
 
         peer.on("signal", (data) => {
-          console.log("Listener: Sending peer signal:", data);
-          socket.emit("peer:signal", streamerId, data);
-        });
+          console.log("Listener: Sending peer signal:", data)
+          socket.emit("peer:signal", streamerId, data)
+        })
 
         socket.on("connect", () => {
           setTimeout(() => {
-            socket.emit("get_peers");
-          }, 500);
-        });
+            socket.emit("get_peers")
+          }, 500)
+        })
         
         socket.on("peers_list", (peersList) => {
-          console.log("peers list received: ", peersList);
-          const uniquePeers = [];
-          const seenIds = new Set();
+          console.log("peers list received: ", peersList)
+          const uniquePeers = []
+          const seenIds = new Set()
           
           peersList.forEach(peer => {
             if (peer.id && !seenIds.has(peer.id)) {
-              seenIds.add(peer.id);
-              uniquePeers.push(peer);
+              seenIds.add(peer.id)
+              uniquePeers.push(peer)
             }
-          });
-          
-          setPeers(uniquePeers);
-        });
+          })
+          setPeers(uniquePeers)
+        })
 
         peer.on("stream", (stream) => {
-          console.log("Listener: Received stream:", stream);
+          console.log("Listener: Received stream:", stream)
           if (stream.getAudioTracks().length > 0) {
-              console.log("Stream has audio tracks, starting playback...");
-              const audio = new Audio();
-              audio.srcObject = stream;
-              audio.play().catch(console.error);
+              console.log("Stream has audio tracks, starting playback...")
+              const audio = new Audio()
+              audio.srcObject = stream
+              audio.play().catch(console.error)
           } else {
-              console.error("No audio tracks in the stream!");
+              console.error("No audio tracks in the stream!")
           }
-        });
+        })
 
         peer.on("connect", () => {
-            console.log("Listener: Peer connected!");
-        });
+            console.log("Listener: Peer connected!")
+        })
 
         peer.on("error", (err) => {
-            console.error("Listener: Peer error", err);
+            console.error("Listener: Peer error", err)
         });
 
         return () => {
-          console.log("Listener: Disconnecting");
-          socket.disconnect();
-          peer.destroy();
-          const existing = document.getElementById("bootstrap-css");
-          if (existing) existing.remove();
+          console.log("Listener: Disconnecting")
+          socket.disconnect()
+          peer.destroy()
+          const existing = document.getElementById("bootstrap-css")
+          if (existing) existing.remove()
         };
-    }, [isListening, roomName, userData]);
+    }, [isListening, roomName, userData])
 
     const handleListenClick = () => {
       if (!isListening) {
         if (roomName) {
-          setIsListening(true);
-          console.log("Listener: setIsListening(true)");
+          setIsListening(true)
+          console.log("Listener: setIsListening(true)")
         } else {
-          console.error("Listener: Room name is not available in the URL.");
+          console.error("Listener: Room name is not available in the URL.")
         }
       } else {
         if (socketRef.current) {
-          socketRef.current.disconnect();
+          socketRef.current.disconnect()
         }
         if (peerRef.current) {
-          peerRef.current.destroy();
+          peerRef.current.destroy()
         }
-        setIsListening(false);
-        setPeers([]);
+        setIsListening(false)
+        setPeers([])
       }
-    };
+    }
   
   const handleGoHome = () => {
-    navigate('/');
+    navigate('/')
   };
     return (
       <div className="d-flex vh-100 overflow-hidden" style={{ backgroundColor: "#F8F9FA" }}>
