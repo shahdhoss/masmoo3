@@ -6,11 +6,6 @@ pipeline {
                 echo 'Hello world!'
             }
         }
-        stage('Cloning repo') {
-            steps {
-                bat 'git clone https://github.com/shahdhoss/masmoo3.git'
-            }
-        }
         stage('Install dependencies and build') {
             steps {
                 dir('web-app/server') {
