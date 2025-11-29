@@ -10,7 +10,7 @@ pipeline {
             steps {
                 dir('web-app/server') {
                     bat 'npm install'
-                    bat 'npm run build'
+                    bat 'npm run'
                 }
             }
         }
