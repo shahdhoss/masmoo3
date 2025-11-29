@@ -1,63 +1,22 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout Code') {
-        steps {
-            git branch: 'main', url:
-            "https://github.com/USERNAME/microblog.git"
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!'
             }
         }
-
-        stage('Install Dependencies') {
+        stage('Cloning repo') {
             steps {
-            sh '''
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
-
-            '''
+                bat 'git clone https://github.com/shahdhoss/masmoo3.git'
             }
         }
-
-        stage(&#39;Lint &amp; Static Analysis&#39;) {
+        stage('Install dependencies and build') {
             steps {
-            sh '''
-            . venv/bin/activate
-            pylint app --exit-zero
-            bandit -r app
-            '''
-            }
-        }
-
-        stage('Unit Tests') {
-            steps {
-            '''
-            . venv/bin/activate
-            pytest --cov=app --cov-report=xml
-            '''
-            }
-        }
-
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('MySonarQubeServer') {
-                sh 'sonar-scanner'
+                dir('web-app/server') {
+                    bat 'npm install'
+                    bat 'npm run build'
                 }
-            }
-        }
-
-        stage('Quality Gate') {
-            steps {
-                timeout(time: 2, unit: &#39;MINUTES&#39;) {
-                waitForQualityGate abortPipeline: true
-                }
-            }
-        }
-
-        stage('Package Application') {
-            steps {
-            sh 'zip -r artifact.zip app/'
             }
         }
     }
