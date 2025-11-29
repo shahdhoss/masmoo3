@@ -21,12 +21,11 @@ pipeline {
                 }
             }
         }
-        stage('Quality Gate') {
+        stage('Slack notification') {
             steps {
-                timeout(time:5, unit: 'MINUTES'){
-                    waitForQualityGate abortPipeline: true
-                }
+                slackSend channel: '#all-zewailcity', message: 'Slack test'
             }
         }
+        
     }
 }
